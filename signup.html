@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreamflix Login</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="icon"  href="logo1.jpg">
+</head>
+
+<body>
+    <header class="header">
+        <div class="overlay">
+        <nav>
+            <h1 class="logo">DreamFlix</h1> 
+            <button class="home"><a href="home.html">Home</a></button>
+        </nav>
+    </div>
+    </header>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <div class="input-container">
+            <input type="password" id="password" placeholder="Password" required>
+            <button class="toggle-password" onclick="togglePassword('password')">👁</button>
+        </div>
+        <div class="input-container">
+            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            <button class="toggle-password" onclick="togglePassword('confirm-password')">👁</button>
+           
+        </div>
+        <button class="btn" onclick="SignUp()">Sign Up</button>
+    </div>
+    <script>
+        function isStrongPassword(password) {
+            return password.length >= 5 && /[A-Z]/.test(password) && /[a-z]/.test(password) && /\d/.test(password) && /[!@#$%^&*(),.?":{}|<>]/.test(password);
+        }
+        
+        function togglePassword(fieldId) {
+            let field = document.getElementById(fieldId);
+            field.type = field.type === "password" ? "text" : "password";
+        }
+        
+        function SignUp() {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let confirmPassword = document.getElementById("confirm-password").value.trim();
+            
+            if (name === "" || email === "" || password === "" || confirmPassword === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+            
+            if (!isStrongPassword(password)) {
+                alert("Incorrect Password! Hint:Password must be minimum 5 characters long, contain uppercase, lowercase, a number, and a special character.return");
+            }
+            
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please enter the same password.");
+                return;
+            }
+            
+            alert("Sign Up Successful! 🎉😃");
+            window.location.href = 'Movies&Series.html';  
+        }
+    </script>
+    
+</body>
+</html>

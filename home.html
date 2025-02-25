@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <script defer src="home.js"></script>
+    <title>DreamFlix - Your Escape, Your Reality</title>
+    <link rel="icon"  href="logo1.jpg">
+   
+</head>
+<body>
+    <header class="hero">
+        <div class="overlay">
+            <nav>
+                <h1 class="logo">DreamFlix</h1>
+                <div class="button-container">
+                    <button class="aboutus" id="loginBtn">Sign In</button>
+                    <button class="aboutus"><a href="About-Us.html">About Us</a></button>
+                   
+                </div>
+            </nav>
+           
+        <div class="hero-content">
+            <h1>Unlimited movies, TV shows, and more.</h1>
+            <h2>Watch anywhere. Cancel anytime.</h2>
+            <div class="signup-form">
+                <button> <a href="signup.html"> Sign Up </a></button>
+            </div>
+            </div>
+            <div id="loginModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <form id="loginForm">
+                        <h2>Log In To Your Account</h2>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="password" placeholder="Your Password" required>
+                        <button type="submit">Log In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+    <section class="trending">
+        <h2>Trending Now</h2>
+        <div class="scroll-container">
+        <button class="scroll-btn left-btn" onclick="scrollLeft()"id="leftBtn">&#10094;</button>
+        <div class="movie-container" id="movieContainer" onscroll="handleScroll()">
+            <div class="grid">
+                <img src="imgs/SquidGame.jpg" alt="">
+            </div>
+            <div class="grid">
+                <img src="imgs/BackinAction.jpg" alt="">
+            </div>
+            <div class="grid">
+                <img src="imgs/TheNightAgent.jpg" alt="">
+            </div>
+            <div class="grid">
+                <img src="imgs/Friends.jpg" alt="">
+            </div>
+            <div class="grid">
+                <img src="imgs/PrisonBreak.jpg" alt="">
+            </div>
+            <div class="grid">
+                <img src="imgs/FastX.jpg" alt="">
+            </div>
+            <div class="grid">
+                <img src="imgs/CarryOn.jpg" alt="">
+            </div>
+            <div class="grid">
+                <img src="imgs/Moana.jpg" alt="">
+            </div>
+            <div class="grid">
+                <img src="imgs/Thepenguin.jpg" alt="">
+            </div>
+        </div>
+        <button class="scroll-btn right-btn" onclick="scrollRight()" id="rightBtn">&#10095;</button>
+    </div>
+    </section>
+    <section class="reasons">
+        <h2>More Reasons to Join</h2>
+        <div class="reasons-container">
+            <div class="reason">
+                <img src="imgs/Free2-removebg-preview.png" alt="Completely Free">
+                <h3>Completely Free</h3>
+                <p>Enjoy a vast library of movies and TV shows without spending a penny.</p>
+            </div>
+            <div class="reason">
+                <img src="imgs/Noads-removebg-preview.png" alt="No Ads">
+                <h3>No Ads</h3>
+                <p>Watch your favorites content without any intermissions. No annoying ads! </p>
+            </div>
+            <div class="reason">
+                <img src="imgs/trending2-removebg-preview.png" alt="Latest Content">
+                <h3>Latest Content</h3>
+                <p>Get access to the lasted releases and trending shows. Always fresh content!</p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">FAQ</a>
+            <a href="#">Help Center</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Preferences</a>
+            <a href="#">Corporate Information</a>
+        </div>
+        <p>&copy; 2025 DreamFlix. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

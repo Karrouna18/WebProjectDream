@@ -1,0 +1,183 @@
+body {
+    font-family:'Courier New', Courier, monospace;
+    background-color: #141414;
+    color: #fff;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #111;
+   
+}
+
+
+header .logo h1 {
+    font-size: 2rem;
+    color: #e50914;
+}
+
+nav ul {
+    list-style: none;
+   
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e50914;
+}
+nav ul li:hover{
+    color: #e50914;
+    cursor: pointer;
+}
+#about-page {
+    padding: 60px;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    text-align: center;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: auto;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.about-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-container h3 {
+    font-size: 2rem;
+    margin-top: 30px;
+}
+
+.about-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-container ul li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-container ul li b {
+    color: #ffcc00;
+}
+
+.about-container ul li::before {
+    content: "🎬";
+    margin-right: 10px;
+}
+.button-about {
+    background: #c41010; 
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.button-about a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.button-about:hover {
+    background: #ff0000; 
+    transform: scale(1.05); 
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    right: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #000000;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 5px;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(167, 54, 54);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkred;
+}
+#loginForm{
+    padding: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #c41010;
+}
+footer p{
+    text-align: center;
+}

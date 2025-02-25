@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - DreamFlix</title>
+    <link rel="stylesheet" href="Aboutus.css">
+    <link rel="icon"  href="logo1.jpg">
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>DreamFlix</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li id="loginBtn">Log in</li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section id="about-page">
+        <div class="about-container">
+            <h2>Welcome to DreamFlix: Your Escape, Your Reality</h2>
+            <p>
+                Once upon a time, entertainment was locked behind paywalls, plagued by ads, and restricted by unnecessary limitations. <b>DreamFlix</b> was created to change that.
+            </p>
+            <p>
+                We believe movies and TV shows are more than just content – they are experiences, emotions, and escapes into different worlds. That’s why we built DreamFlix, a platform where you can watch what you love, when you want, without interruption.
+            </p>
+            <h3>What Makes DreamFlix Different?</h3>
+            <ul>
+                <li>🚀 **Completely Free** – No subscriptions, no payments, just entertainment.</li>
+                <li>🎬 **Handpicked Content** – Discover fresh, trending, and classic movies and shows.</li>
+                <li>🕶️ **Ad-Free Experience** – Enjoy uninterrupted viewing, because your time matters.</li>
+                <li>📡 **Anywhere, Anytime** – Watch your favorites on any device, anytime you want.</li>
+            </ul>
+            <p>
+                DreamFlix is built for movie lovers, binge-watchers, and everyone who believes that stories should be free and accessible. Join us in redefining the way we experience entertainment.
+            </p>
+            <p><b>Welcome to the Dream. Welcome to DreamFlix.</b></p>
+            <p>
+                <b style="color: rgb(246, 15, 15); font-size: 200%;">What are you waiting for?</b><br>
+                Don’t waste your time searching endlessly for something to watch.  
+                Dive into a world of unlimited entertainment, handpicked just for you. Whether you're in the mood for an action-packed thriller, a heartwarming romance, or a mind-bending sci-fi adventure, **DreamFlix** has it all.  
+                <br>🚀Start watching now and escape into your reality!🚀
+            </p>
+            <button class="button-about" id="joinBtn"><a href="signup.html">Join For Free </a></button>
+        </div>
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form id="loginForm">
+                    <h2>Log In To Your Account</h2>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="password" placeholder="Your Password" required>
+                    <button type="submit">Log In</button>
+                </form>
+            </div>
+        </div>
+        
+    </section>
+    <footer>
+        <p>&copy; 2025 DreamFlix. All Rights Reserved.</p>
+    </footer>
+    <script>
+       
+        var modal = document.getElementById("loginModal");
+        
+        
+        var btn = document.getElementById("loginBtn");
+        
+        
+        var span = document.getElementsByClassName("close")[0];
+        
+        
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        
+       
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        
+        document.getElementById("loginForm").onsubmit = function(event) {
+            event.preventDefault(); 
+            modal.style.display = "none"; 
+            alert("Log-In Successful! Redirecting to Main Page...");
+            window.location.href = 'Movies&Series.html'; 
+        }
+        </script>
+        
+</body>
+</html>

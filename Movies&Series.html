@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamFlix - Discover Movies & Series</title>
+    <link rel="stylesheet" href="Movies&Series.css">
+    <script defer src="Movies&Series.js"></script>
+    <link rel="icon" href="logo1.jpg">
+</head>
+<body>
+  
+    <header>
+        <div class="logo">
+            <h1>DreamFlix</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a class="active" href="Movies&Series.html"> Home </a></li>
+                <li class="categories">
+                    <a href="#" id="categoriesBtn">Categories ▼</a>
+                    <div class="categories-popup" id="categoriesPopup">
+                        <ul>
+                            <li class="dropdown-item" onclick="toggleSubMenu('moviesMenu')">
+                                🎬 Movies <span class="arrow">▶</span>
+                                <ul class="sub-dropdown" id="moviesMenu">
+                                    <li>🎭 Drama</li>
+                                    <li>❤️Romance</li>
+                                    <li>🔪 Horror</li>
+                                    <li>🔥 Action</li>
+                                    <li>😂 Comedy</li>
+                                    <li>🛸 Sci-Fi</li>
+                                    <li>👨‍👩‍👦 Family</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item" onclick="toggleSubMenu('seriesMenu')">
+                                📺 Series <span class="arrow">▶</span>
+                                <ul class="sub-dropdown" id="seriesMenu">
+                                    <li>🎭 K-Drama</li>
+                                    <li>❤️Drama-Turk</li>
+                                    <li>🕵️‍♂️ Mystery</li>
+                                    <li>🤖 Sci-Fi</li>
+                                    <li>😂 Comedy</li>
+                                    <li>🔥 Thriller</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Trending</a></li>
+                <li><a href="#">Watchlist</a></li>
+                <li><a href="About-Us.html">About Us</a></li>
+                <button class="button" id="logoutBtn"><a href="home.html" >Log Out</a></button>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Search Bar -->
+    <section id="search">
+        <input type="text" id="searchInput" placeholder="Search for movies, series...">
+        <button class="button" id="searchBtn">Search</button>
+    </section>
+ <!-- Hero Section -->
+  <div class="carousel-container">
+ <div class="carousel">
+    <div class="carousel-track">
+      <div class="carousel-slide">
+        <img src="imgs/images.jpg" alt="Buried Hearts">
+        <div class="carousel-caption">Buried Hearts</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="imgs/Study_Group.png" alt="Study Group">
+        <div class="carousel-caption">Study Group</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="imgs/myfault London.jpg" alt="My fault London">
+        <div class="carousel-caption">My fault London</div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="carousel-dots">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+ 
+
+<!-- Trending Now -->
+<section class="movies-section">
+    <h2>🔥 Trending Now</h2>
+    <div class="movie-carousel">
+        <button class="scroll-btn left-btn" onclick="scrollLeft()" id="leftBtn">&#8249;</button>
+        <div class="movie-container" id="movieContainer" onscroll="handleScroll()">
+            <div class="movie-card">
+                <img src="imgs/Culpatuya.jpg" alt="Culpa Tuya">
+                <p>Culpa Tuya</p>
+            </div>
+            <div class="movie-card">
+                <img src="imgs/Madameweb.jpg" alt="Madame Web">
+                <p>Madame Web</p>
+            </div>
+            <div class="movie-card">
+                <img src="imgs/Argylle.jpg" alt="Argylle">
+                <p>Argylle</p>
+            </div>
+            <div class="movie-card">
+                <img src="imgs/Lucifer.jpg" alt="Lucifer">
+                <p>Lucifer</p>
+            </div>
+            <div class="movie-card">
+                <img src="imgs/Gameofthrones.jpg" alt="Game of Thrones">
+                <p>Game of Thrones</p>
+            </div>
+            <div class="movie-card">
+                <img src="imgs/Denofthieves2.jpg" alt="Den of Thieves 2">
+                <p>Den of Thieves 2</p>
+            </div>
+            <div class="movie-card">
+                <img src="imgs/Joker2.jpg" alt="Joker 2">
+                <p>Joker 2</p>
+            </div>
+            <div class="movie-card">
+                <img src="imgs/Extraction2.jpg" alt="Extraction 2">
+                <p>Extraction 2</p>
+            </div>
+            <div class="movie-card">
+                <img src="imgs/Arcane.jpg" alt="Arcane">
+                <p>Arcane</p>
+            </div>
+        </div>
+        <button class="scroll-btn right-btn" onclick="scrollRight()" id="rightBtn">&#8250;</button>
+    </div>
+</section>
+
+<!-- New Releases -->
+<section class="movies-section">
+    <h2>🎬 New Releases</h2>
+    <div class="movie-container">
+        <div class="movie-card">
+            <img src="movie4.jpg" alt="The Lift">
+            <p>The Lift</p>
+        </div>
+        <div class="movie-card">
+            <img src="movie5.jpg" alt="Squid Game 2">
+            <p>Squid Game 2</p>
+        </div>
+    </div>
+</section>
+<section class="movies-section">
+    <h2>🎭 K-Drama</h2>
+    <div class="movie-container">
+        <div class="movie-card">
+            <img src="movie4.jpg" alt="The Lift">
+            <p>The Lift</p>
+        </div>
+        <div class="movie-card">
+            <img src="movie5.jpg" alt="Squid Game 2">
+            <p>Squid Game 2</p>
+        </div>
+    </div>
+</section>
+<section class="movies-section">
+    <h2>✨ Stars</h2>
+    <div class="movie-container">
+        <div class="movie-card">
+            <img src="movie4.jpg" alt="The Lift">
+            <p>The Lift</p>
+        </div>
+        <div class="movie-card">
+            <img src="movie5.jpg" alt="Squid Game 2">
+            <p>Squid Game 2</p>
+        </div>
+    </div>
+</section>
+<section class="movies-section">
+    <h2>💀 Films That Haunt You</h2>
+    <div class="movie-container">
+        <div class="movie-card">
+            <img src="movie4.jpg" alt="The Lift">
+            <p>The Lift</p>
+        </div>
+        <div class="movie-card">
+            <img src="movie5.jpg" alt="Squid Game 2">
+            <p>Squid Game 2</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
