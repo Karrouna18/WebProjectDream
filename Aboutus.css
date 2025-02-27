@@ -181,3 +181,57 @@ button:hover {
 footer p{
     text-align: center;
 }
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    nav ul {
+        padding: 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    #about-page {
+        padding: 30px;
+    }
+
+    .about-container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .about-container h2 {
+        font-size: 2rem;
+    }
+
+    .about-container p {
+        font-size: 1rem;
+    }
+
+    .button-about {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .modal {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
