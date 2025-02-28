@@ -64,29 +64,63 @@ setInterval(() => {
 
 
 //scroll
-let movieContainer = document.getElementById('movieContainer');
-let leftBtn = document.getElementById('leftBtn');
-let rightBtn = document.getElementById('rightBtn');
+const moviesWrapper = document.getElementById('movieContainer');
+const btnLeft = document.getElementById('leftBtn');
+const btnRight = document.getElementById('rightBtn');
 
-// Initially, hide the left button and show the right button
-window.onload = handleScroll;
+const scrollAmount = 300; // Amount to scroll in pixels
 
-function scrollLeft() {
-    movieContainer.scrollBy({ left: -300, behavior: 'smooth' });
-    handleScroll(); // Update button visibility after scroll
-}
+// Initial button state
+handleScroll();
 
-function scrollRight() {
-    movieContainer.scrollBy({ left: 300, behavior: 'smooth' });
-    handleScroll(); // Update button visibility after scroll
-}
+// Scroll Right
+btnRight.addEventListener('click', () => {
+    moviesWrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    setTimeout(updateButtonVisibility, 300); // Delay to match scroll behavior
+});
 
+// Scroll Left
+btnLeft.addEventListener('click', () => {
+    moviesWrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    setTimeout(updateButtonVisibility, 300);
+});
+
+// Update Button Visibility
 function handleScroll() {
-    const maxScrollLeft = movieContainer.scrollWidth - movieContainer.clientWidth;
+    const container = document.getElementById('movieContainer');
+    const leftBtn = document.getElementById('leftBtn');
+    const rightBtn = document.getElementById('rightBtn');
 
-    // Show left button if scrolled right
-    leftBtn.style.display = movieContainer.scrollLeft > 0 ? 'flex' : 'none';
+    // Hide left button if at the start
+    if (container.scrollLeft <= 0) {
+        leftBtn.style.display = 'none';
+    } else {
+        leftBtn.style.display = 'block';
+    }
 
-    // Show right button if not scrolled to the end
-    rightBtn.style.display = movieContainer.scrollLeft < maxScrollLeft ? 'flex' : 'none';
+    // Hide right button if at the end
+    if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 1) {
+        rightBtn.style.display = 'none';
+    } else {
+        rightBtn.style.display = 'block';
+    }
 }
+
+// Initial check for button visibility
+handleScroll();
+
+// Add scroll event listener to the container
+document.getElementById('movieContainer').addEventListener('scroll', handleScroll);
+
+
+
+
+
+
+
+
+
+
+
+ 
+

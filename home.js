@@ -1,23 +1,53 @@
-let movieContainer = document.getElementById('movieContainer');
-let leftBtn = document.getElementById('leftBtn');
-let rightBtn = document.getElementById('rightBtn');
+let moviesWrapper = document.getElementById('movieContainer');
+let btnLeft = document.getElementById('leftBtn');
+let btnRight = document.getElementById('rightBtn');
 
+let scrollAmount = 710; // Amount to scroll in pixels
 
-function scrollLeft() {
-    movieContainer.scrollBy({ left: -710, behavior: 'smooth' });
-}
-function scrollRight() {
-    movieContainer.scrollBy({ left: 710, behavior: 'smooth' });
-}
+// Initial button state
+handleScroll();
 
+// Scroll Right
+btnRight.addEventListener('click', () => {
+    moviesWrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    setTimeout(updateButtonVisibility, 710); // Delay to match scroll behavior
+});
+
+// Scroll Left
+btnLeft.addEventListener('click', () => {
+    moviesWrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    setTimeout(updateButtonVisibility, 710);
+});
+
+// Update Button Visibility
 function handleScroll() {
-    const maxScrollLeft = movieContainer.scrollWidth - movieContainer.clientWidth;
-    leftBtn.style.display = movieContainer.scrollLeft > 0 ? 'flex' : 'none';
-    rightBtn.style.display = movieContainer.scrollLeft < maxScrollLeft ? 'flex' : 'none';
+    let container = document.getElementById('movieContainer');
+    let leftBtn = document.getElementById('leftBtn');
+    let rightBtn = document.getElementById('rightBtn');
+
+    // Hide left button if at the start
+    if (container.scrollLeft <= 0) {
+        leftBtn.style.display = 'none';
+    } else {
+        leftBtn.style.display = 'block';
+    }
+
+    // Hide right button if at the end
+    if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 1) {
+        rightBtn.style.display = 'none';
+    } else {
+        rightBtn.style.display = 'block';
+    }
 }
 
-window.onload = handleScroll;
+// Initial check for button visibility
+handleScroll();
 
+// Add scroll event listener to the container
+document.getElementById('movieContainer').addEventListener('scroll', handleScroll);
+
+
+//pop
 var modal = document.getElementById("loginModal");
         
         
