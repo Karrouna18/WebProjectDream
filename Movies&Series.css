@@ -66,11 +66,14 @@ nav ul li a:hover {
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
-
 .movie-container {
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto !important;
+    gap: 10px;
+    padding: 10px;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
 }
 
 .movie-item {
@@ -120,12 +123,6 @@ footer p {
     margin: 40px 5%;
 }
 
-.movie-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
 
 .movie-item {
     text-align: center;
@@ -227,29 +224,18 @@ input {
     width: auto !important;    
 }
 /* Movie Card Container */
-.movie-container {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 10px;
-    scroll-behavior: smooth;
-    scrollbar-width:none; 
-}
-.movie-container::-webkit-scrollbar {
-    display:none !important;
-}
 
+.movie-container::-webkit-scrollbar {
+    display: none !important; 
+}
 /* Movie Card */
 .movie-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex: 0 0 auto;
-    width: 160px;
+    width: 155px;
     margin-right: 10px;
-    
-
 }
 
 .movie-card img {
@@ -257,6 +243,7 @@ input {
     height: 250px;
     border-radius: 4px;
 }
+
 
 .movie-card:hover {
     transform: scale(1.1);
@@ -282,12 +269,10 @@ input {
 
 .left-btn {
     left: 0px;
-    
-    
 }
+
 .right-btn {
     right: 0px;
-    
 }
 
 

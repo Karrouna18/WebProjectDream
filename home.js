@@ -1,50 +1,47 @@
-let moviesWrapper = document.getElementById('movieContainer');
-let btnLeft = document.getElementById('leftBtn');
-let btnRight = document.getElementById('rightBtn');
+// === MOVIE SCROLL FUNCTIONALITY ===
+const moviesWrapper = document.getElementById("movieContainer");
+const btnLeft = document.getElementById("leftBtn");
+const btnRight = document.getElementById("rightBtn");
+const scrollAmount = 710; // Amount to scroll in pixels
 
-let scrollAmount = 710; // Amount to scroll in pixels
+if (moviesWrapper) {
+    // Ensure first image is fully visible on load
+    moviesWrapper.scrollLeft = 0;
+    handleScroll();
 
-// Initial button state
-handleScroll();
+    // Scroll Right
+    btnRight.addEventListener("click", function () {
+        moviesWrapper.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        setTimeout(handleScroll, 710);
+    });
 
-// Scroll Right
-btnRight.addEventListener('click', () => {
-    moviesWrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    setTimeout(updateButtonVisibility, 710); // Delay to match scroll behavior
-});
+    // Scroll Left
+    btnLeft.addEventListener("click", function () {
+        moviesWrapper.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        setTimeout(handleScroll, 710);
+    });
 
-// Scroll Left
-btnLeft.addEventListener('click', () => {
-    moviesWrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    setTimeout(updateButtonVisibility, 710);
-});
-
-// Update Button Visibility
-function handleScroll() {
-    let container = document.getElementById('movieContainer');
-    let leftBtn = document.getElementById('leftBtn');
-    let rightBtn = document.getElementById('rightBtn');
-
-    // Hide left button if at the start
-    if (container.scrollLeft <= 0) {
-        leftBtn.style.display = 'none';
-    } else {
-        leftBtn.style.display = 'block';
-    }
-
-    // Hide right button if at the end
-    if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 1) {
-        rightBtn.style.display = 'none';
-    } else {
-        rightBtn.style.display = 'block';
-    }
+    // Add event listener to monitor scroll changes
+    moviesWrapper.addEventListener("scroll", handleScroll);
 }
 
-// Initial check for button visibility
-handleScroll();
+// Move `handleScroll()` outside so it can be globally accessible
+function handleScroll() {
+    const container = document.getElementById("movieContainer");
+    const leftBtn = document.getElementById("leftBtn");
+    const rightBtn = document.getElementById("rightBtn");
 
-// Add scroll event listener to the container
-document.getElementById('movieContainer').addEventListener('scroll', handleScroll);
+    if (!container) return;
+
+    // Hide left button if at the start
+    leftBtn.style.display = container.scrollLeft <= 0 ? "none" : "block";
+
+    // Hide right button if at the end
+    rightBtn.style.display =
+        container.scrollLeft + container.clientWidth >= container.scrollWidth - 1
+            ? "none"
+            : "block";
+}
 
 
 //pop
