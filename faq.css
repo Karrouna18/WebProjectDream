@@ -1,0 +1,74 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: white;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #222;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* FAQ Container */
+.faq-container {
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+/* FAQ Section */
+.faq {
+    background-color: #222;
+    margin: 10px 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* FAQ Question Button */
+.faq-question {
+    width: 100%;
+    background: #333;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+.faq-question:hover {
+    background: #444;
+}
+
+/* Toggle Icon */
+.toggle {
+    font-size: 20px;
+}
+
+/* FAQ Answer */
+.faq-answer {
+    display: none;
+    padding: 15px;
+    background: #444;
+    font-size: 16px;
+    line-height: 1.5;
+    border-top: 1px solid #666;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+}
