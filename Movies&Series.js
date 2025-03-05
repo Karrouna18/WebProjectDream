@@ -62,38 +62,36 @@ if (track) {
 }
 
 // === MOVIE SCROLL FUNCTIONALITY ===
-const moviesWrapper = document.getElementById("movieContainer");
-const btnLeft = document.getElementById("leftBtn");
-const btnRight = document.getElementById("rightBtn");
-const scrollAmount = 300; // Amount to scroll in pixels
+document.querySelectorAll(".movie-carousel").forEach((carousel) => {
+    let moviesWrapper = carousel.querySelector(".movie-container"); // Select the container within this carousel
+    let btnLeft = carousel.querySelector(".left-btn"); // Select the left button within this carousel
+    let btnRight = carousel.querySelector(".right-btn"); // Select the right button within this carousel
+    let scrollAmount = 1080; // Amount to scroll in pixels
 
-if (moviesWrapper) {
-    // Ensure first image is fully visible on load
-    moviesWrapper.scrollLeft = 0;
-    handleScroll();
+    if (moviesWrapper) {
+        // Ensure first image is fully visible on load
+        moviesWrapper.scrollLeft = 0;
+        handleScroll(moviesWrapper, btnLeft, btnRight);
 
-    // Scroll Right
-    btnRight.addEventListener("click", function () {
-        moviesWrapper.scrollBy({ left: scrollAmount, behavior: "smooth" });
-        setTimeout(handleScroll, 300);
-    });
+        // Scroll Right
+        btnRight.addEventListener("click", function () {
+            moviesWrapper.scrollBy({ left: scrollAmount, behavior: "smooth" });
+            setTimeout(() => handleScroll(moviesWrapper, btnLeft, btnRight), 1100);
+        });
 
-    // Scroll Left
-    btnLeft.addEventListener("click", function () {
-        moviesWrapper.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-        setTimeout(handleScroll, 300);
-    });
+        // Scroll Left
+        btnLeft.addEventListener("click", function () {
+            moviesWrapper.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+            setTimeout(() => handleScroll(moviesWrapper, btnLeft, btnRight), 1100);
+        });
 
-    // Add event listener to monitor scroll changes
-    moviesWrapper.addEventListener("scroll", handleScroll);
-}
+        // Add event listener to monitor scroll changes
+        moviesWrapper.addEventListener("scroll", () => handleScroll(moviesWrapper, btnLeft, btnRight));
+    }
+});
 
 // Move `handleScroll()` outside so it can be globally accessible
-function handleScroll() {
-    const container = document.getElementById("movieContainer");
-    const leftBtn = document.getElementById("leftBtn");
-    const rightBtn = document.getElementById("rightBtn");
-
+function handleScroll(container, leftBtn, rightBtn) {
     if (!container) return;
 
     // Hide left button if at the start

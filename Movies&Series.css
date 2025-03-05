@@ -213,6 +213,7 @@ input {
 /* Movie Sections */
 .movies-section {
     padding: 20px;
+    
 }
 
 .movies-section h2 {
@@ -234,14 +235,26 @@ input {
     flex-direction: column;
     align-items: center;
     flex: 0 0 auto;
-    width: 155px;
+    width: 200px;
     margin-right: 10px;
 }
 
 .movie-card img {
     width: 100%;
-    height: 250px;
+    height: 300px;
     border-radius: 4px;
+}
+.movie-card .stars{
+    border-radius: 100%;
+    height: 180px; 
+}
+.movie-container .movie-ramadan{
+    width: 250px;
+}
+.movie-card .ramadan{
+    width: 250px;
+    height: 350px;
+    gap: 10px;
 }
 
 
