@@ -103,3 +103,124 @@ function handleScroll(container, leftBtn, rightBtn) {
             ? "none"
             : "block";
 }
+// Hard-coded movie data
+const movies = [
+    {
+      title: "Buried Hearts",
+      description: "This is the description of Movie 1.",
+      img: "imgs/images.jpg",
+    },
+    {
+      title: "Study Group",
+      description: "This is the description of Movie 2.",
+      img: "imgs/Study_Group.png",
+    },
+    {
+      title: "My fault London",
+      description: "This is the description of Movie 3.",
+      img: "imgs/myfault London.jpg",
+    },
+    { id: 1, title: "تحت سابع أرض ", description: "A special movie for Ramadan.", genre: "Family", year: 2025, img: "imgs/TahtSabehAred.jpeg" },
+    { id: 2, title: "معاوية", description: "High-octane action movie.", genre: "Action", year: 2024, img: "imgs/Moawiya.jpg" },
+    { id: 3, title: "البطل", description: "Emotional drama movie.", genre: "Drama", year: 2023, img: "imgs/AlBatal.jpg" },
+    { id: 4, title: "تحت الأرض", description: "An intergalactic adventure.", genre: "Sci-Fi", year: 2024, img: "imgs/TahetAlAred.jpg" },
+    { id: 5, title: "بالدم", description: "Laugh-out-loud comedy film.", genre: "Comedy", year: 2023, img: "imgs/Bldam.jpg" },
+    { id: 6, title: " فهد البطل", description: "Spine-chilling thriller.", genre: "Horror", year: 2025, img: "imgs/FahedAlBatal.jpg" },
+    { id: 1, title: "نص الشعب اسمه محمد", description: "A special movie for Ramadan.", genre: "Family", year: 2025, img: "imgs/NosALShaab.jpg" },
+    { id: 2, title: "ولاد شمس", description: "High-octane action movie.", genre: "Action", year: 2024, img: "imgs/WladShames.jpg" },
+    { id: 3, title: "بيت حموله", description: "Emotional drama movie.", genre: "Drama", year: 2023, img: "imgs/BetHmouleh.jpg" },
+    { id: 4, title: " يوميات رجل عانس", description: "An intergalactic adventure.", genre: "Sci-Fi", year: 2024, img: "imgs/YawmeyatRajolAanes.jpg" },
+    { id: 5, title: "السيع ابن الجبل", description: "Laugh-out-loud comedy film.", genre: "Comedy", year: 2023, img: "imgs/AlSabihAbnlJabal.jpg" },
+    { id: 6, title: " رامز ايلون ماسك", description: "Spine-chilling thriller.", genre: "Horror", year: 2025, img: "imgs/RamezElonMasr.jpg" }
+
+];
+// Function to hide all sections (except the carousel)
+function hideSections() {
+    const sections = document.querySelectorAll('.movies-section');
+    sections.forEach(section => {
+        section.style.display = 'none'; // Hide all sections
+    });
+
+    const carousels = document.querySelectorAll('.carousel-container');
+    carousels.forEach(carousel => {
+        carousel.style.display = 'none'; // Hide all carousel sections
+    });
+
+    // Hide the carousel dots when the search is active
+    const carouselDots = document.querySelector('.carousel-dots');
+    if (carouselDots) {
+        carouselDots.style.display = 'none';
+    }
+}
+
+// Function to display search results
+function displaySearchResults(query) {
+    const searchResultsContainer = document.getElementById('movieResults');
+    searchResultsContainer.innerHTML = ''; // Clear previous search results
+
+    // If the search input is empty, reset everything
+    if (query.trim() === '') {
+        searchResultsContainer.innerHTML = ''; // Clear any results if input is empty
+        document.getElementById('movieResults').style.display = 'none'; // Hide search results
+        const sections = document.querySelectorAll('.movies-section');
+        sections.forEach(section => {
+            section.style.display = 'block'; // Show all sections again if no search
+        });
+
+        // Show the carousel dots again when search is cleared
+        const carouselDots = document.querySelector('.carousel-dots');
+        if (carouselDots) {
+            carouselDots.style.display = 'flex'; // Show the carousel dots
+        }
+
+        // Show the carousel sections again when search is cleared
+        const carousels = document.querySelectorAll('.carousel-container');
+        carousels.forEach(carousel => {
+            carousel.style.display = 'block'; // Show carousel sections
+        });
+
+        // Add class to center the carousel
+        const carouselContainer = document.querySelector('.carousel-container');
+        if (carouselContainer) {
+            carouselContainer.classList.add('center-carousel'); // Add class to center carousel
+        }
+
+        return;
+    }
+
+    // Filter movies based on search query
+    const filteredMovies = movies.filter(movie =>
+        movie.title.toLowerCase().includes(query.toLowerCase())
+    );
+
+    // Display the filtered movies in search results
+    if (filteredMovies.length > 0) {
+        filteredMovies.forEach(movie => {
+            const movieElement = document.createElement('div');
+            movieElement.classList.add('movie');
+            movieElement.innerHTML = `
+                <img src="${movie.img}" alt="${movie.title}">
+                <h2>${movie.title}</h2>
+                <p>${movie.description}</p>
+            `;
+            searchResultsContainer.appendChild(movieElement);
+        });
+        document.getElementById('movieResults').style.display = 'block'; // Show the search results
+    } else {
+        searchResultsContainer.innerHTML = "<p>No results found</p>";
+    }
+}
+
+// Event listener for the search button
+document.getElementById('searchBtn').addEventListener('click', () => {
+    const query = document.getElementById('searchInput').value; // Get the search query
+    hideSections(); // Hide all sections
+    displaySearchResults(query); // Display the filtered results
+});
+
+// Event listener for input change (optional reset when input is empty)
+document.getElementById('searchInput').addEventListener('input', () => {
+    const query = document.getElementById('searchInput').value;
+    hideSections(); // Hide all sections
+    displaySearchResults(query); // Trigger filtering when typing
+});

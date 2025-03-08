@@ -485,3 +485,77 @@ nav ul li a:hover {
         gap: 10px;
     }
 }
+
+
+
+/* Movie Results Section Styling */
+#movieResults {
+    display: flex;               /* Ensures it's displayed as a flex container */
+    flex-wrap: wrap;             /* Allows wrapping of items to new rows */
+    justify-content: center;     /* Centers the items horizontally */
+    gap: 20px;                   /* Adds space between the items */
+    margin-top: 20px;            /* Adds space above the container */
+    width: 100%;                 /* Ensures the container spans the full width */
+    padding: 0 20px;             /* Optional: Adds padding for better spacing */
+    box-sizing: border-box;      /* Prevents overflow issues */
+}
+
+/* Movie Item Styling */
+.movie {
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.movie h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.movie img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.movie p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    #searchInput {
+        width: 80%;
+    }
+
+    .movie {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #searchInput {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .movie {
+        width: 180px;
+    }
+}
+/* Add this CSS to center the carousel properly */
+.center-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    max-width: 5px; /* Optional: Control the width of the carousel */
+}
