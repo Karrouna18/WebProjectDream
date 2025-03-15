@@ -18,40 +18,47 @@
             <ul>
                 <li><a class="active" href="Movies&Series.html"> Home </a></li>
                 <li class="categories">
-                    <a href="#" id="categoriesBtn">Categories ▼</a>
-                    <div class="categories-popup" id="categoriesPopup">
+                    <a href="#" id="categoriesBtn"  id="" role="button" data-bs-toggle="" aria-expanded="">Categories ▼</a>
+                    <div class="sub-menu">
                         <ul>
-                            <li class="dropdown-item" onclick="toggleSubMenu('moviesMenu')">
-                                🎬 Movies <span class="arrow">▶</span>
-                                <ul class="sub-dropdown" id="moviesMenu">
-                                    <li>🎭 Drama</li>
-                                    <li>❤️Romance</li>
-                                    <li>🔪 Horror</li>
-                                    <li>🔥 Action</li>
-                                    <li>😂 Comedy</li>
-                                    <li>🛸 Sci-Fi</li>
-                                    <li>👨‍👩‍👦 Family</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-item" onclick="toggleSubMenu('seriesMenu')">
-                                📺 Series <span class="arrow">▶</span>
-                                <ul class="sub-dropdown" id="seriesMenu">
-                                    <li>🎭 K-Drama</li>
-                                    <li>❤️Drama-Turk</li>
-                                    <li>🕵️‍♂️ Mystery</li>
-                                    <li>🤖 Sci-Fi</li>
-                                    <li>😂 Comedy</li>
-                                    <li>🔥 Thriller</li>
-                                </ul>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" href="#">Action</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Animation</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Crime</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Family</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Horror</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Mystery</a></li>
+                        </ul>
+                        <ul>
+                            <li class="nav-item"><a class="nav-link" href="#">Romance</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Soap</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">TV Movie</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Biography</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Documentary</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Fantasy</a></li>
+                        </ul>
+                        <ul>
+                            <li class="nav-item"><a class="nav-link" href="#">Kids</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Adventure</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Comedy</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Drama</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">History</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Music</a></li>
+                        </ul>
+                        <ul>
+                            <li class="nav-item"><a class="nav-link" href="#">Reality</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Sci-Fi & Fantasy</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Science Fiction</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Thriller</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">War & Politics</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">War</a></li>
                         </ul>
                     </div>
                 </li>
                 <li><a href="#">Trending</a></li>
                 <li><a href="#">Watchlist</a></li>
                 <li><a href="About-Us.html">About Us</a></li>
-                <button class="button" id="logoutBtn"><a href="home.html" >Log Out</a></button>
             </ul>
+                <button class="button" id="logoutBtn"><a href="home.html" >Log Out</a></button>
         </nav>
     </header>
     
@@ -61,7 +68,12 @@
         <button class="button" id="searchBtn">Search</button>
         <div id="movieResults" style="display: none;"></div> 
     </section>
-   
+    <section id="filters">
+        <label for="yearFilter">Enter Year to Filter:</label>
+        <input type="number" id="yearFilter" placeholder="Enter year (e.g. 2024)">
+        <button id="filterBtn">Filter</button>
+    </section>
+    
 <div class="carousel-container">
  <div class="carousel">
     <div class="carousel-track">
@@ -679,6 +691,17 @@
     </div>
 </footer>
 
+<!-- Modal Structure -->
+<div id="movieModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modalImage" src="" alt="Movie Image">
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <p><strong>Year:</strong> <span id="modalYear"></span></p>
+        <p><strong>Rating:</strong> <span id="modalRating"></span></p>
+    </div>
+</div>
 
 
 </body>

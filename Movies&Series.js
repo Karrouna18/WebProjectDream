@@ -1,37 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let categoriesBtn = document.getElementById("categoriesBtn");
-    let categoriesPopup = document.getElementById("categoriesPopup");
+    const categoriesBtn = document.getElementById("categoriesBtn");
+    const subMenu = document.querySelector(".categories .sub-menu");
 
-    // Open/Close Categories Popup
-    categoriesBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-        categoriesPopup.classList.toggle("show");
+    categoriesBtn.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default link behavior
+        subMenu.classList.toggle("show"); // Toggle visibility
     });
 
-    // Close when clicking outside
-    document.addEventListener("click", function (e) {
-        if (!categoriesBtn.contains(e.target) && !categoriesPopup.contains(e.target)) {
-            categoriesPopup.classList.remove("show");
+    // Optional: Close menu when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!categoriesBtn.contains(event.target) && !subMenu.contains(event.target)) {
+            subMenu.classList.remove("show");
         }
     });
 });
 
-// Function to toggle sub-menus
-function toggleSubMenu(menuId) {
-    let menu = document.getElementById(menuId);
-    let parent = menu.parentElement;
-    
-    if (menu.style.display === "block") {
-        menu.style.display = "none";
-        parent.classList.remove("active");
-    } else {
-        document.querySelectorAll(".sub-dropdown").forEach(sub => sub.style.display = "none");
-        document.querySelectorAll(".dropdown-item").forEach(item => item.classList.remove("active"));
-        
-        menu.style.display = "block";
-        parent.classList.add("active");
-    }
-}
 
 let track = document.querySelector('.carousel-track');
 let slides = track ? Array.from(track.children) : [];
@@ -103,6 +86,7 @@ function handleScroll(container, leftBtn, rightBtn) {
             ? "none"
             : "block";
 }
+
 // Hard-coded movie data
 let movies = [ 
     {
@@ -217,4 +201,134 @@ document.getElementById('searchInput').addEventListener('input', () => {
     const query = document.getElementById('searchInput').value;
     hideSections(); // Hide all sections
     displaySearchResults(query); // Trigger filtering when typing
+});
+// Get the modal
+var modal = document.getElementById("movieModal");
+
+// Get the elements to show the modal content
+var modalImage = document.getElementById("modalImage");
+var modalTitle = document.getElementById("modalTitle");
+var modalDescription = document.getElementById("modalDescription");
+var modalYear = document.getElementById("modalYear");
+var modalRating = document.getElementById("modalRating");
+
+// Get the close button element
+var closeBtn = document.getElementsByClassName("close")[0];
+
+// Add event listener for the movie cards
+var movieCards = document.querySelectorAll(".movie-card");
+
+movieCards.forEach(function(card) {
+    card.addEventListener("click", function() {
+        var imgSrc = card.querySelector("img").src;
+        var title = card.querySelector("p").textContent;
+        var description = "This is a sample description for " + title; // Replace with actual data if available
+        var year = "2025"; // Replace with actual year
+        var rating = "4.5"; // Replace with actual rating
+        
+        // Set modal content
+        modalImage.src = imgSrc;
+        modalTitle.textContent = title;
+        modalDescription.textContent = description;
+        modalYear.textContent = year;
+        modalRating.textContent = rating;
+
+        // Display the modal
+        modal.style.display = "block";
+    });
+});
+
+// Close the modal when the user clicks on the close button
+closeBtn.addEventListener("click", function() {
+    modal.style.display = "none";
+});
+
+// Close the modal if the user clicks outside of the modal content
+window.addEventListener("click", function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
+
+// Assuming movies array is already declared elsewhere in your code
+// For example:
+// const movies = [
+//     { title: "Culpa Tuya", genre: "action", img: "imgs/Culpatuya.jpg", description: "An intense action movie.", year: 2025 },
+//     { title: "Madame Web", genre: "drama", img: "imgs/Madameweb.jpg", description: "A captivating drama.", year: 2025 },
+//     { title: "Argylle", genre: "action", img: "imgs/Argylle.jpg", description: "A thrilling action film.", year: 2025 },
+//     { title: "Eid Celebration", genre: "family", img: "imgs/EidCelebration.jpg", description: "A heartwarming family movie.", year: 2025 },
+//     { title: "Ramadan 2025 Special", genre: "drama", img: "imgs/RamadanSpecial.jpg", description: "A special Ramadan drama.", year: 2025 },
+// ];
+
+document.addEventListener('DOMContentLoaded', () => {
+    const yearFilterInput = document.getElementById('yearFilter');
+    const filterBtn = document.getElementById('filterBtn');
+    const movieContainer = document.getElementById('movieContainer');
+
+    // Function to hide all sections except for filtered movies
+    function hideAllSections() {
+        let sections = document.querySelectorAll('.movies-section');
+        sections.forEach(section => {
+            section.style.display = 'none'; // Hide all movie sections
+        });
+
+        let carousels = document.querySelectorAll('.carousel-container');
+        carousels.forEach(carousel => {
+            carousel.style.display = 'none'; // Hide carousel sections
+        });
+
+        // Hide the carousel dots when filtering is applied
+        let carouselDots = document.querySelector('.carousel-dots');
+        if (carouselDots) {
+            carouselDots.style.display = 'none';
+        }
+    }
+
+    // Function to display filtered movies based on the year
+    function displayFilteredMovies(year) {
+        // Filter movies based on the year input
+        const filteredMovies = movies.filter(movie => movie.year == year);
+
+        // Clear previous movies and display filtered ones
+        movieContainer.innerHTML = ''; // Clear the previous movies
+
+        if (filteredMovies.length > 0) {
+            filteredMovies.forEach(movie => {
+                const movieElement = document.createElement('div');
+                movieElement.classList.add('movie');
+                movieElement.innerHTML = `
+                    <img src="${movie.img}" alt="${movie.title}">
+                    <h3>${movie.title}</h3>
+                    <p>${movie.description}</p>
+                    <p><strong>Year:</strong> ${movie.year}</p>
+                `;
+                movieContainer.appendChild(movieElement);
+            });
+            movieContainer.style.display = 'block'; // Show the filtered movies
+        } else {
+            movieContainer.innerHTML = "<p>No movies found for this year.</p>";
+            movieContainer.style.display = 'block'; // Show the "no results" message
+        }
+    }
+
+    // Event listener for the filter button to filter by year
+    filterBtn.addEventListener('click', function() {
+        const yearFilter = yearFilterInput.value.trim(); // Get the input year and trim whitespace
+        if (yearFilter) {
+            hideAllSections(); // Hide all sections first
+            displayFilteredMovies(yearFilter); // Display the filtered movies
+        } else {
+            alert("Please enter a valid year.");
+        }
+    });
+
+    // Optional: Event listener for input change (filter movies as user types)
+    yearFilterInput.addEventListener('input', function() {
+        const yearFilter = yearFilterInput.value.trim();
+        if (yearFilter) {
+            hideAllSections(); // Hide all sections
+            displayFilteredMovies(yearFilter); // Display the filtered movies
+        }
+    });
 });
