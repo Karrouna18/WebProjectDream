@@ -386,13 +386,11 @@ nav ul li a:hover {
     transform: rotate(90deg);
 }
 
-
-
 .carousel-container {
     display: flex;
     justify-content: center; /* Centers horizontally */
     align-items: center;    /* Centers vertically */
-    height: 60vh;          /* Full screen height */
+    height: 70vh;          /* Full screen height */
     background-image: url('imgs/');
   }
   
@@ -490,7 +488,7 @@ nav ul li a:hover {
 
 /* Movie Results Section Styling */
 #movieResults {
-    display: flex;               /* Ensures it's displayed as a flex container */
+    display: flex;              /* Ensures it's displayed as a flex container */
     flex-wrap: wrap;             /* Allows wrapping of items to new rows */
     justify-content: center;     /* Centers the items horizontally */
     gap: 20px;                   /* Adds space between the items */
@@ -503,6 +501,7 @@ nav ul li a:hover {
 /* Movie Item Styling */
 .movie {
     width: 250px;
+    flex: 0 0 auto;
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 10px;
@@ -517,7 +516,7 @@ nav ul li a:hover {
 
 .movie img {
     width: 100%;
-    height: auto;
+    height: 300px;
     border-radius: 5px;
 }
 
@@ -549,13 +548,52 @@ nav ul li a:hover {
         width: 180px;
     }
 }
-/* Add this CSS to center the carousel properly */
-.center-carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
+ /* Footer */
+.custom-footer {
+    background: linear-gradient(to top, #000, #111);
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
     position: relative;
-    width: 100%;
-    max-width: 5px; /* Optional: Control the width of the carousel */
+    box-shadow: 0 -10px 20px rgba(255, 0, 0, 0.2);
 }
+
+
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-content h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: #e50914; 
+}
+
+.footer-content p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.tagline {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+.footer-logo img {
+    width: 220px;
+    margin: 20px 0;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
