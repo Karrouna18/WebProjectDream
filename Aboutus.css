@@ -28,20 +28,26 @@ nav ul li {
     margin: 0 15px;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #e50914;
-}
-nav ul li:hover{
-    color: #e50914;
+.home-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #e50914; /* Netflix-style red */
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
+
+.home-btn a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.home-btn:hover {
+    background-color: #b20710;
+}
+
 #about-page {
     padding: 60px;
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
@@ -115,42 +121,6 @@ nav ul li:hover{
 .button-about:hover {
     background: #ff0000; 
     transform: scale(1.05); 
-}
-
-.modal {
-    display: none; 
-    position: fixed;
-    z-index: 1; 
-    right: 0;
-    top: 0;
-    width: 40%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    padding-top: 60px;
-}
-
-.modal-content {
-    background-color: #000000;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 400px;
-    text-align: center;
-    border-radius: 5px;
-}
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: rgb(167, 54, 54);
-    text-decoration: none;
-    cursor: pointer;
 }
 
 input {

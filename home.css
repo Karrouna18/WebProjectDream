@@ -69,41 +69,7 @@ nav {
 .aboutus:hover {
     background: rgb(104, 63, 63);
 }
-.modal {
-    display: none; 
-    position: fixed;
-    z-index: 1; 
-    right: 0;
-    top: 0;
-    width: 40%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    padding-top: 60px;
-}
 
-.modal-content {
-    background-color: #000000;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 400px;
-    text-align: center;
-    border-radius: 5px;
-}
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: rgb(167, 54, 54);
-    text-decoration: none;
-    cursor: pointer;
-}
 
 input {
     padding: 10px;
@@ -124,12 +90,6 @@ button {
 button:hover {
     background-color: darkred;
 }
-#loginForm{
-    padding: 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: #c41010;
-}
-
 .hero-content{
     color: white;
     display: flex;

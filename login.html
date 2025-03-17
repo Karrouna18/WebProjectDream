@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreamflix Login</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="icon" href="logo1.jpg">
+</head>
+
+<body>
+    <header class="header">
+        <div class="overlay">
+        <nav>
+            <h1 class="logo">DreamFlix</h1> 
+            <button class="home"><a href="home.html">Home</a></button>
+        </nav>
+        </div>
+    </header>
+
+    <div class="signup-container">
+        <h2>Log In</h2>
+        <input type="text" id="username" placeholder="Username" required>
+        <div class="input-container">
+            <input type="password" id="password" placeholder="Password" required>
+            <button class="toggle-password" onclick="togglePassword('password')">👁</button>
+        </div>
+        <button class="btn" onclick="login()">Log In</button>
+    </div>
+
+    <script>
+        function togglePassword(fieldId) {
+            let field = document.getElementById(fieldId);
+            field.type = field.type === "password" ? "text" : "password";
+        }
+
+        function login() {
+            let username = document.getElementById("username").value.trim();
+            let password = document.getElementById("password").value.trim();
+
+            if (username === "" || password === "") {
+                alert("Please enter your username and password.");
+                return;
+            }
+
+            alert("Login Successful! 🎉");
+            window.location.href = 'Movies&Series.html'; 
+        }
+    </script>
+</body>
+</html>
