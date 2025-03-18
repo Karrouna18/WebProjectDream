@@ -119,6 +119,7 @@ let movies = [
 ];
 
 // Function to hide all sections (except the carousel)
+// Function to hide all sections (except search results)
 function hideSections() {
     let sections = document.querySelectorAll('.movies-section');
     sections.forEach(section => {
@@ -135,40 +136,56 @@ function hideSections() {
     if (carouselDots) {
         carouselDots.style.display = 'none';
     }
+
+    let footer = document.querySelector('.custom-footer');
+    if (footer) {
+        footer.style.display = 'none';
+    }
 }
 
-// Function to display search results
-function displaySearchResults(query) {
+// Function to display search results (handles both title and year filtering)
+function displaySearchResults() {
+    const searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
+    const yearFilter = document.getElementById('yearFilter').value.trim();
     const searchResultsContainer = document.getElementById('movieResults');
-    searchResultsContainer.innerHTML = ''; // Clear previous search results
+    searchResultsContainer.innerHTML = ''; // Clear previous results
 
-    // If the search input is empty, reset everything
-    if (query.trim() === '') {
-        document.getElementById('movieResults').style.display = 'none'; // Hide search results
-        const sections = document.querySelectorAll('.movies-section');
+    // If both inputs are empty, restore everything
+    if (searchQuery === '' && yearFilter === '') {
+        searchResultsContainer.style.display = 'none'; // Hide search results
+
+        let sections = document.querySelectorAll('.movies-section');
         sections.forEach(section => {
             section.style.display = 'block'; // Show all sections again
         });
 
-        // Show the carousel dots again when search is cleared
-        const carouselDots = document.querySelector('.carousel-dots');
-        if (carouselDots) {
-            carouselDots.style.display = 'flex'; // Show the carousel dots
-        }
-
-        // Show the carousel sections again when search is cleared
-        const carousels = document.querySelectorAll('.carousel-container');
+        let carousels = document.querySelectorAll('.carousel-container');
         carousels.forEach(carousel => {
             carousel.style.display = 'flex'; // Show carousel sections
         });
 
+        let carouselDots = document.querySelector('.carousel-dots');
+        if (carouselDots) {
+            carouselDots.style.display = 'flex'; // Show the carousel dots
+        }
+
+        let footer = document.querySelector('.custom-footer');
+        if (footer) {
+            footer.style.display = 'block'; // Show footer
+        }
+
         return;
     }
 
-    
+    // Hide everything when filtering
+    hideSections();
 
-    // Filter movies based on the query
-    let filteredMovies = movies.filter(movie => movie.title.toLowerCase().includes(query.toLowerCase()));
+    // Filter movies based on the query and/or year
+    let filteredMovies = movies.filter(movie => {
+        let matchesTitle = searchQuery ? movie.title.toLowerCase().includes(searchQuery) : true;
+        let matchesYear = yearFilter ? (movie.year && movie.year == yearFilter) : true;
+        return matchesTitle && matchesYear;
+    });
 
     if (filteredMovies.length > 0) {
         filteredMovies.forEach(movie => {
@@ -178,30 +195,24 @@ function displaySearchResults(query) {
                 <img src="${movie.img}" alt="${movie.title}">
                 <h2>${movie.title}</h2>
                 <p>${movie.description}</p>
+                <p><strong>Year:</strong> ${movie.year}</p>
             `;
             searchResultsContainer.appendChild(movieElement);
         });
-        searchResultsContainer.style.display = 'flex'; // Show the search results
+        searchResultsContainer.style.display = 'flex'; // Show search results
     } else {
         searchResultsContainer.innerHTML = "<p>No results found</p>";
         searchResultsContainer.style.display = 'block';
     }
 }
 
+// Event listeners for search and filtering
+document.getElementById('searchBtn').addEventListener('click', displaySearchResults);
+document.getElementById('filterBtn').addEventListener('click', displaySearchResults);
+document.getElementById('searchInput').addEventListener('input', displaySearchResults);
+document.getElementById('yearFilter').addEventListener('input', displaySearchResults);
 
-// Event listener for the search button
-document.getElementById('searchBtn').addEventListener('click', () => {
-    const query = document.getElementById('searchInput').value; // Get the search query
-    hideSections(); // Hide all sections
-    displaySearchResults(query); // Display the filtered results
-});
 
-// Event listener for input change (optional reset when input is empty)
-document.getElementById('searchInput').addEventListener('input', () => {
-    const query = document.getElementById('searchInput').value;
-    hideSections(); // Hide all sections
-    displaySearchResults(query); // Trigger filtering when typing
-});
 // Get the modal
 var modal = document.getElementById("movieModal");
 
@@ -261,74 +272,4 @@ window.addEventListener("click", function(event) {
 //     { title: "Ramadan 2025 Special", genre: "drama", img: "imgs/RamadanSpecial.jpg", description: "A special Ramadan drama.", year: 2025 },
 // ];
 
-document.addEventListener('DOMContentLoaded', () => {
-    const yearFilterInput = document.getElementById('yearFilter');
-    const filterBtn = document.getElementById('filterBtn');
-    const movieContainer = document.getElementById('movieContainer');
 
-    // Function to hide all sections except for filtered movies
-    function hideAllSections() {
-        let sections = document.querySelectorAll('.movies-section');
-        sections.forEach(section => {
-            section.style.display = 'none'; // Hide all movie sections
-        });
-
-        let carousels = document.querySelectorAll('.carousel-container');
-        carousels.forEach(carousel => {
-            carousel.style.display = 'none'; // Hide carousel sections
-        });
-
-        // Hide the carousel dots when filtering is applied
-        let carouselDots = document.querySelector('.carousel-dots');
-        if (carouselDots) {
-            carouselDots.style.display = 'none';
-        }
-    }
-
-    // Function to display filtered movies based on the year
-    function displayFilteredMovies(year) {
-        // Filter movies based on the year input
-        const filteredMovies = movies.filter(movie => movie.year == year);
-
-        // Clear previous movies and display filtered ones
-        movieContainer.innerHTML = ''; // Clear the previous movies
-
-        if (filteredMovies.length > 0) {
-            filteredMovies.forEach(movie => {
-                const movieElement = document.createElement('div');
-                movieElement.classList.add('movie');
-                movieElement.innerHTML = `
-                    <img src="${movie.img}" alt="${movie.title}">
-                    <h3>${movie.title}</h3>
-                    <p>${movie.description}</p>
-                    <p><strong>Year:</strong> ${movie.year}</p>
-                `;
-                movieContainer.appendChild(movieElement);
-            });
-            movieContainer.style.display = 'block'; // Show the filtered movies
-        } else {
-            movieContainer.innerHTML = "<p>No movies found for this year.</p>";
-            movieContainer.style.display = 'block'; // Show the "no results" message
-        }
-    }
-
-    // Event listener for the filter button to filter by year
-    filterBtn.addEventListener('click', function() {
-        const yearFilter = yearFilterInput.value.trim(); // Get the input year and trim whitespace
-        if (yearFilter) {
-            hideAllSections(); // Hide all sections first
-            displayFilteredMovies(yearFilter); // Display the filtered movies
-        } else {
-            alert("Please enter a valid year.");
-        }
-    });
-
-    // Optional: Event listener for input change (filter movies as user types)
-    yearFilterInput.addEventListener('input', function() {
-        const yearFilter = yearFilterInput.value.trim();
-        if (yearFilter) {
-            hideAllSections(); // Hide all sections
-            displayFilteredMovies(yearFilter); // Display the filtered movies
-        }
-    });
-});
