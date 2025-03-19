@@ -14,7 +14,7 @@
         <div class="logo">
             <h1>DreamFlix</h1>
         </div>
-        <nav>
+        <nav class="nav-container">
             <ul>
                 <li><a class="active" href="Movies&Series.html"> Home </a></li>
                 <li class="categories">
@@ -54,11 +54,10 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="#">Trending</a></li>
                 <li><a href="#">Watchlist</a></li>
                 <li><a href="About-Us.html">About Us</a></li>
             </ul>
-                <button class="button" id="logoutBtn"><a href="home.html" >Log Out</a></button>
+                <button class="log-button" id="logoutBtn"><a href="home.html" >Log Out</a></button>
         </nav>
     </header>
     
@@ -598,11 +597,11 @@
     <div class="movie-carousel">
         <button class="scroll-btn left-btn" id="leftBtn">&#8249;</button>
         <div class="movie-container" id="movieContainer">
-            <div class="movie-card">
+            <div class="movie-card" data-index="0">
                 <img src="imgs/TheLionKing.jpg" alt="The Lion King">
                 <p>The Lion King</p>
             </div>
-            <div class="movie-card">
+            <div class="movie-card" data-index="1">
                 <img src="imgs/OnePiece.jpg" alt="One Peace">
                 <p>One Peace</p>
             </div>

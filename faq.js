@@ -17,3 +17,6 @@ document.querySelectorAll(".faq-question").forEach(button => {
         }
     });
 });
+function closePage() {
+    window.location.href = "home.html";
+}

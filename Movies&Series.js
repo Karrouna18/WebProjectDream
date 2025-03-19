@@ -212,64 +212,59 @@ document.getElementById('filterBtn').addEventListener('click', displaySearchResu
 document.getElementById('searchInput').addEventListener('input', displaySearchResults);
 document.getElementById('yearFilter').addEventListener('input', displaySearchResults);
 
+// Get the container where movie cards will be inserted
+var movieContainer = document.getElementById("movieContainer");
 
-// Get the modal
+// Create movie cards dynamically
+movies.forEach(function (movie, index) {
+    var movieCard = document.createElement("div");
+    movieCard.classList.add("movie-card");
+    movieCard.setAttribute("data-index", index); // Store index to get movie data
+
+    movieCard.innerHTML = `
+        <img src="${movie.img}" alt="${movie.title}">
+        <p>${movie.title}</p>
+    `;
+
+    movieContainer.appendChild(movieCard);
+});
+
+// Get the modal and its elements
 var modal = document.getElementById("movieModal");
-
-// Get the elements to show the modal content
 var modalImage = document.getElementById("modalImage");
 var modalTitle = document.getElementById("modalTitle");
 var modalDescription = document.getElementById("modalDescription");
 var modalYear = document.getElementById("modalYear");
 var modalRating = document.getElementById("modalRating");
-
-// Get the close button element
 var closeBtn = document.getElementsByClassName("close")[0];
 
-// Add event listener for the movie cards
-var movieCards = document.querySelectorAll(".movie-card");
+// Event listener to open modal when a movie card is clicked
+document.addEventListener("click", function(event) {
+    if (event.target.closest(".movie-card")) {
+        var card = event.target.closest(".movie-card");
+        var index = card.getAttribute("data-index");
+        var movie = movies[index]; // Get movie details from array
 
-movieCards.forEach(function(card) {
-    card.addEventListener("click", function() {
-        var imgSrc = card.querySelector("img").src;
-        var title = card.querySelector("p").textContent;
-        var description = "This is a sample description for " + title; // Replace with actual data if available
-        var year = "2025"; // Replace with actual year
-        var rating = "4.5"; // Replace with actual rating
-        
         // Set modal content
-        modalImage.src = imgSrc;
-        modalTitle.textContent = title;
-        modalDescription.textContent = description;
-        modalYear.textContent = year;
-        modalRating.textContent = rating;
+        modalImage.src = movie.img;
+        modalTitle.textContent = movie.title;
+        modalDescription.textContent = movie.description;
+        modalYear.textContent = movie.year || "Unknown"; // Default if missing
+        modalRating.textContent = movie.genre || "Unknown"; // Default if missing
 
-        // Display the modal
-        modal.style.display = "block";
-    });
+        // Show modal
+        modal.style.display = "flex";
+    }
 });
 
-// Close the modal when the user clicks on the close button
-closeBtn.addEventListener("click", function() {
+// Close modal when clicking the close button
+closeBtn.addEventListener("click", function () {
     modal.style.display = "none";
 });
 
-// Close the modal if the user clicks outside of the modal content
-window.addEventListener("click", function(event) {
+// Close modal when clicking outside the modal
+window.addEventListener("click", function (event) {
     if (event.target === modal) {
         modal.style.display = "none";
     }
 });
-
-
-// Assuming movies array is already declared elsewhere in your code
-// For example:
-// const movies = [
-//     { title: "Culpa Tuya", genre: "action", img: "imgs/Culpatuya.jpg", description: "An intense action movie.", year: 2025 },
-//     { title: "Madame Web", genre: "drama", img: "imgs/Madameweb.jpg", description: "A captivating drama.", year: 2025 },
-//     { title: "Argylle", genre: "action", img: "imgs/Argylle.jpg", description: "A thrilling action film.", year: 2025 },
-//     { title: "Eid Celebration", genre: "family", img: "imgs/EidCelebration.jpg", description: "A heartwarming family movie.", year: 2025 },
-//     { title: "Ramadan 2025 Special", genre: "drama", img: "imgs/RamadanSpecial.jpg", description: "A special Ramadan drama.", year: 2025 },
-// ];
-
-

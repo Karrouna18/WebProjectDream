@@ -60,6 +60,24 @@ footer {
 a:hover {
     color: #ff6347;
 }
+.close-page {
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: #333;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.close-page:hover {
+    background-color: #444;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -77,5 +95,11 @@ a:hover {
 
     .content h2, .content h3 {
         font-size: 20px;
+    }
+    .close-page {
+        top: 3px;
+        right: 8px;
+        font-size: 18px;
+        padding: 3px 7px;
     }
 }

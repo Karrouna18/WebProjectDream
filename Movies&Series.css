@@ -15,6 +15,7 @@ header {
     align-items: center;
     padding: 20px;
     background-color: black;
+    background: linear-gradient(rgb(41, 32, 32),rgb(109, 12, 12));
 }
 
 header .logo h1 {
@@ -26,41 +27,42 @@ display: flex;
 justify-content: space-between; /* Space between items */
 align-items: center; /* Align items vertically */
 padding: 6px 7px;
-background: black;
 color: white;
+margin: 20px 40px;
 }
-nav ul {
+
+.nav-container{
+display: flex;
+}
+.nav-container ul {
     display: flex;
     gap: 10px; /* Space between menu items */
     list-style: none;
     padding: 0;
     margin: 0;
+    
 }
 
-nav ul li {
+.nav-container ul li {
     display: inline;
     margin: 0 9px;
     position: relative;
+    margin-right: 30px;
 }
 
-nav ul li a {
+.nav-container ul li a {
     display: inline-block;
     text-decoration: none;
     color: white;
     font-size: 18px;
     padding: 6px 7px;
     transition: 0.3s;
+    font-size: 18px;
+    
 }
-nav li a:hover,
-nav li a.active{
-    color:#e50914;
-}
-nav  li a.active::after
-{   content: "";
-    display: table;
-    clear: both;
-}
-nav  li a:hover::after{
+
+
+.nav-container li a:hover::after{
     content:"";
     width: 30%;
     height: 2px;
@@ -70,7 +72,7 @@ nav  li a:hover::after{
     left: 3px;
 }
 
-nav ul li .sub-menu {
+.nav-container ul li .sub-menu {
     position: absolute;
     top: 100%;
     left: 0;
@@ -84,6 +86,22 @@ nav ul li .sub-menu {
 
 nav ul li a:hover {
     color: #e50914;
+}
+.log-button{
+    padding: 12px 20px;
+    background: linear-gradient(rgb(204, 9, 9),rgba(56, 9, 9, 0.658));
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-left: 40px;
+}
+.log-button:hover {
+    background-color: grey;
+}
+.log-button a{
+    color: white;
+    text-decoration: none;
 }
 /* Trending Movies Section Styling */
 
@@ -184,7 +202,10 @@ footer p {
     padding: 10px;
     z-index: 1000;
     overflow-x: hidden;
-    overflow-y: auto; /* Enable scrolling if too many items */
+    overflow-y: scroll; 
+}
+.sub-menu::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar */
 }
 
 /* Show menu when active */
@@ -282,18 +303,19 @@ input {
 }
 
 /* Style the button */
+
 .button {
     padding: 10px 15px;
-    background-color: red;
+    background: linear-gradient(rgb(204, 9, 9),rgba(65, 10, 10, 0.658));
     color: white;
     border-radius: 5px;
     border: none;
     cursor: pointer;
 }
-
 .button:hover {
-    background-color: darkred;
+    background-color: #aaa;
 }
+
 .button a{
     color: white;
     text-decoration: none;
@@ -538,43 +560,91 @@ nav ul li a:hover {
   .dot.active {
     background-color: white;
   }
-  @media (max-width: 1024px) {
-    .movie-item {
-        width: 45%;
-    }
-}
-
+  /* Small Screens (Phones) */
 @media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
     header {
         flex-direction: column;
+        padding: 10px;
+    }
+
+    header .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        margin: 10px 20px;
         align-items: center;
     }
 
-    nav ul {
+    .nav-container ul {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .nav-container ul li {
+        margin-right: 0;
+    }
+
+    .log-button {
+        padding: 8px 15px;
+        margin-left: 0;
+    }
+
+    .movie-container {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .movie-item {
         width: 80%;
     }
-}
 
-@media (max-width: 480px) {
-    .movie-item {
-        width: 50%;
+    .modal-content {
+        width: 90%;
     }
-    
-    header .logo h1 {
+
+    .movie-card {
+        width: 150px;
+    }
+
+    .scroll-btn {
         font-size: 1.5rem;
-    }
-
-    nav ul {
-        gap: 10px;
+        padding: 5px;
     }
 }
 
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+    .movie-container {
+        flex-wrap: wrap;
+    }
 
+    .movie-item {
+        width: 45%;
+    }
+
+    .movie-card {
+        width: 180px;
+    }
+}
+
+/* Large Screens (Desktops) */
+@media (min-width: 1025px) {
+    .movie-container {
+        flex-wrap: nowrap;
+    }
+
+    .movie-item {
+        width: 30%;
+    }
+}
+  
 
 /* Movie Results Section Styling */
 #movieResults {
@@ -712,7 +782,7 @@ nav ul li a:hover {
     padding: 8px 16px;
     font-size: 16px;
     cursor: pointer;
-    background-color: red;
+    background: linear-gradient(rgb(204, 9, 9),rgba(65, 10, 10, 0.658));
     color: white;
     border: none;
     border-radius: 5px;
@@ -720,5 +790,89 @@ nav ul li a:hover {
 }
 
 #filters button:hover {
-    background-color: #790303;
+    background-color: grey;
+}
+@media (max-width: 768px) {
+    .custom-footer {
+        padding: 30px 15px;
+        margin-top: 30px;
+    }
+
+    .footer-content h2 {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .footer-content p {
+        font-size: 1rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .footer-logo img {
+        width: 180px;
+    }
+
+    #filters {
+        margin: 10px;
+    }
+
+    #filters label {
+        font-size: 16px;
+    }
+
+    #filters input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #filters button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-footer {
+        padding: 20px 10px;
+        margin-top: 20px;
+    }
+
+    .footer-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .footer-content p {
+        font-size: 0.9rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+
+    .footer-logo img {
+        width: 150px;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+    }
+
+    #filters label {
+        font-size: 14px;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    #filters input {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    #filters button {
+        width: 100%;
+        font-size: 14px;
+    }
 }
