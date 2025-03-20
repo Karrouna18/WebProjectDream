@@ -2,7 +2,7 @@
 const moviesWrapper = document.getElementById("movieContainer");
 const btnLeft = document.getElementById("leftBtn");
 const btnRight = document.getElementById("rightBtn");
-const scrollAmount = 710; // Amount to scroll in pixels
+const scrollAmount = 730; // Amount to scroll in pixels
 
 if (moviesWrapper) {
     // Ensure first image is fully visible on load
@@ -12,13 +12,13 @@ if (moviesWrapper) {
     // Scroll Right
     btnRight.addEventListener("click", function () {
         moviesWrapper.scrollBy({ left: scrollAmount, behavior: "smooth" });
-        setTimeout(handleScroll, 710);
+        setTimeout(handleScroll, 730);
     });
 
     // Scroll Left
     btnLeft.addEventListener("click", function () {
         moviesWrapper.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-        setTimeout(handleScroll, 710);
+        setTimeout(handleScroll, 730);
     });
 
     // Add event listener to monitor scroll changes
@@ -42,3 +42,37 @@ function handleScroll() {
             ? "none"
             : "block";
 }
+//pop
+var modal = document.getElementById("loginModal");
+        
+        
+var btn = document.getElementById("loginBtn");
+
+
+var span = document.getElementsByClassName("close")[0];
+
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+document.getElementById("loginForm").onsubmit = function(event) {
+    event.preventDefault(); 
+    modal.style.display = "none"; 
+    alert("Log-In Successful! Redirecting to Main Page...");
+    window.location.href = 'Movies&Series.html'; 
+}
+

@@ -54,7 +54,7 @@ nav {
     text-decoration: none;
 }
 .aboutus {
-    background: linear-gradient(rgb(37, 32, 32), #792929, #f10a0a);
+    background: linear-gradient(rgb(204, 9, 9),rgba(92, 12, 12, 0.658));
     color: white;
     border: none;
     padding: 10px 20px;
@@ -62,15 +62,70 @@ nav {
     cursor: pointer;
     border-radius: 4px;
     transition: 0.3s ease;
-    
-   
-
 }
 .aboutus:hover {
-    background: rgb(104, 63, 63);
+    background-color:  gray;
+}
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    right: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding-top: 60px;
 }
 
+.modal-content {
+    background-color: #000000;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 5px;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
 
+.close:hover,
+.close:focus {
+    color: rgb(167, 54, 54);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+button {
+    padding: 10px 15px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkred;
+}
+#loginForm{
+    padding: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #c41010;
+}
 input {
     padding: 10px;
     width: 80%;
@@ -86,8 +141,11 @@ input {
     align-items: center;
     justify-content: center;
     margin-top: 200px;
-    background: radial-gradient(circle, rgba(146, 136, 136, 0.8), rgba(119, 14, 14, 0.7), rgba(141, 13, 13, 0.6));
-    border-radius: 50%;
+    background: rgb(0,0, 0, 0.7);
+    width:900px ;
+    margin-left: 190px;
+    border-radius: 45%;
+   
 
 }
 .hero-content h1 {
@@ -113,7 +171,7 @@ input {
     z-index: 1;
 }
 .signup-form button {
-    background: linear-gradient( rgb(110, 70, 70),rgb(120, 36, 36),rgb(141, 13, 13));
+    background: linear-gradient(rgb(204, 9, 9),rgba(92, 12, 12, 0.658));
     color: white;
     border: none;
     padding: 10px 20px;
@@ -124,7 +182,7 @@ input {
     transition: 0.3s ease;
 }
 .signup-form button:hover {
-    background:  rgb(99, 59, 59);
+    background-color:  gray;
 }
 .trending {
     display: flex;
@@ -154,7 +212,7 @@ input {
     display: flex;
     overflow-x: auto;
     gap: 10px;
-    padding: 10px;
+    padding: 20px;
     scroll-behavior: smooth;
     scrollbar-width:none;
     

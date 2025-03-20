@@ -23,11 +23,11 @@
         <input type="email" id="email" placeholder="Email" required>
         <div class="input-container">
             <input type="password" id="password" placeholder="Password" required>
-            <button class="toggle-password" onclick="togglePassword('password')">👁</button>
+            <button class="toggle-password" onclick="togglePassword('password',this)">👁</button>
         </div>
         <div class="input-container">
             <input type="password" id="confirm-password" placeholder="Confirm Password" required>
-            <button class="toggle-password" onclick="togglePassword('confirm-password')">👁</button>
+            <button class="toggle-password" onclick="togglePassword('confirm-password',this)">👁</button>
            
         </div>
         <button class="btn" onclick="SignUp()">Sign Up</button>
@@ -43,10 +43,18 @@
            /[!@#$%^&*(),.?":{}|<>]/.test(password);
 }
 
-function togglePassword(fieldId) {
+function togglePassword(fieldId, button) {
     let field = document.getElementById(fieldId);
-    field.type = field.type === "password" ? "text" : "password";
+
+    if (field.type === "password") {
+        field.type = "text";
+        button.style.color = "red"; 
+    } else {
+        field.type = "password";
+        button.style.color = "white"; 
+    }
 }
+
 
 function SignUp() {
     let name = document.getElementById("name").value.trim();
@@ -72,6 +80,7 @@ function SignUp() {
     alert("Sign Up Successful! 🎉😃");
     window.location.href = 'Movies&Series.html';
 }
+
 
     </script>
     

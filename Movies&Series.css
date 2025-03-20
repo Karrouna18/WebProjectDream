@@ -15,14 +15,12 @@ header {
     align-items: center;
     padding: 20px;
     background-color: black;
-    background: linear-gradient(rgb(41, 32, 32),rgb(201, 113, 113),rgb(171, 24, 24));
+   
 }
 
 header .logo h1 {
     font-size: 2rem;
-    background: linear-gradient(rgb(84, 38, 38), rgb(127, 36, 36),rgb(0, 0, 0));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: red
 }
 
 nav{
@@ -63,15 +61,19 @@ display: flex;
     font-size: 18px;
     
 }
+.nav-container li a:hover,
+.nav-container li a.active{
+    color:#e50914;
+}
 
-
-.nav-container li a:hover::after{
+.nav-container li a:hover::after,
+.nav-container li a.active::after{
     content:"";
     width: 30%;
     height: 2px;
     background: white;
     position: absolute;
-    bottom: 10px;
+    bottom: 2px;
     left: 3px;
 }
 
@@ -86,10 +88,6 @@ display: flex;
     border-radius: 8px;
 }
 
-
-nav ul li a:hover {
-    color: #e50914;
-}
 .log-button{
     padding: 12px 20px;
     background: linear-gradient(rgb(204, 9, 9),rgba(92, 12, 12, 0.658));
@@ -100,7 +98,7 @@ nav ul li a:hover {
     margin-left: 40px;
 }
 .log-button:hover {
-    background-color: rgb(32, 26, 26);
+    background-color: gray
 }
 .log-button a{
     color: white;
@@ -352,6 +350,11 @@ input {
     flex: 0 0 auto;
     width: 200px;
     margin-right: 10px;
+    
+}
+.movie-container{
+    padding: 20px;
+    
 }
 
 .movie-card img {
@@ -365,11 +368,15 @@ input {
 }
 .movie-container .movie-ramadan{
     width: 250px;
+    
 }
 .movie-card .ramadan{
     width: 250px;
     height: 350px;
     gap: 10px;
+}
+.movie-card p{
+    margin-top: 10px;
 }
 
 
@@ -415,7 +422,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color:  #fff;
     text-decoration: none;
     font-size: 1.1rem;
     transition: color 0.3s;
@@ -761,6 +768,9 @@ nav ul li a:hover {
 }
 
 /* Basic Styling for the Filter Section */
+#searchfilter{
+    text-align: center;
+}
 #filters {
     margin: 20px;
     text-align: center;
