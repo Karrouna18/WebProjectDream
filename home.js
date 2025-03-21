@@ -76,3 +76,4 @@ document.getElementById("loginForm").onsubmit = function(event) {
     window.location.href = 'Movies&Series.html'; 
 }
 
+

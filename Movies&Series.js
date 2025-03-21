@@ -104,10 +104,10 @@ let movies = [
         description: "This is the description of Movie 3.",
         img: "imgs/myfault London.jpg",
     },
-    { id: 1, title: "تحت سابع أرض", description: "A special movie for Ramadan.", genre: "Family", year: 2025, img: "imgs/TahtSabehAred.jpeg" },
-    { id: 2, title: "معاوية", description: "High-octane action movie.", genre: "Action", year: 2024, img: "imgs/Moawiya.jpg" },
-    { id: 3, title: "البطل", description: "Emotional drama movie.", genre: "Drama", year: 2023, img: "imgs/AlBatal.jpg" },
-    { id: 4, title: "تحت الأرض", description: "An intergalactic adventure.", genre: "Sci-Fi", year: 2024, img: "imgs/TahetAlAred.jpg" },
+    { id: 1, title: "تحت سابع أرض",  description: "تحت سابع أرض هو مسلسل درامي مليء بالأحداث المثيرة التي تدور في أعماق الأرض. تتبع القصة مجموعة من الأشخاص الذين يجدون أنفسهم عالقين في مكان غريب ومظلم، حيث تبدأ المغامرات والتحديات التي تواجههم. يتميز هذا العمل بالتشويق والترقب، مع تفاصيل مثيرة ستجعلك تتابع الأحداث بشغف.", genre: "Family", year: 2025,rating:"8.5/10", img: "imgs/TahtSabehAred.jpeg" },
+    { id: 2, title: "معاوية", description: "مسلسل معاوية هو عمل درامي تاريخي يعرض قصة حياة الصحابي معاوية بن أبي سفيان، ويأخذك عبر أحداث تاريخية مهمة وتحديات كبيرة في فترة خلافته. ينقلك العمل عبر الأحداث المليئة بالدراما والتشويق، مع تقديم العديد من اللحظات المؤثرة في حياة الشخصية.", genre: "Action", year: 2024, rating:"9.0/10", img: "imgs/Moawiya.jpg" },
+    { id: 3, title: "البطل",  description: "البطل هو مسلسل درامي يشهد ظهور شخصية رئيسية تخوض مغامرات مليئة بالتحديات. يروي المسلسل قصة بطل خارق يتعرض لاختبارات صعبة في حياته. القصة مليئة بالإثارة والتشويق، وتركز على جوانب القوة الداخلية للشخصية وكيفية التعامل مع الأزمات.", genre: "Drama", year: 2023, rating:"7.8/10" ,img: "imgs/AlBatal.jpg" },
+    { id: 4, title: "تحت الأرض",  description: "قصة غامضة عن مجموعة تبحث عن الحقيقة في عالم خفي.", genre: "Sci-Fi", year: 2024, rating:"8.0/10" ,img: "imgs/TahetAlAred.jpg" },
     { id: 5, title: "بالدم", description: "Laugh-out-loud comedy film.", genre: "Comedy", year: 2023, img: "imgs/Bldam.jpg" },
     { id: 6, title: "فهد البطل", description: "Spine-chilling thriller.", genre: "Horror", year: 2025, img: "imgs/FahedAlBatal.jpg" },
     { id: 7, title: "نص الشعب اسمه محمد", description: "A special movie for Ramadan.", genre: "Family", year: 2025, img: "imgs/NosALShaab.jpg" },
@@ -212,59 +212,64 @@ document.getElementById('filterBtn').addEventListener('click', displaySearchResu
 document.getElementById('searchInput').addEventListener('input', displaySearchResults);
 document.getElementById('yearFilter').addEventListener('input', displaySearchResults);
 
-// Get the container where movie cards will be inserted
-var movieContainer = document.getElementById("movieContainer");
 
-// Create movie cards dynamically
-movies.forEach(function (movie, index) {
-    var movieCard = document.createElement("div");
-    movieCard.classList.add("movie-card");
-    movieCard.setAttribute("data-index", index); // Store index to get movie data
 
-    movieCard.innerHTML = `
-        <img src="${movie.img}" alt="${movie.title}">
-        <p>${movie.title}</p>
-    `;
 
-    movieContainer.appendChild(movieCard);
-});
+//Movie POP UP
 
-// Get the modal and its elements
-var modal = document.getElementById("movieModal");
-var modalImage = document.getElementById("modalImage");
-var modalTitle = document.getElementById("modalTitle");
-var modalDescription = document.getElementById("modalDescription");
-var modalYear = document.getElementById("modalYear");
-var modalRating = document.getElementById("modalRating");
-var closeBtn = document.getElementsByClassName("close")[0];
+// Select the modal and elements inside it
+const modal = document.getElementById("movieModal");
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalDescription = document.getElementById("modalDescription");
+const modalYear = document.getElementById("modalYear");
+const modalRating = document.getElementById("modalRating");
+const closeModal = document.querySelector(".close");
 
-// Event listener to open modal when a movie card is clicked
-document.addEventListener("click", function(event) {
-    if (event.target.closest(".movie-card")) {
-        var card = event.target.closest(".movie-card");
-        var index = card.getAttribute("data-index");
-        var movie = movies[index]; // Get movie details from array
 
-        // Set modal content
-        modalImage.src = movie.img;
-        modalTitle.textContent = movie.title;
-        modalDescription.textContent = movie.description;
-        modalYear.textContent = movie.year || "Unknown"; // Default if missing
-        modalRating.textContent = movie.genre || "Unknown"; // Default if missing
+// Select all movie cards and add event listener to each
+document.querySelectorAll(".movie-card").forEach((card) => {
+    card.addEventListener("click", () => {
+        const cardImageSrc = card.querySelector("img")?.src.trim();
+        const cardTitle = card.querySelector("p.movie-title")?.textContent.trim();
+        const cardDescription = card.querySelector("p.movie-description")?.textContent.trim();
 
-        // Show modal
-        modal.style.display = "flex";
-    }
+        // Find movie by comparing multiple attributes
+        const movie = movies.find(m => 
+            (m.img && cardImageSrc.includes(m.img)) || // Match by image name (ignoring path)
+            (m.title && cardTitle === m.title) || // Match by title
+            (m.description && cardDescription === m.description) // Match by description
+        );
+
+        if (movie) {
+            modalImage.src = movie.img;
+            modalTitle.textContent = movie.title;
+            modalDescription.textContent = movie.description || "No description available.";
+            modalYear.textContent = movie.year || "N/A";
+            modalRating.textContent = movie.rating || "N/A";
+        } else {
+            // If the movie is not found in `movies`, extract from the card itself
+            modalImage.src = cardImageSrc || "default-image.jpg";
+            modalTitle.textContent = cardTitle || "Unknown Title";
+            modalDescription.textContent = cardDescription || "No description available.";
+            modalYear.textContent = card.querySelector("p.movie-year")?.textContent.trim() || "N/A";
+            modalRating.textContent = card.querySelector("p.movie-rating")?.textContent.trim() || "N/A";
+        }
+
+        modal.style.display = "block"; // Show modal
+    });
 });
 
 // Close modal when clicking the close button
-closeBtn.addEventListener("click", function () {
+closeModal.addEventListener("click", () => {
     modal.style.display = "none";
 });
 
-// Close modal when clicking outside the modal
-window.addEventListener("click", function (event) {
+// Close modal when clicking outside of it
+window.addEventListener("click", (event) => {
     if (event.target === modal) {
         modal.style.display = "none";
     }
 });
+
+
