@@ -334,63 +334,63 @@
     <div class="movie-carousel">
         <button class="scroll-btn left-btn" id="leftBtn">&#8249;</button>
         <div class="movie-container" id="movieContainer">
-            <div class="movie-card">
+            <div class="star-card">
                 <img class="stars" src="imgs/LeonardoDicaprio.jpg" alt="Leonardo Dicaprio">
                 <p>Leonardo Dicaprio</p>
             </div>
-            <div class="movie-card ">
+            <div class="star-card ">
                 <img class="stars" src="imgs/JasonStatham.jpg" alt="Jason Statham">
                 <p>Jason Statham</p>
             </div>
-            <div class="movie-card">
+            <div class="star-card">
                 <img class="stars" src="imgs/ShahRukhKhan.jpg" alt="Shah Rhukh Khan">
                 <p>Shah Rhukh Khan</p>
             </div>
-            <div class="movie-card">
+            <div class="star-card">
                 <img class="stars" src="imgs/MargotRobbie.jpg" alt="Margot Robbie">
                 <p>Margot Robbie</p>
             </div>
-            <div class="movie-card">
+            <div class="star-card">
                 <img class="stars" src="imgs/ScarlettJohansson.jpg" alt="Scarllet Johansson">
                 <p>Scarllet Johansson</p>
             </div>
-            <div class="movie-card">
+            <div class="star-card">
                 <img class="stars" src="imgs/ArasBulut.jpg" alt="Aras Bulut">
                 <p>Aras Bulut</p>
             </div>
-            <div class="movie-card">
+            <div class="star-card">
                 <img class="stars" src="imgs/Neslihan Atagül.jpg" alt="Neslihan Atagül">
                 <p>Neslihan Atagül</p>
             </div>
-            <div class="movie-card">
+            <div class="star-card">
                 <img class="stars" src="imgs/Hrithik Roshan.jpg" alt="Hrithik Roshan">
                 <p>Hrithik Roshan</p>
             </div>
-            <div class="movie-card">
+            <div class="star-card">
                 <img class="stars" src="imgs/AamirKhan.jpg" alt="Aamir Khan">
                 <p>Aamir Khan</p>
             </div>
-            <div class="movie-card">
+            <div class="star-card">
                 <img class="stars" src="imgs/DenzelWashington.jpg" alt="Denzel Washington">
                 <p>Denzel Washington</p>
             </div>
-            <div class="movie-card">
+            <div class="star-card">
                 <img class="stars" src="imgs/Deepika Padukone .jpg" alt="Deepika Padukone">
                 <p>Deepika Padukone</p>
             </div>
-            <div class="movie-card">
+            <div class="star-card">
                 <img class="stars" src="imgs/GongYoo.jpg" alt="Gong Yoo">
                 <p>Gong Yoo</p>
             </div>
-            <div class="movie-card">
+            <div class="star-card">
                 <img class="stars" src="imgs/MaDong-seok.jpg" alt="Ma Dong-seok">
                 <p>Ma Dong-seok </p>
             </div>
-            <div class="movie-card">
+            <div class="star-card">
                 <img class="stars" src="imgs/BurakÖzçivit.jpg" alt="Burak Özçivit">
                 <p>Burak Özçivit</p>
             </div>
-            <div class="movie-card">
+            <div class="star-card">
                 <img class="stars" src="imgs/RayanReynolds.jpg" alt="Rayan Reynolds">
                 <p>Rayan Reynolds</p>
             </div>
@@ -692,19 +692,38 @@
     </div>
 </footer>
 
-<!-- Modal Structure -->
+<!-- Movie Modal -->
 <div id="movieModal" class="modal">
     <div class="modal-content">
         <span class="close close-movie">&times;</span>
         <img id="modalImage" src="" alt="Movie Image">
         <h2 id="modalTitle"></h2>
         <p id="modalDescription"></p>
+        <p><strong>Genre:</strong> <span id="modalGenre"></span></p>
         <p><strong>Year:</strong> <span id="modalYear"></span></p>
         <p><strong>Rating:</strong> <span id="modalRating"></span></p>
+        <p><strong>Cast:</strong> <span id="modalCast"></span></p>
+        <div id="modalStars" class="stars"></div>  <!-- Container for stars -->
+
+        <!-- User Rating & Review -->
+       <div class="user-rating">
+    <p><strong>Your Rating:</strong></p>
+    <div id="ratingStars">
+        <span class="star rating-star" data-value="1">★</span>
+        <span class="star rating-star" data-value="2">★</span>
+        <span class="star rating-star" data-value="3">★</span>
+        <span class="star rating-star" data-value="4">★</span>
+        <span class="star rating-star" data-value="5">★</span>
     </div>
+    
+    <textarea id="userReview" placeholder="Write a review..."></textarea>
+    <button id="submitReview">Submit</button>
+    </div>
+  </div>
 </div>
 
- <!-- Star Modal -->
+
+<!-- Star Modal -->
 <div id="starsModal" class="modal">
     <div class="modal-content">
         <span class="close close-stars" id="closeStarModal">&times;</span>
@@ -712,7 +731,7 @@
         <h2 id="starName"></h2>
         <p id="starDescription"></p>
         <h3>Movies:</h3>
-        <ul id="starMovies"></ul>
+        <ul id="starMovies" class="scrollable-list"></ul>
     </div>
 </div>
 

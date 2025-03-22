@@ -331,8 +331,120 @@ footer p {
     font-size: 14px;
     color: #FFD700;
 }
+#modalCast{
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFD700;  
+}
 
-/* Responsive Styles */
+.stars {
+    cursor: pointer;
+    font-size: 20px;
+}
+.star {
+    font-size: 24px;
+    cursor: pointer;
+    color: gray; /* Default star color */
+}
+
+.star:hover {
+    color: gold;
+}
+
+
+.scrollable-list {
+    max-height: 150px;
+    overflow-y: visible;
+    list-style: none;
+    padding: 0;
+}
+/* User Rating and Review Section */
+.user-rating {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.user-rating p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Rating stars */
+#ratingStars {
+    display: flex;
+    justify-content: center; /* Center stars horizontally */
+    gap: 5px; /* Add space between stars */
+    margin-bottom: 5px;
+}
+
+
+.rating-star {
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    
+}
+
+.rating-star:hover,
+.rating-star.selected {
+    color: #ffd700; /* Gold color for selected stars */
+}
+
+/* Textarea for the review */
+#userReview {
+    width: 20%;
+    height: 50px;
+    padding: 6px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: vertical;
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+#userReview:focus {
+    outline: none;
+    border-color: #ff0000;
+}
+
+/* Submit Button */
+#submitReview {
+    background: linear-gradient(rgb(204, 9, 9),rgba(79, 8, 8, 0.658));
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 200px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+#submitReview:hover {
+    background-color: #b30c00a4;
+}
+
+.user-rating p.thank-you {
+    color: #a72828;  
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    display: none;  
+}
+
+
+
+
 @media (max-width: 768px) {
     .modal {
         width: 80%;
@@ -543,7 +655,7 @@ input {
     height: 300px;
     border-radius: 4px;
 }
-.movie-card .stars{
+.star-card .stars{
     border-radius: 100%;
     height: 180px; 
 }

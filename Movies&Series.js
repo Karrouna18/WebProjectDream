@@ -92,7 +92,7 @@ let movies = [
     {
         title: "Buried Hearts",
         description: "This is the description of Movie 1.",
-        img: "imgs/images.jpg",
+        img: "imgs/images.jpg", cast: ["John Doe", "Jane Smith", "Max Power"]
     },
     {
         title: "Study Group",
@@ -104,12 +104,14 @@ let movies = [
         description: "This is the description of Movie 3.",
         img: "imgs/myfault London.jpg",
     },
-    { id: 1, title: "تحت سابع أرض",  description: "تحت سابع أرض هو مسلسل درامي مليء بالأحداث المثيرة التي تدور في أعماق الأرض. تتبع القصة مجموعة من الأشخاص الذين يجدون أنفسهم عالقين في مكان غريب ومظلم، حيث تبدأ المغامرات والتحديات التي تواجههم. يتميز هذا العمل بالتشويق والترقب، مع تفاصيل مثيرة ستجعلك تتابع الأحداث بشغف.", genre: "Family", year: 2025,rating:"8.5/10", img: "imgs/TahtSabehAred.jpeg" },
-    { id: 2, title: "معاوية", description: "مسلسل معاوية هو عمل درامي تاريخي يعرض قصة حياة الصحابي معاوية بن أبي سفيان، ويأخذك عبر أحداث تاريخية مهمة وتحديات كبيرة في فترة خلافته. ينقلك العمل عبر الأحداث المليئة بالدراما والتشويق، مع تقديم العديد من اللحظات المؤثرة في حياة الشخصية.", genre: "Action", year: 2024, rating:"9.0/10", img: "imgs/Moawiya.jpg" },
-    { id: 3, title: "البطل",  description: "البطل هو مسلسل درامي يشهد ظهور شخصية رئيسية تخوض مغامرات مليئة بالتحديات. يروي المسلسل قصة بطل خارق يتعرض لاختبارات صعبة في حياته. القصة مليئة بالإثارة والتشويق، وتركز على جوانب القوة الداخلية للشخصية وكيفية التعامل مع الأزمات.", genre: "Drama", year: 2023, rating:"7.8/10" ,img: "imgs/AlBatal.jpg" },
-    { id: 4, title: "تحت الأرض",  description: "قصة غامضة عن مجموعة تبحث عن الحقيقة في عالم خفي.", genre: "Sci-Fi", year: 2024, rating:"8.0/10" ,img: "imgs/TahetAlAred.jpg" },
+    { id: 1, title: "تحت سابع أرض",  description: "تحت سابع أرض هو مسلسل درامي مليء بالأحداث المثيرة التي تدور في أعماق الأرض. تتبع القصة مجموعة من الأشخاص الذين يجدون أنفسهم عالقين في مكان غريب ومظلم، حيث تبدأ المغامرات والتحديات التي تواجههم. يتميز هذا العمل بالتشويق والترقب، مع تفاصيل مثيرة ستجعلك تتابع الأحداث بشغف.", genre: "Family", year: 2025,rating:"8.5/10", img: "imgs/TahtSabehAred.jpeg",  cast: ["أحمد السقا", "منى زكي", "محمود عبد المغني"] },
+    { id: 2, title: "معاوية", description: "مسلسل معاوية هو عمل درامي تاريخي يعرض قصة حياة الصحابي معاوية بن أبي سفيان، ويأخذك عبر أحداث تاريخية مهمة وتحديات كبيرة في فترة خلافته. ينقلك العمل عبر الأحداث المليئة بالدراما والتشويق، مع تقديم العديد من اللحظات المؤثرة في حياة الشخصية.", genre: "Action", year: 2024, rating:"9.0/10", img: "imgs/Moawiya.jpg",  cast: ["تيم حسن", "كاريس بشار", "سلاف فواخرجي"] // Key Arabic cast
+    }, 
+    { id: 3, title: "البطل",  description: "البطل هو مسلسل درامي يشهد ظهور شخصية رئيسية تخوض مغامرات مليئة بالتحديات. يروي المسلسل قصة بطل خارق يتعرض لاختبارات صعبة في حياته. القصة مليئة بالإثارة والتشويق، وتركز على جوانب القوة الداخلية للشخصية وكيفية التعامل مع الأزمات.", genre: "Drama", year: 2023, rating:"7.8/10" ,img: "imgs/AlBatal.jpg",  cast: ["أحمد مكي", "دينا الشربيني", "أحمد داوود"] // Key Arabic cast
+    }, 
+    { id: 4, title: "تحت الأرض",  description: "قصة غامضة عن مجموعة تبحث عن الحقيقة في عالم خفي.", genre: "Sci-Fi", year: 2024, rating:"8.0/10" ,img: "imgs/TahetAlAred.jpg", },
     { id: 5, title: "بالدم", description: "Laugh-out-loud comedy film.", genre: "Comedy", year: 2023, img: "imgs/Bldam.jpg" },
-    { id: 6, title: "فهد البطل", description: "Spine-chilling thriller.", genre: "Horror", year: 2025, img: "imgs/FahedAlBatal.jpg" },
+    { id: 6, title: "فهد البطل", description: "Spine-chilling thriller.", genre: "Horror", year: 2025, img: "imgs/FahedAlBatal.jpg", cast: ["عمرو يوسف", "غادة عبد الرازق", "أحمد زاهر"] },
     { id: 7, title: "نص الشعب اسمه محمد", description: "A special movie for Ramadan.", genre: "Family", year: 2025, img: "imgs/NosALShaab.jpg" },
     { id: 8, title: "ولاد شمس", description: "High-octane action movie.", genre: "Action", year: 2024, img: "imgs/WladShames.jpg" },
     { id: 9, title: "بيت حموله", description: "Emotional drama movie.", genre: "Drama", year: 2023, img: "imgs/BetHmouleh.jpg" },
@@ -253,11 +255,13 @@ let stars = [
 //Movie POP UP
 // Select the movie modal and elements inside it
 const movieModal = document.getElementById("movieModal");
-const modalImage = document.getElementById("modalImage");
 const modalTitle = document.getElementById("modalTitle");
 const modalDescription = document.getElementById("modalDescription");
 const modalYear = document.getElementById("modalYear");
+const modalGenre = document.getElementById("modalGenre");
 const modalRating = document.getElementById("modalRating");
+const modalCast = document.getElementById("modalCast");
+const modalImage = document.getElementById("modalImage");
 const closeMovieModal = document.querySelector(".close-movie");
 
 // Select the star modal and elements inside it
@@ -270,69 +274,86 @@ const closeStarModal = document.getElementById("closeStarModal");
 // Function to close all modals before opening a new one
 function closeAllModals() {
     movieModal.style.display = "none";
-    starsModal.style.display = "none";
 }
 
-// Movie Modal Logic
-document.querySelectorAll(".movie-card").forEach((card) => {
+// Movie Modal Logic (only triggers for movie clicks)
+document.querySelectorAll(".movie-card").forEach((card, index) => {
     card.addEventListener("click", (event) => {
-        event.stopPropagation(); // Prevent event bubbling issues
+        if (event.target.classList.contains("star")) {
+            return; // Prevent triggering the movie modal if a star was clicked
+        }
+
+        event.stopPropagation(); // Prevent event bubbling
         closeAllModals(); // Close any open modal first
 
         const cardImageSrc = card.querySelector("img")?.src.trim();
         const cardTitle = card.querySelector("p.movie-title")?.textContent.trim();
         const cardDescription = card.querySelector("p.movie-description")?.textContent.trim();
 
-        // Find movie in the array
         const movie = movies.find(m => 
             (m.img && cardImageSrc.includes(m.img)) ||
             (m.title && cardTitle === m.title) ||
             (m.description && cardDescription === m.description)
         );
 
+        // Ensure the rating stars container exists for this movie
+        let ratingStarsContainer = document.getElementById(`ratingStars_${index}`);
+        if (!ratingStarsContainer) {
+            // Create the container if it doesn't exist
+            ratingStarsContainer = document.createElement('div');
+            ratingStarsContainer.id = `ratingStars_${index}`;
+            card.appendChild(ratingStarsContainer); // Append it to the movie card
+        }
+        
+        // Clear any previous stars
+        ratingStarsContainer.innerHTML = ''; 
+
+        // Create 5 stars for the rating
+        for (let i = 1; i <= 5; i++) {
+            const star = document.createElement('span');
+            star.classList.add('star', 'rating-star');
+            star.setAttribute('data-value', i);
+            star.textContent = '★';
+            ratingStarsContainer.appendChild(star);
+        }
+
+        // Set the star ratings based on the movie's stored rating
         if (movie) {
             modalImage.src = movie.img;
             modalTitle.textContent = movie.title;
             modalDescription.textContent = movie.description || "No description available.";
             modalYear.textContent = movie.year || "N/A";
             modalRating.textContent = movie.rating || "N/A";
+            modalCast.textContent = movie.cast ? movie.cast.join(", ") : "No cast available.";
         } else {
             modalImage.src = cardImageSrc || "default-image.jpg";
             modalTitle.textContent = cardTitle || "Unknown Title";
             modalDescription.textContent = cardDescription || "No description available.";
             modalYear.textContent = card.querySelector("p.movie-year")?.textContent.trim() || "N/A";
             modalRating.textContent = card.querySelector("p.movie-rating")?.textContent.trim() || "N/A";
+            modalCast.textContent = card.querySelector("p.movie-cast")?.textContent.trim() || "N/A";
         }
 
-        movieModal.style.display = "block"; // Show movie modal
-    });
-});
+        // Show movie modal
+        movieModal.style.display = "block"; 
 
-// Stars Modal Logic
-// Event Listener for clicking on a star
-document.querySelectorAll(".movie-card").forEach((card) => {
-    card.addEventListener("click", () => {
-        const starTitle = card.querySelector("p").textContent.trim(); // Get star name
-        const star = stars.find(s => s.name.trim() === starTitle); // Find the correct star
+        // Event listener for star rating (for this specific movie)
+        document.querySelectorAll(`#ratingStars_${index} .rating-star`).forEach(star => {
+            star.addEventListener('click', function() {
+                // Remove selected class from all stars for this movie
+                document.querySelectorAll(`#ratingStars_${index} .rating-star`).forEach(s => s.classList.remove('selected'));
+                // Add selected class to clicked star
+                this.classList.add('selected');
 
-        if (star) {
-            starImage.src = star.img;
-            starName.textContent = star.name;
-            starDescription.textContent = star.description;
-            
-            // Populate movies list
-            starMovies.innerHTML = "";
-            star.movies.forEach(movie => {
-                let li = document.createElement("li");
-                li.textContent = movie;
-                starMovies.appendChild(li);
+                // Update the movie rating
+                const newRating = this.getAttribute('data-value');
+                movie.rating = newRating;
+
+                // Save the updated movie data to localStorage
+                localStorage.setItem('movies', JSON.stringify(movies));
             });
-
-            starsModal.style.display = "block"; // Show modal
-        }
-    });
-});
-
+        });
+    }); });
 // Close movie modal
 closeMovieModal.addEventListener("click", () => {
     movieModal.style.display = "none";
@@ -351,4 +372,32 @@ window.addEventListener("click", (event) => {
     if (event.target === starsModal) {
         starsModal.style.display = "none";
     }
+});
+
+// Review submission logic
+document.getElementById('submitReview').addEventListener('click', function() {
+    const rating = document.querySelector('.rating-star.selected')?.getAttribute('data-value');
+    const reviewText = document.getElementById('userReview').value;
+
+    if (rating && reviewText) {
+        let reviews = JSON.parse(localStorage.getItem('movieReviews')) || [];
+        reviews.push({ rating: rating, review: reviewText });
+        localStorage.setItem('movieReviews', JSON.stringify(reviews));
+    }
+
+    // Create the "Thank You" message element
+    const thankYouMessage = document.createElement('p');
+    thankYouMessage.textContent = "Thank you for your review!";
+    thankYouMessage.classList.add('thank-you');  // Add the CSS class for styling
+    
+    // Append the message after the review form
+    const reviewContainer = document.querySelector('.user-rating');
+    reviewContainer.appendChild(thankYouMessage);
+
+    // Display the "Thank You" message
+    thankYouMessage.style.display = 'block';
+
+    // Optionally, clear the review form after submission
+    document.getElementById('userReview').value = '';
+    document.querySelectorAll('.rating-star').forEach(star => star.classList.remove('selected'));
 });
