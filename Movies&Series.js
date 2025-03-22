@@ -213,32 +213,81 @@ document.getElementById('searchInput').addEventListener('input', displaySearchRe
 document.getElementById('yearFilter').addEventListener('input', displaySearchResults);
 
 
+// Hard-coded star data
+let stars = [
+    {
+        name: "Leonardo Dicaprio",
+        description: "An Academy Award-winning actor known for his roles in Titanic, Inception, and The Revenant.",
+        movies: ["Titanic", "Inception", "The Revenant", "Shutter Island"],
+        img: "imgs/LeonardoDicaprio.jpg"
+    },
+    {
+        name: "Jason Statham",
+        description: "A British actor known for his action-packed roles in The Transporter, Fast & Furious, and The Expendables.",
+        movies: ["The Transporter", "Fast & Furious", "The Expendables", "Wrath of Man"],
+        img: "imgs/JasonStatham.jpg"
+    },
+    {
+        name: "Shah Rhukh Khan",
+        description: "A Bollywood superstar known as 'King Khan,' famous for films like Dilwale, Raees, and My Name Is Khan.",
+        movies: ["Dilwale", "Raees", "My Name Is Khan", "Pathaan"],
+        img: "imgs/ShahRukhKhan.jpg"
+    },
+    {
+        name: "Margot Robbie",
+        description: "An Australian actress known for her roles in The Wolf of Wall Street, Suicide Squad, and Barbie.",
+        movies: ["The Wolf of Wall Street", "Suicide Squad", "Barbie", "I, Tonya"],
+        img: "imgs/MargotRobbie.jpg"
+    },
+    {
+        name: "Scarlett Johansson",
+        description: "An American actress known for playing Black Widow in the Marvel Cinematic Universe.",
+        movies: ["Black Widow", "Lucy", "Marriage Story", "Lost in Translation"],
+        img: "imgs/ScarlettJohansson.jpg"
+    }
+];
+
+
 
 
 //Movie POP UP
-
-// Select the modal and elements inside it
-const modal = document.getElementById("movieModal");
+// Select the movie modal and elements inside it
+const movieModal = document.getElementById("movieModal");
 const modalImage = document.getElementById("modalImage");
 const modalTitle = document.getElementById("modalTitle");
 const modalDescription = document.getElementById("modalDescription");
 const modalYear = document.getElementById("modalYear");
 const modalRating = document.getElementById("modalRating");
-const closeModal = document.querySelector(".close");
+const closeMovieModal = document.querySelector(".close-movie");
 
+// Select the star modal and elements inside it
+const starsModal = document.getElementById("starsModal");
+const starImage = document.getElementById("starImage");
+const starName = document.getElementById("starName");
+const starDescription = document.getElementById("starDescription");
+const starMovies = document.getElementById("starMovies");
+const closeStarModal = document.getElementById("closeStarModal");
+// Function to close all modals before opening a new one
+function closeAllModals() {
+    movieModal.style.display = "none";
+    starsModal.style.display = "none";
+}
 
-// Select all movie cards and add event listener to each
+// Movie Modal Logic
 document.querySelectorAll(".movie-card").forEach((card) => {
-    card.addEventListener("click", () => {
+    card.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevent event bubbling issues
+        closeAllModals(); // Close any open modal first
+
         const cardImageSrc = card.querySelector("img")?.src.trim();
         const cardTitle = card.querySelector("p.movie-title")?.textContent.trim();
         const cardDescription = card.querySelector("p.movie-description")?.textContent.trim();
 
-        // Find movie by comparing multiple attributes
+        // Find movie in the array
         const movie = movies.find(m => 
-            (m.img && cardImageSrc.includes(m.img)) || // Match by image name (ignoring path)
-            (m.title && cardTitle === m.title) || // Match by title
-            (m.description && cardDescription === m.description) // Match by description
+            (m.img && cardImageSrc.includes(m.img)) ||
+            (m.title && cardTitle === m.title) ||
+            (m.description && cardDescription === m.description)
         );
 
         if (movie) {
@@ -248,7 +297,6 @@ document.querySelectorAll(".movie-card").forEach((card) => {
             modalYear.textContent = movie.year || "N/A";
             modalRating.textContent = movie.rating || "N/A";
         } else {
-            // If the movie is not found in `movies`, extract from the card itself
             modalImage.src = cardImageSrc || "default-image.jpg";
             modalTitle.textContent = cardTitle || "Unknown Title";
             modalDescription.textContent = cardDescription || "No description available.";
@@ -256,20 +304,51 @@ document.querySelectorAll(".movie-card").forEach((card) => {
             modalRating.textContent = card.querySelector("p.movie-rating")?.textContent.trim() || "N/A";
         }
 
-        modal.style.display = "block"; // Show modal
+        movieModal.style.display = "block"; // Show movie modal
     });
 });
 
-// Close modal when clicking the close button
-closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
+// Stars Modal Logic
+// Event Listener for clicking on a star
+document.querySelectorAll(".movie-card").forEach((card) => {
+    card.addEventListener("click", () => {
+        const starTitle = card.querySelector("p").textContent.trim(); // Get star name
+        const star = stars.find(s => s.name.trim() === starTitle); // Find the correct star
+
+        if (star) {
+            starImage.src = star.img;
+            starName.textContent = star.name;
+            starDescription.textContent = star.description;
+            
+            // Populate movies list
+            starMovies.innerHTML = "";
+            star.movies.forEach(movie => {
+                let li = document.createElement("li");
+                li.textContent = movie;
+                starMovies.appendChild(li);
+            });
+
+            starsModal.style.display = "block"; // Show modal
+        }
+    });
 });
 
-// Close modal when clicking outside of it
+// Close movie modal
+closeMovieModal.addEventListener("click", () => {
+    movieModal.style.display = "none";
+});
+
+// Close stars modal
+closeStarModal.addEventListener("click", () => {
+    starsModal.style.display = "none";
+});
+
+// Close modals when clicking outside
 window.addEventListener("click", (event) => {
-    if (event.target === modal) {
-        modal.style.display = "none";
+    if (event.target === movieModal) {
+        movieModal.style.display = "none";
+    }
+    if (event.target === starsModal) {
+        starsModal.style.display = "none";
     }
 });
-
-
