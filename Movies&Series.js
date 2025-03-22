@@ -274,10 +274,11 @@ const closeStarModal = document.getElementById("closeStarModal");
 // Function to close all modals before opening a new one
 function closeAllModals() {
     movieModal.style.display = "none";
+    starsModal.style.display = "none";
 }
 
 // Movie Modal Logic (only triggers for movie clicks)
-document.querySelectorAll(".movie-card").forEach((card, index) => {
+document.querySelectorAll(".movie-card").forEach((card) => {
     card.addEventListener("click", (event) => {
         if (event.target.classList.contains("star")) {
             return; // Prevent triggering the movie modal if a star was clicked
@@ -296,64 +297,114 @@ document.querySelectorAll(".movie-card").forEach((card, index) => {
             (m.description && cardDescription === m.description)
         );
 
-        // Ensure the rating stars container exists for this movie
-        let ratingStarsContainer = document.getElementById(`ratingStars_${index}`);
-        if (!ratingStarsContainer) {
-            // Create the container if it doesn't exist
-            ratingStarsContainer = document.createElement('div');
-            ratingStarsContainer.id = `ratingStars_${index}`;
-            card.appendChild(ratingStarsContainer); // Append it to the movie card
-        }
-        
-        // Clear any previous stars
-        ratingStarsContainer.innerHTML = ''; 
-
-        // Create 5 stars for the rating
-        for (let i = 1; i <= 5; i++) {
-            const star = document.createElement('span');
-            star.classList.add('star', 'rating-star');
-            star.setAttribute('data-value', i);
-            star.textContent = '★';
-            ratingStarsContainer.appendChild(star);
-        }
-
-        // Set the star ratings based on the movie's stored rating
         if (movie) {
             modalImage.src = movie.img;
             modalTitle.textContent = movie.title;
             modalDescription.textContent = movie.description || "No description available.";
             modalYear.textContent = movie.year || "N/A";
             modalRating.textContent = movie.rating || "N/A";
-            modalCast.textContent = movie.cast ? movie.cast.join(", ") : "No cast available.";
         } else {
             modalImage.src = cardImageSrc || "default-image.jpg";
             modalTitle.textContent = cardTitle || "Unknown Title";
             modalDescription.textContent = cardDescription || "No description available.";
             modalYear.textContent = card.querySelector("p.movie-year")?.textContent.trim() || "N/A";
             modalRating.textContent = card.querySelector("p.movie-rating")?.textContent.trim() || "N/A";
-            modalCast.textContent = card.querySelector("p.movie-cast")?.textContent.trim() || "N/A";
         }
 
-        // Show movie modal
-        movieModal.style.display = "block"; 
+        movieModal.style.display = "block"; // Show movie modal
+    });
+});
 
-        // Event listener for star rating (for this specific movie)
-        document.querySelectorAll(`#ratingStars_${index} .rating-star`).forEach(star => {
-            star.addEventListener('click', function() {
-                // Remove selected class from all stars for this movie
-                document.querySelectorAll(`#ratingStars_${index} .rating-star`).forEach(s => s.classList.remove('selected'));
-                // Add selected class to clicked star
-                this.classList.add('selected');
+// Stars Modal Logic (only triggers when clicking a star)
+// Stars Modal Logic
+document.querySelectorAll(".star-card").forEach((card) => {
+    card.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevent event conflicts
 
-                // Update the movie rating
-                const newRating = this.getAttribute('data-value');
-                movie.rating = newRating;
+        const starTitle = card.querySelector("p")?.textContent.trim();
 
-                // Save the updated movie data to localStorage
-                localStorage.setItem('movies', JSON.stringify(movies));
-            });
+        const star = stars.find(s => s.name.trim().toLowerCase() === starTitle.toLowerCase());
+
+        if (star) {
+            starImage.src = star.img;
+            starName.textContent = star.name;
+            starDescription.textContent = star.description || "No description available.";
+            
+            // Populate movies list
+            starMovies.innerHTML = "";
+            if (star.movies && star.movies.length > 0) {
+                star.movies.forEach(movie => {
+                    let li = document.createElement("li");
+                    li.textContent = movie;
+                    starMovies.appendChild(li);
+                });
+            } else {
+                let li = document.createElement("li");
+                li.textContent = "No movies listed.";
+                starMovies.appendChild(li);
+            }
+
+            starsModal.style.display = "block"; // Show stars modal
+        } else {
+            console.error("Star not found:", starTitle);
+        }
+    });
+});
+// Select the rating stars inside the modal
+const ratingStars = document.getElementById("ratingStars");
+
+// Store ratings per movie
+let movieRatings = {};
+
+// Function to open the movie modal and update movie details
+function openMovieModal(movie) {
+    // Set movie details in the modal
+    modalTitle.textContent = movie.title;
+    modalDescription.textContent = movie.description;
+    modalGenre.textContent = movie.genre;
+    modalYear.textContent = movie.year;
+    modalCast.textContent = movie.cast.join(", ");
+    modalImage.src = movie.image;
+    watchTrailer.href = movie.trailerLink;
+
+    // Retrieve saved rating for this movie or default to 0
+    let currentRating = movieRatings[movie.title] || 0;
+
+    // Update the star colors based on saved rating
+    ratingStars.querySelectorAll(".rating-star").forEach((star, index) => {
+        star.style.color = index < currentRating ? "gold" : "gray"; // Apply saved rating
+    });
+
+    // Clear previous event listeners and attach new ones
+    ratingStars.querySelectorAll(".rating-star").forEach((star, index) => {
+        star.removeEventListener("click", handleStarClick); // Remove any previous listeners
+        star.addEventListener("click", function() {
+            handleStarClick(index + 1); // Pass the star's value (1 to 5)
         });
-    }); });
+    });
+
+    // Show the modal
+    movieModal.style.display = "block";
+}
+
+// Event handler function for click on a star
+function handleStarClick(ratingValue) {
+    console.log("Star clicked with rating:", ratingValue); // Debugging log
+    movieRatings[modalTitle.textContent] = ratingValue; // Store the rating for the current movie
+    updateStarRating(ratingValue); // Update the star colors
+}
+
+// Function to update star colors based on rating
+function updateStarRating(value) {
+    ratingStars.querySelectorAll(".rating-star").forEach((star, index) => {
+        star.style.color = index < value ? "gold" : "gray"; // Gold for selected, gray for unselected
+    });
+
+    // Update displayed rating
+    modalRating.textContent = value + "/5";
+}
+
+
 // Close movie modal
 closeMovieModal.addEventListener("click", () => {
     movieModal.style.display = "none";
