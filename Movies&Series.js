@@ -263,6 +263,9 @@ const modalRating = document.getElementById("modalRating");
 const modalCast = document.getElementById("modalCast");
 const modalImage = document.getElementById("modalImage");
 const closeMovieModal = document.querySelector(".close-movie");
+const ratingStars = document.querySelectorAll(".rating-star");
+const userReviewInput = document.getElementById("userReview");
+const submitReviewBtn = document.getElementById("submitReview");
 
 // Select the star modal and elements inside it
 const starsModal = document.getElementById("starsModal");
@@ -349,61 +352,7 @@ document.querySelectorAll(".star-card").forEach((card) => {
             console.error("Star not found:", starTitle);
         }
     });
-});
-// Select the rating stars inside the modal
-const ratingStars = document.getElementById("ratingStars");
-
-// Store ratings per movie
-let movieRatings = {};
-
-// Function to open the movie modal and update movie details
-function openMovieModal(movie) {
-    // Set movie details in the modal
-    modalTitle.textContent = movie.title;
-    modalDescription.textContent = movie.description;
-    modalGenre.textContent = movie.genre;
-    modalYear.textContent = movie.year;
-    modalCast.textContent = movie.cast.join(", ");
-    modalImage.src = movie.image;
-    watchTrailer.href = movie.trailerLink;
-
-    // Retrieve saved rating for this movie or default to 0
-    let currentRating = movieRatings[movie.title] || 0;
-
-    // Update the star colors based on saved rating
-    ratingStars.querySelectorAll(".rating-star").forEach((star, index) => {
-        star.style.color = index < currentRating ? "gold" : "gray"; // Apply saved rating
-    });
-
-    // Clear previous event listeners and attach new ones
-    ratingStars.querySelectorAll(".rating-star").forEach((star, index) => {
-        star.removeEventListener("click", handleStarClick); // Remove any previous listeners
-        star.addEventListener("click", function() {
-            handleStarClick(index + 1); // Pass the star's value (1 to 5)
-        });
-    });
-
-    // Show the modal
-    movieModal.style.display = "block";
-}
-
-// Event handler function for click on a star
-function handleStarClick(ratingValue) {
-    console.log("Star clicked with rating:", ratingValue); // Debugging log
-    movieRatings[modalTitle.textContent] = ratingValue; // Store the rating for the current movie
-    updateStarRating(ratingValue); // Update the star colors
-}
-
-// Function to update star colors based on rating
-function updateStarRating(value) {
-    ratingStars.querySelectorAll(".rating-star").forEach((star, index) => {
-        star.style.color = index < value ? "gold" : "gray"; // Gold for selected, gray for unselected
-    });
-
-    // Update displayed rating
-    modalRating.textContent = value + "/5";
-}
-
+}); 
 
 // Close movie modal
 closeMovieModal.addEventListener("click", () => {
@@ -425,30 +374,63 @@ window.addEventListener("click", (event) => {
     }
 });
 
-// Review submission logic
-document.getElementById('submitReview').addEventListener('click', function() {
-    const rating = document.querySelector('.rating-star.selected')?.getAttribute('data-value');
-    const reviewText = document.getElementById('userReview').value;
 
-    if (rating && reviewText) {
-        let reviews = JSON.parse(localStorage.getItem('movieReviews')) || [];
-        reviews.push({ rating: rating, review: reviewText });
-        localStorage.setItem('movieReviews', JSON.stringify(reviews));
+// Store ratings and reviews per movie
+let movieReviews = JSON.parse(localStorage.getItem("movieReviews")) || {};
+
+// Function to open the movie modal and update movie details
+function openMovieModal(movie) {
+    modalTitle.textContent = movie.title;
+    modalDescription.textContent = movie.description;
+    modalGenre.textContent = movie.genre;
+    modalYear.textContent = movie.year;
+    modalCast.textContent = movie.cast.join(", ");
+    modalImage.src = movie.image;
+
+    let savedReview = movieReviews[movie.title] || { rating: 0, review: "" };
+    updateStarRating(savedReview.rating);
+    userReviewInput.value = savedReview.review;
+
+    movieModal.style.display = "block";
+}
+
+// Function to update star colors
+function updateStarRating(value) {
+    ratingStars.forEach((star, index) => {
+        star.style.color = index < value ? "gold" : "gray";
+    });
+    modalRating.textContent = value ? `${value}/5` : "No rating";
+}
+
+// Event listener for star clicks
+ratingStars.forEach(star => {
+    star.addEventListener("click", function () {
+        let ratingValue = parseInt(this.dataset.value);
+        movieReviews[modalTitle.textContent] = movieReviews[modalTitle.textContent] || {};
+        movieReviews[modalTitle.textContent].rating = ratingValue;
+        updateStarRating(ratingValue);
+    });
+});
+
+// Review submission logic
+submitReviewBtn.addEventListener("click", function () {
+    let rating = movieReviews[modalTitle.textContent]?.rating || 0;
+    let reviewText = userReviewInput.value.trim();
+    
+    if (!rating || !reviewText) {
+        alert("Please enter a rating and a review.");
+        return;
     }
 
-    // Create the "Thank You" message element
-    const thankYouMessage = document.createElement('p');
-    thankYouMessage.textContent = "Thank you for your review!";
-    thankYouMessage.classList.add('thank-you');  // Add the CSS class for styling
+    movieReviews[modalTitle.textContent] = { rating, review: reviewText };
+    localStorage.setItem("movieReviews", JSON.stringify(movieReviews));
     
-    // Append the message after the review form
-    const reviewContainer = document.querySelector('.user-rating');
-    reviewContainer.appendChild(thankYouMessage);
+    alert("Thank you for your review!");
+    userReviewInput.value = "";
+    updateStarRating(0);
+});
 
-    // Display the "Thank You" message
-    thankYouMessage.style.display = 'block';
-
-    // Optionally, clear the review form after submission
-    document.getElementById('userReview').value = '';
-    document.querySelectorAll('.rating-star').forEach(star => star.classList.remove('selected'));
+// Close movie modal
+closeMovieModal.addEventListener("click", () => {
+    movieModal.style.display = "none";
 });
