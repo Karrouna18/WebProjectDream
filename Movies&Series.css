@@ -364,6 +364,9 @@ footer p {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color:#222;
+    
+    
 }
 /* Rating stars */
 #ratingStars {
@@ -414,6 +417,7 @@ footer p {
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 30%;
+    margin-top: 5px;
 }
 
 #submitReview:hover {
@@ -462,7 +466,7 @@ footer p {
     width: 100%;
     max-width: 600px;
     max-height: 90vh;
-    background: linear-gradient(to bottom, rgba(255, 0, 0, 0.9), black);
+    background: black;
     color: white;
     border-radius: 10px;
     padding: 25px;
@@ -490,12 +494,12 @@ footer p {
     right: 15px;
     font-size: 45px;
     cursor: pointer;
-    color: black;
+    color: white;
     transition: color 0.3s ease-in-out;
 }
 
 .close-stars:hover {
-    color: white;
+    color: red;
 }
 
 /* Star Image */
@@ -504,13 +508,14 @@ footer p {
     height: 140px;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid black;
+    border: 2px solid white;
     margin-bottom: 15px;
     transition: transform 0.3s ease-in-out;
 }
 
 #starImage:hover {
     transform: scale(1.1);
+    border: 3px solid red;
 }
 
 /* Star Name */
@@ -541,14 +546,16 @@ footer p {
     font-size: 18px;
     font-weight: bold;
     margin: 8px 0;
-    background: rgba(255, 0, 0, 0.7);
+    background: white;
+    color: red;
     padding: 8px;
     border-radius: 5px;
     transition: background 0.3s ease-in-out;
 }
 
 #starMovies li:hover {
-    background: rgba(255, 0, 0, 1);
+    background: red;
+    color: white;
 }
 
 /* Responsive Styles */

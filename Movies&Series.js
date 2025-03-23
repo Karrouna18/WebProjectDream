@@ -377,60 +377,99 @@ window.addEventListener("click", (event) => {
 
 // Store ratings and reviews per movie
 let movieReviews = JSON.parse(localStorage.getItem("movieReviews")) || {};
+let currentMovieTitle = "";
+let selectedStars = new Set(); // To track selected stars
 
-// Function to open the movie modal and update movie details
 function openMovieModal(movie) {
-    modalTitle.textContent = movie.title;
-    modalDescription.textContent = movie.description;
-    modalGenre.textContent = movie.genre;
-    modalYear.textContent = movie.year;
-    modalCast.textContent = movie.cast.join(", ");
-    modalImage.src = movie.image;
+    currentMovieTitle = movie.title;
 
-    let savedReview = movieReviews[movie.title] || { rating: 0, review: "" };
-    updateStarRating(savedReview.rating);
-    userReviewInput.value = savedReview.review;
+    modalTitle.textContent = movie.title;
+    modalDescription.textContent = movie.description || "No description available.";
+    modalGenre.textContent = movie.genre || "N/A";
+    modalYear.textContent = movie.year || "N/A";
+    modalCast.textContent = movie.cast?.join(", ") || "N/A";
+    modalImage.src = movie.image || movie.img || "";
+
+    modalRating.textContent = movie.rating || "N/A";
+
+    const saved = movieReviews[movie.title] || { rating: 0, review: "" };
+
+    // Set stars based on saved rating
+    selectedStars = new Set();
+    for (let i = 0; i < saved.rating; i++) {
+        selectedStars.add(i);
+    }
+    updateStarUI();
+
+    userReviewInput.value = saved.review;
 
     movieModal.style.display = "block";
 }
 
-// Function to update star colors
-function updateStarRating(value) {
+// Update UI based on selectedStars Set
+function updateStarUI() {
     ratingStars.forEach((star, index) => {
-        star.style.color = index < value ? "gold" : "gray";
+        star.style.color = selectedStars.has(index) ? "gold" : "gray";
     });
-    modalRating.textContent = value ? `${value}/5` : "No rating";
 }
 
-// Event listener for star clicks
-ratingStars.forEach(star => {
-    star.addEventListener("click", function () {
-        let ratingValue = parseInt(this.dataset.value);
-        movieReviews[modalTitle.textContent] = movieReviews[modalTitle.textContent] || {};
-        movieReviews[modalTitle.textContent].rating = ratingValue;
-        updateStarRating(ratingValue);
+// Toggle individual stars on click
+ratingStars.forEach((star, index) => {
+    star.addEventListener("click", () => {
+        if (selectedStars.has(index)) {
+            selectedStars.delete(index);
+        } else {
+            selectedStars.add(index);
+        }
+        updateStarUI();
     });
 });
 
-// Review submission logic
+// Submit button logic
 submitReviewBtn.addEventListener("click", function () {
-    let rating = movieReviews[modalTitle.textContent]?.rating || 0;
-    let reviewText = userReviewInput.value.trim();
-    
-    if (!rating || !reviewText) {
+    const reviewText = userReviewInput.value.trim();
+    const rating = selectedStars.size;
+
+    if (!rating && !reviewText) {
         alert("Please enter a rating and a review.");
+        return;
+    } else if (!rating) {
+        alert("Please enter a rating.");
+        return;
+    } else if (!reviewText) {
+        alert("Please enter a review.");
         return;
     }
 
-    movieReviews[modalTitle.textContent] = { rating, review: reviewText };
+    movieReviews[currentMovieTitle] = {
+        rating: rating,
+        review: reviewText
+    };
+
     localStorage.setItem("movieReviews", JSON.stringify(movieReviews));
-    
+
     alert("Thank you for your review!");
+
+    // Clear for next time
+    selectedStars.clear();
+    updateStarUI();
     userReviewInput.value = "";
-    updateStarRating(0);
 });
 
-// Close movie modal
+// Close modal reset selectedStars and review (to avoid carry-over)
 closeMovieModal.addEventListener("click", () => {
     movieModal.style.display = "none";
+    selectedStars.clear();
+    updateStarUI();
+    userReviewInput.value = "";
+});
+
+// Optional: also clear stars when clicking outside modal
+window.addEventListener("click", (event) => {
+    if (event.target === movieModal) {
+        movieModal.style.display = "none";
+        selectedStars.clear();
+        updateStarUI();
+        userReviewInput.value = "";
+    }
 });
