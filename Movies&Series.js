@@ -88,39 +88,141 @@ function handleScroll(container, leftBtn, rightBtn) {
 }
 
 // Hard-coded movie data
-let movies = [ 
-    {
-        title: "Buried Hearts",
-        description: "This is the description of Movie 1.",
-        img: "imgs/images.jpg", cast: ["John Doe", "Jane Smith", "Max Power"]
-    },
-    {
-        title: "Study Group",
-        description: "This is the description of Movie 2.",
-        img: "imgs/Study_Group.png",
-    },
-    {
-        title: "My fault London",
-        description: "This is the description of Movie 3.",
-        img: "imgs/myfault London.jpg",
-    },
-    { id: 1, title: "تحت سابع أرض",  description: "تحت سابع أرض هو مسلسل درامي مليء بالأحداث المثيرة التي تدور في أعماق الأرض. تتبع القصة مجموعة من الأشخاص الذين يجدون أنفسهم عالقين في مكان غريب ومظلم، حيث تبدأ المغامرات والتحديات التي تواجههم. يتميز هذا العمل بالتشويق والترقب، مع تفاصيل مثيرة ستجعلك تتابع الأحداث بشغف.", genre: "Family", year: 2025,rating:"8.5/10", img: "imgs/TahtSabehAred.jpeg",  cast: ["أحمد السقا", "منى زكي", "محمود عبد المغني"] },
-    { id: 2, title: "معاوية", description: "مسلسل معاوية هو عمل درامي تاريخي يعرض قصة حياة الصحابي معاوية بن أبي سفيان، ويأخذك عبر أحداث تاريخية مهمة وتحديات كبيرة في فترة خلافته. ينقلك العمل عبر الأحداث المليئة بالدراما والتشويق، مع تقديم العديد من اللحظات المؤثرة في حياة الشخصية.", genre: "Action", year: 2024, rating:"9.0/10", img: "imgs/Moawiya.jpg",  cast: ["تيم حسن", "كاريس بشار", "سلاف فواخرجي"] // Key Arabic cast
-    }, 
-    { id: 3, title: "البطل",  description: "البطل هو مسلسل درامي يشهد ظهور شخصية رئيسية تخوض مغامرات مليئة بالتحديات. يروي المسلسل قصة بطل خارق يتعرض لاختبارات صعبة في حياته. القصة مليئة بالإثارة والتشويق، وتركز على جوانب القوة الداخلية للشخصية وكيفية التعامل مع الأزمات.", genre: "Drama", year: 2023, rating:"7.8/10" ,img: "imgs/AlBatal.jpg",  cast: ["أحمد مكي", "دينا الشربيني", "أحمد داوود"] // Key Arabic cast
-    }, 
-    { id: 4, title: "تحت الأرض",  description: "قصة غامضة عن مجموعة تبحث عن الحقيقة في عالم خفي.", genre: "Sci-Fi", year: 2024, rating:"8.0/10" ,img: "imgs/TahetAlAred.jpg", },
-    { id: 5, title: "بالدم", description: "Laugh-out-loud comedy film.", genre: "Comedy", year: 2023, img: "imgs/Bldam.jpg" },
-    { id: 6, title: "فهد البطل", description: "Spine-chilling thriller.", genre: "Horror", year: 2025, img: "imgs/FahedAlBatal.jpg", cast: ["عمرو يوسف", "غادة عبد الرازق", "أحمد زاهر"] },
-    { id: 7, title: "نص الشعب اسمه محمد", description: "A special movie for Ramadan.", genre: "Family", year: 2025, img: "imgs/NosALShaab.jpg" },
-    { id: 8, title: "ولاد شمس", description: "High-octane action movie.", genre: "Action", year: 2024, img: "imgs/WladShames.jpg" },
-    { id: 9, title: "بيت حموله", description: "Emotional drama movie.", genre: "Drama", year: 2023, img: "imgs/BetHmouleh.jpg" },
-    { id: 10, title: "يوميات رجل عانس", description: "An intergalactic adventure.", genre: "Sci-Fi", year: 2024, img: "imgs/YawmeyatRajolAanes.jpg" },
-    { id: 11, title: "السيع ابن الجبل", description: "Laugh-out-loud comedy film.", genre: "Comedy", year: 2023, img: "imgs/AlSabihAbnlJabal.jpg" },
-    { id: 12, title: "رامز ايلون ماسك", description: "Spine-chilling thriller.", genre: "Horror", year: 2025, img: "imgs/RamezElonMasr.jpg" }
-];
+let movies = {
+    "Action": [
+        { 
+            title: "Buried Hearts",
+            description: "This is the description of Movie 1.",
+            img: "imgs/images.jpg", 
+            cast: ["John Doe", "Jane Smith", "Max Power"]
+        },
+        { 
+            title: "Study Group",
+            description: "This is the description of Movie 2.",
+            img: "imgs/Study_Group.png"
+        },
+        { 
+            title: "My fault London",
+            description: "This is the description of Movie 3.",
+            img: "imgs/myfault London.jpg"
+        },
+        { 
+            id: 2, 
+            title: "معاوية", 
+            description: "مسلسل معاوية هو عمل درامي تاريخي يعرض قصة حياة الصحابي معاوية بن أبي سفيان...",
+            genre: "Action", 
+            year: 2024, 
+            rating: "9.0/10", 
+            img: "imgs/Moawiya.jpg",  
+            cast: ["تيم حسن", "كاريس بشار", "سلاف فواخرجي"]
+        },
+        { 
+            id: 8, 
+            title: "ولاد شمس", 
+            description: "High-octane action movie.",
+            genre: "Action", 
+            year: 2024, 
+            img: "imgs/WladShames.jpg"
+        }
+    ],
+    "Comedy": [
+        { 
+            id: 5, 
+            title: "بالدم", 
+            description: "Laugh-out-loud comedy film.",
+            genre: "Comedy", 
+            year: 2023, 
+            img: "imgs/Bldam.jpg" 
+        },
+        { 
+            id: 11, 
+            title: "السيع ابن الجبل", 
+            description: "Laugh-out-loud comedy film.",
+            genre: "Comedy", 
+            year: 2023, 
+            img: "imgs/AlSabihAbnlJabal.jpg"
+        }
+    ],
+    "Drama": [
+        { 
+            id: 3, 
+            title: "البطل",  
+            description: "البطل هو مسلسل درامي يشهد ظهور شخصية رئيسية تخوض مغامرات مليئة بالتحديات...",
+            genre: "Drama", 
+            year: 2023, 
+            rating: "7.8/10",
+            img: "imgs/AlBatal.jpg",  
+            cast: ["أحمد مكي", "دينا الشربيني", "أحمد داوود"]
+        },
+        { 
+            id: 9, 
+            title: "بيت حموله", 
+            description: "Emotional drama movie.",
+            genre: "Drama", 
+            year: 2023, 
+            img: "imgs/BetHmouleh.jpg"
+        }
+    ],
+    "Sci-Fi": [
+        { 
+            id: 4, 
+            title: "تحت الأرض",  
+            description: "قصة غامضة عن مجموعة تبحث عن الحقيقة في عالم خفي.",
+            genre: "Sci-Fi", 
+            year: 2024, 
+            rating: "8.0/10",
+            img: "imgs/TahetAlAred.jpg"
+        },
+        { 
+            id: 10, 
+            title: "يوميات رجل عانس", 
+            description: "An intergalactic adventure.",
+            genre: "Sci-Fi", 
+            year: 2024, 
+            img: "imgs/YawmeyatRajolAanes.jpg"
+        }
+    ],
+    "Horror": [
+        { 
+            id: 6, 
+            title: "فهد البطل", 
+            description: "Spine-chilling thriller.",
+            genre: "Horror", 
+            year: 2025, 
+            img: "imgs/FahedAlBatal.jpg", 
+            cast: ["عمرو يوسف", "غادة عبد الرازق", "أحمد زاهر"]
+        },
+        { 
+            id: 12, 
+            title: "رامز ايلون ماسك", 
+            description: "Spine-chilling thriller.",
+            genre: "Horror", 
+            year: 2025, 
+            img: "imgs/RamezElonMasr.jpg"
+        }
+    ],
+    "Family": [
+        { 
+            id: 1, 
+            title: "تحت سابع أرض",  
+            description: "تحت سابع أرض هو مسلسل درامي مليء بالأحداث المثيرة التي تدور في أعماق الأرض...",
+            genre: "Family", 
+            year: 2025, 
+            rating: "8.5/10", 
+            img: "imgs/TahtSabehAred.jpeg",  
+            cast: ["أحمد السقا", "منى زكي", "محمود عبد المغني"]
+        },
+        { 
+            id: 7, 
+            title: "نص الشعب اسمه محمد", 
+            description: "A special movie for Ramadan.",
+            genre: "Family", 
+            year: 2025, 
+            img: "imgs/NosALShaab.jpg"
+        }
+    ]
+};
 
-// Function to hide all sections (except the carousel)
 // Function to hide all sections (except search results)
 function hideSections() {
     let sections = document.querySelectorAll('.movies-section');
@@ -279,8 +381,8 @@ function closeAllModals() {
     movieModal.style.display = "none";
     starsModal.style.display = "none";
 }
+const allMovies = Object.values(movies).flat(); // Flatten all movies into a single array
 
-// Movie Modal Logic (only triggers for movie clicks)
 document.querySelectorAll(".movie-card").forEach((card) => {
     card.addEventListener("click", (event) => {
         if (event.target.classList.contains("star")) {
@@ -294,7 +396,8 @@ document.querySelectorAll(".movie-card").forEach((card) => {
         const cardTitle = card.querySelector("p.movie-title")?.textContent.trim();
         const cardDescription = card.querySelector("p.movie-description")?.textContent.trim();
 
-        const movie = movies.find(m => 
+        // Find the movie in the flattened array
+        const movie = allMovies.find(m => 
             (m.img && cardImageSrc.includes(m.img)) ||
             (m.title && cardTitle === m.title) ||
             (m.description && cardDescription === m.description)
@@ -317,6 +420,7 @@ document.querySelectorAll(".movie-card").forEach((card) => {
         movieModal.style.display = "block"; // Show movie modal
     });
 });
+
 
 // Stars Modal Logic (only triggers when clicking a star)
 // Stars Modal Logic
@@ -373,7 +477,6 @@ window.addEventListener("click", (event) => {
         starsModal.style.display = "none";
     }
 });
-
 
 // Store ratings and reviews per movie
 let movieReviews = JSON.parse(localStorage.getItem("movieReviews")) || {};
