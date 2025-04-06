@@ -7,6 +7,8 @@
     <script defer src="home.js"></script>
     <title>DreamFlix - Your Escape, Your Reality</title>
     <link rel="icon"  href="logo1.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
    
 </head>
 <body>
@@ -78,17 +80,12 @@
         <button class="scroll-btn right-btn" onclick="scrollRight()" id="rightBtn">&#10095;</button>
     </div>
     </section>
-
     
-
-
-
-
     <section class="reasons">
         <h2>More Reasons to Join</h2>
         <div class="reasons-container">
             <div class="reason">
-                <img src="imgs/imagesF.png" alt="Completely Free">
+                <img src="imgs/Free-removebg-preview.png" alt="Completely Free">
                 <h3>Completely Free</h3>
                 <p>Enjoy a vast library of movies and TV shows without spending a penny.</p>
             </div>
@@ -105,15 +102,42 @@
         </div>
     </section>
     <footer class="footer">
-        <div class="footer-links">
+        <div class="footer-top">
+          <img class="footer-logo" src="Dreamflix logo-04.png" alt="">
+          <div class="footer-links">
             <a href="faq.html">FAQ</a>
             <a href="help.html">Help Center</a>
             <a href="terms.html">Terms of Use</a>
             <a href="priavcy.html">Privacy Policy</a>
             <a href="cookies.html">Cookie Preferences</a>
             <a href="corporate.html">Corporate Information</a>
+          </div>
+          <div class="footer-newsletter">
+            <p>Subscribe for Updates</p>
+            <form id="newsletter-form">
+                <input type="email" id="newsletterEmail" placeholder="Enter your email">
+                <button id="subscribeBtn">Subscribe</button>
+                <p id="message" class="message"></p> <!-- Message will be shown here -->
+            </form>
+          </div>
+          <div class="footer-socials">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="footer-toggle">
+            <label class="switch">
+              <input type="checkbox" id="themeToggle" class="theme-toggle">
+              <span class="slider round"></span>
+            </label>
+            <p>Light Mode</p>
+          </div>
         </div>
-        <p>&copy; 2025 DreamFlix. All Rights Reserved.</p>
-    </footer>
+        <div class="footer-bottom">
+          <p>&copy; 2025 DreamFlix. All rights reserved.</p>
+        </div>
+      </footer>
+      
 </body>
 </html>

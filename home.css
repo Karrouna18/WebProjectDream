@@ -29,7 +29,7 @@ body {
 nav {
     position: absolute;
     top: 10px;
-    width: 90%;
+    width: 99%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -141,7 +141,7 @@ input {
     align-items: center;
     justify-content: center;
     margin-top: 160px;
-    background: rgb(0,0, 0, 0.7);
+    background: rgb(134, 3, 3);
     width:900px ;
     margin-left: 190px;
     border-radius: 45%;
@@ -293,36 +293,295 @@ input {
     margin-bottom: 10px;
 }
 .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background-color: #111;
+    color: #bbb;
     padding: 40px 20px;
-    background: black;
-    color: grey;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-top {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #444;
+}
+
+.footer-logo {
+    width: 240px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    margin-bottom: 20px;
 }
 
 .footer-links {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 30px;
     flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
 .footer-links a {
-    color: grey;
+    color: #bbb;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .footer-links a:hover {
+    color: red;
+}
+.footer-newsletter {
+    margin: 20px 0;
+}
+
+.footer-newsletter p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.footer-newsletter input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 250px;
+    max-width: 80%;
+    margin-right: 10px;
+}
+
+.footer-newsletter button {
+    padding: 10px 20px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.footer-newsletter button:hover {
+    background-color: darkred;
+}
+
+.footer-socials {
+    margin-top: 10px;
+}
+
+.footer-socials a {
+    margin: 0 10px;
+    color: #bbb;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: red;
+}
+.footer-toggle {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: gray;
+    transition: .4s;
+    border-radius: 26px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+.footer-bottom {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #666;
+}
+
+.message {
+    display: none;
+    font-size: 14px;
+    color: #ff0000; /* Red for errors, default */
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  /* Success message */
+  .message.success {
+    color: #28a745; /* Green for success */
+  }
+  
+  /* Valid email message */
+  .message.valid {
+    color: #007bff; /* Blue for valid email */
+  }
+  
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #ffffff;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+body.light-mode .hero {
+    background: url(imgs/Homeback.jpg) no-repeat center center/cover;
+}
+body.light-mode .hero .logo{
+    color: #007bff;
+}
+
+/* Hero Content */
+body.light-mode .hero-content  {
+    background-color: white; /* Lightened background */
+    color:#007bff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+body.light-mode .hero-content h1{
+color: #007bff;
+}
+body.light-mode .hero-content .signup-form button,
+body.light-mode .hero .overlay .button-container .aboutus{
+    background:#007bff;
+    color: white;
+}
+body.light-mode .hero-content .signup-form button:hover,
+body.light-mode .hero .overlay .button-container .aboutus:hover{
+    background: #0056b3;
+}
+body.light-mode .modal #loginForm{
+    background: #007bff;
+}
+body.light-mode .reasons-container .reason{
+    background: #007bff;
+    color: white;
+}
+
+/* Main Content Sections */
+body.light-mode .trending h2, 
+body.light-mode .reasons h2 {
+    color: #007bff;
+}
+
+
+
+/* Footer Styles */
+body.light-mode .footer {
+    background-color: #f9f9f9;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .footer-links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Buttons and Input Styles */
+
+body.light-mode input,
+body.light-mode select {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional Styling for Light Mode */
+body.light-mode .trending h2 {
+    color: #007bff;
+}
+
+/* Modal Styles (if required) */
+body.light-mode .modal-content {
+    background-color: #fff;
+    color: #333;
+}
+
+body.light-mode .modal-content button {
+    background-color: #007bff;
+}
+
+/* Footer Styles */
+body.light-mode .footer {
+    background-color: #f9f9f9;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Links */
+body.light-mode .footer-links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+body.light-mode .footer-links a:hover {
     text-decoration: underline;
 }
 
-.footer p {
-    font-size: 14px;
+/* Button and Input Styles */
+body.light-mode button {
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease;
 }
+
+body.light-mode button:hover {
+    background-color: #0056b3;
+}
+
+body.light-mode input,
+body.light-mode select {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+body.light-mode .footer .footer-socials a:hover{
+    color:#007bff;
+}
+
+
 @media (max-width: 768px) {
     body {
         font-size: 14px;
@@ -405,3 +664,6 @@ input {
         text-align: center;
     }
 }
+
+
+
