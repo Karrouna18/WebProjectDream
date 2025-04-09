@@ -1,0 +1,1222 @@
+{
+        "movies": [
+          {
+            "id": 1,
+            "title": "تحت سابع أرض",
+            "description": "تحت سابع أرض هو مسلسل درامي مليء بالأحداث المثيرة التي تدور في أعماق الأرض. تتبع القصة مجموعة من الأشخاص الذين يجدون أنفسهم عالقين في مكان غريب ومظلم، حيث تبدأ المغامرات والتحديات التي تواجههم. يتميز هذا العمل بالتشويق والترقب، مع تفاصيل مثيرة ستجعلك تتابع الأحداث بشغف.",
+            "genre": "Family",
+            "year": 2025,
+            "rating": "8.5/10",
+            "image": "imgs/TahtSabehAred.jpeg",
+            "cast": ["أحمد السقا", "منى زكي", "محمود عبد المغني"]
+          },
+          {
+            "id": 2,
+            "title": "معاوية",
+            "description": "مسلسل معاوية هو عمل درامي تاريخي يعرض قصة حياة الصحابي معاوية بن أبي سفيان. ينقلك العمل عبر أحداث مليئة بالدراما والتشويق مع لحظات مؤثرة.",
+            "genre": "Action",
+            "year": 2024,
+            "rating": "9.0/10",
+            "image": "imgs/Moawiya.jpg",
+            "cast": ["تيم حسن", "كاريس بشار", "سلاف فواخرجي"]
+          },
+          {
+            "id": 3,
+            "title": "البطل",
+            "description": "البطل هو مسلسل درامي يشهد ظهور شخصية رئيسية تخوض مغامرات مليئة بالتحديات مع اختبارات قوة داخلية.",
+            "genre": "Drama",
+            "year": 2023,
+            "rating": "7.8/10",
+            "image": "imgs/AlBatal.jpg",
+            "cast": ["أحمد مكي", "دينا الشربيني", "أحمد داوود"]
+          },
+          {
+            "id": 4,
+            "title": "تحت الأرض",
+            "description": "قصة غامضة عن مجموعة تبحث عن الحقيقة في عالم خفي.",
+            "genre": "Sci-Fi",
+            "year": 2024,
+            "rating": "8.0/10",
+            "image": "imgs/TahetAlAred.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 5,
+            "title": "بالدم",
+            "description": "Laugh-out-loud comedy film.",
+            "genre": "Comedy",
+            "year": 2023,
+            "image": "imgs/Bldam.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 6,
+            "title": "فهد البطل",
+            "description": "Spine-chilling thriller.",
+            "genre": "Horror",
+            "year": 2025,
+            "image": "imgs/FahedAlBatal.jpg",
+            "cast": ["عمرو يوسف", "غادة عبد الرازق", "أحمد زاهر"]
+          },
+          {
+            "id": 7,
+            "title": "نص الشعب اسمه محمد",
+            "description": "A special movie for Ramadan.",
+            "genre": "Family",
+            "year": 2025,
+            "image": "imgs/NosALShaab.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 8,
+            "title": "ولاد شمس",
+            "description": "High-octane action movie.",
+            "genre": "Action",
+            "year": 2024,
+            "image": "imgs/WladShames.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 9,
+            "title": "بيت حموله",
+            "description": "Emotional drama movie.",
+            "genre": "Drama",
+            "year": 2023,
+            "image": "imgs/BetHmouleh.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 10,
+            "title": "يوميات رجل عانس",
+            "description": "An intergalactic adventure.",
+            "genre": "Sci-Fi",
+            "year": 2024,
+            "image": "imgs/YawmeyatRajolAanes.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 11,
+            "title": "السيع ابن الجبل",
+            "description": "Laugh-out-loud comedy film.",
+            "genre": "Comedy",
+            "year": 2023,
+            "image": "imgs/AlSabihAbnlJabal.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 12,
+            "title": "رامز ايلون ماسك",
+            "description": "Spine-chilling thriller.",
+            "genre": "Horror",
+            "year": 2025,
+            "image": "imgs/RamezElonMasr.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 13,
+            "title": "العتاولة 2",
+            "description": "Sequel to the popular series, continuing the action-packed storyline.",
+            "genre": "Action",
+            "year": 2024,
+            "rating": "8.2/10",
+            "image": "imgs/ALAatawela.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 14,
+            "title": "سيد الناس",
+            "description": "An insightful tale of leadership and societal change.",
+            "genre": "Drama",
+            "year": 2023,
+            "rating": "7.9/10",
+            "image": "imgs/SayedAlNas.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 15,
+            "title": "ما اختلفنا 2",
+            "description": "The sequel that explores new dimensions of conflict and humor.",
+            "genre": "Comedy",
+            "year": 2025,
+            "rating": "8.0/10",
+            "image": "imgs/MaKhtlfna2.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 16,
+            "title": "أشغال شقة جدا",
+            "description": "A comedic look at the quirks of apartment living.",
+            "genre": "Comedy",
+            "year": 2024,
+            "rating": "7.5/10",
+            "image": "imgs/AshgalShaqaJidan.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 17,
+            "title": "جودر 2",
+            "description": "The thrilling continuation of the suspense-filled series.",
+            "genre": "Thriller",
+            "year": 2023,
+            "rating": "7.8/10",
+            "image": "imgs/Gawdar2.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 18,
+            "title": "المداح أسطورة العهد",
+            "description": "An epic narrative of honor and legacy.",
+            "genre": "Drama",
+            "year": 2023,
+            "rating": "8.1/10",
+            "image": "imgs/AlMadah.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+    
+          {
+            "id": 19,
+            "title": "Culpa Tuya",
+            "description": "A complex story exploring guilt and redemption.",
+            "genre": "Drama",
+            "year": 2025,
+            "image": "imgs/Culpatuya.jpg",
+            "cast": ["John Doe", "Jane Smith"]
+          },
+          {
+            "id": 20,
+            "title": "Madame Web",
+            "description": "Mystery and intrigue surround this dark narrative.",
+            "genre": "Mystery",
+            "year": 2024,
+            "image": "imgs/Madameweb.jpg",
+            "cast": ["Alice", "Bob"]
+          },
+          {
+            "id": 21,
+            "title": "Argylle",
+            "description": "A stylish spy thriller that keeps you guessing.",
+            "genre": "Action",
+            "year": 2023,
+            "image": "imgs/Argylle.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 22,
+            "title": "Lucifer",
+            "description": "A tale of devilish charm and unexpected twists.",
+            "genre": "Fantasy",
+            "year": 2022,
+            "image": "imgs/Lucifer.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 23,
+            "title": "Game of Thrones",
+            "description": "A saga of power struggles in a fantastical world.",
+            "genre": "Fantasy",
+            "year": 2023,
+            "image": "imgs/Gameofthrones.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 24,
+            "title": "Den of Thieves 2",
+            "description": "Heist and action in a high stakes underworld.",
+            "genre": "Action",
+            "year": 2023,
+            "image": "imgs/Denofthieves2.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 25,
+            "title": "Joker 2",
+            "description": "Dark humor and a profound character study in a chaotic world.",
+            "genre": "Thriller",
+            "year": 2024,
+            "image": "imgs/Joker2.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 26,
+            "title": "Extraction 2",
+            "description": "A relentless action film with breathtaking sequences.",
+            "genre": "Action",
+            "year": 2024,
+            "image": "imgs/Extraction2.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 27,
+            "title": "Arcane",
+            "description": "An animated series that blends fantasy with complex lore.",
+            "genre": "Animation",
+            "year": 2023,
+            "image": "imgs/Arcane.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+     
+          {
+            "id": 28,
+            "title": "The Witcher: Sirens of the Deep",
+            "description": "A fresh chapter in the world of fantasy adventures.",
+            "genre": "Fantasy",
+            "year": 2025,
+            "rating": "8.7/10",
+            "image": "imgs/TheWitcherSirens.jpg",
+            "cast": ["Henry Cavill", "Liam Neeson"]
+          },
+          {
+            "id": 29,
+            "title": "Back in Action",
+            "description": "A return to form for a beloved action franchise.",
+            "genre": "Action",
+            "year": 2024,
+            "image": "imgs/BackinAction.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 30,
+            "title": "The Exorcism",
+            "description": "A terrifying journey into demonic possession.",
+            "genre": "Horror",
+            "year": 2023,
+            "image": "imgs/TheExorcism.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 31,
+            "title": "Blood line Killer",
+            "description": "A gritty thriller centered around a notorious criminal.",
+            "genre": "Thriller",
+            "year": 2025,
+            "image": "imgs/BloodlineKiller.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 32,
+            "title": "Sniper: The Last Stand",
+            "description": "Precision and tension define this action-packed movie.",
+            "genre": "Action",
+            "year": 2024,
+            "image": "imgs/SniperTheLastStand.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 33,
+            "title": "The Killer's Game",
+            "description": "A deadly game of cat and mouse among assassins.",
+            "genre": "Thriller",
+            "year": 2023,
+            "image": "imgs/TheKiller'sGame.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 34,
+            "title": "Ad Vitam",
+            "description": "A sci‑fi exploration of eternal life and its consequences.",
+            "genre": "Sci-Fi",
+            "year": 2025,
+            "image": "imgs/AdVitam.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 35,
+            "title": "Sonic the Hedgehog 3",
+            "description": "Speed and adventure in a colorful animated world.",
+            "genre": "Animation",
+            "year": 2024,
+            "image": "imgs/Sonic3.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 36,
+            "title": "Sumala",
+            "description": "A dramatic tale of identity and redemption.",
+            "genre": "Drama",
+            "year": 2023,
+            "image": "imgs/Sumala.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+   
+
+          {
+            "id": 37,
+            "title": "Mouse",
+            "description": "A suspenseful thriller that blurs the lines of reality.",
+            "genre": "Thriller",
+            "year": 2025,
+            "image": "imgs/Mouse.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 38,
+            "title": "Night in Paradise",
+            "description": "A journey through the underworld of crime and passion.",
+            "genre": "Crime",
+            "year": 2024,
+            "image": "imgs/NightinParadise.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 39,
+            "title": "Newtopia",
+            "description": "A speculative vision of an ideal society.",
+            "genre": "Sci-Fi",
+            "year": 2023,
+            "image": "imgs/Newtopia.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 40,
+            "title": "Offer Black Belt",
+            "description": "Martial arts and redemption in this action-packed drama.",
+            "genre": "Action",
+            "year": 2025,
+            "image": "imgs/OfferBlackBelt.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 41,
+            "title": "Parasite",
+            "description": "A sharp social commentary wrapped in a dramatic narrative.",
+            "genre": "Drama",
+            "year": 2024,
+            "image": "imgs/Parasite.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 42,
+            "title": "School 2017",
+            "description": "A nostalgic dive into the trials of high school life.",
+            "genre": "Drama",
+            "year": 2017,
+            "image": "imgs/School2017.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 43,
+            "title": "Steel Rain",
+            "description": "Political intrigue meets action in this riveting tale.",
+            "genre": "Thriller",
+            "year": 2023,
+            "image": "imgs/SteelRain.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 44,
+            "title": "The Drug King",
+            "description": "A gritty look at the rise of a criminal empire.",
+            "genre": "Crime",
+            "year": 2025,
+            "image": "imgs/TheDrugKing.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 45,
+            "title": "The Trunk",
+            "description": "A mysterious journey unfolds with hidden secrets.",
+            "genre": "Mystery",
+            "year": 2024,
+            "image": "imgs/TheTrunk.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 46,
+            "title": "Unlocked",
+            "description": "A suspenseful drama about breaking free from the past.",
+            "genre": "Drama",
+            "year": 2023,
+            "image": "imgs/Unlocked.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+    
+   
+          {
+            "id": 47,
+            "title": "Leonardo DiCaprio",
+            "description": "Academy Award-winning actor known for his diverse roles.",
+            "genre": "Star",
+            "image": "imgs/LeonardoDicaprio.jpg",
+            "cast": []
+          },
+          {
+            "id": 48,
+            "title": "Jason Statham",
+            "description": "Iconic actor known for action-packed roles.",
+            "genre": "Star",
+            "image": "imgs/JasonStatham.jpg",
+            "cast": []
+          },
+          {
+            "id": 49,
+            "title": "Shah Rukh Khan",
+            "description": "Bollywood superstar with a charismatic screen presence.",
+            "genre": "Star",
+            "image": "imgs/ShahRukhKhan.jpg",
+            "cast": []
+          },
+          {
+            "id": 50,
+            "title": "Margot Robbie",
+            "description": "Acclaimed actress known for versatile performances.",
+            "genre": "Star",
+            "image": "imgs/MargotRobbie.jpg",
+            "cast": []
+          },
+          {
+            "id": 51,
+            "title": "Scarlett Johansson",
+            "description": "Award-winning actress celebrated for her roles in blockbusters.",
+            "genre": "Star",
+            "image": "imgs/ScarlettJohansson.jpg",
+            "cast": []
+          },
+          {
+            "id": 52,
+            "title": "Aras Bulut",
+            "description": "Talented actor known for his roles in Turkish dramas.",
+            "genre": "Star",
+            "image": "imgs/ArasBulut.jpg",
+            "cast": []
+          },
+          {
+            "id": 53,
+            "title": "Neslihan Atagül",
+            "description": "Renowned actress with a powerful screen presence.",
+            "genre": "Star",
+            "image": "imgs/Neslihan Atagül.jpg",
+            "cast": []
+          },
+          {
+            "id": 54,
+            "title": "Hrithik Roshan",
+            "description": "Popular Bollywood actor known for his versatility.",
+            "genre": "Star",
+            "image": "imgs/Hrithik Roshan.jpg",
+            "cast": []
+          },
+          {
+            "id": 55,
+            "title": "Aamir Khan",
+            "description": "Versatile actor and filmmaker known for his work in Hindi cinema.",
+            "genre": "Star",
+            "image": "imgs/AamirKhan.jpg",
+            "cast": []
+          },
+          {
+            "id": 56,
+            "title": "Denzel Washington",
+            "description": "Acclaimed actor known for his powerful performances.",
+            "genre": "Star",
+            "image": "imgs/DenzelWashington.jpg",
+            "cast": []
+          },
+          {
+            "id": 57,
+            "title": "Deepika Padukone",
+            "description": "Internationally acclaimed actress noted for her elegance.",
+            "genre": "Star",
+            "image": "imgs/Deepika Padukone .jpg",
+            "cast": []
+          },
+          {
+            "id": 58,
+            "title": "Gong Yoo",
+            "description": "Popular South Korean actor known for his captivating performances.",
+            "genre": "Star",
+            "image": "imgs/GongYoo.jpg",
+            "cast": []
+          },
+          {
+            "id": 59,
+            "title": "Ma Dong-seok",
+            "description": "Rugged actor known for his commanding screen presence.",
+            "genre": "Star",
+            "image": "imgs/MaDong-seok.jpg",
+            "cast": []
+          },
+          {
+            "id": 60,
+            "title": "Burak Özçivit",
+            "description": "Turkish actor famous for his leading roles in drama series.",
+            "genre": "Star",
+            "image": "imgs/BurakÖzçivit.jpg",
+            "cast": []
+          },
+          {
+            "id": 61,
+            "title": "Rayan Reynolds",
+            "description": "Charismatic actor known for his charm on screen.",
+            "genre": "Star",
+            "image": "imgs/RayanReynolds.jpg",
+            "cast": []
+          },
+     
+          {
+            "id": 62,
+            "title": "Animal",
+            "description": "An exciting action-packed film set in the urban jungle.",
+            "genre": "Action",
+            "year": 2025,
+            "image": "imgs/Animal.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 63,
+            "title": "Dhoom 2",
+            "description": "A high-speed heist film with thrilling chases.",
+            "genre": "Action",
+            "year": 2024,
+            "image": "imgs/Dhoom2.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 64,
+            "title": "Dilwale",
+            "description": "A romantic action drama that tugs at the heartstrings.",
+            "genre": "Romance",
+            "year": 2023,
+            "image": "imgs/Dilwale.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 65,
+            "title": "Yodha",
+            "description": "A gripping tale of valor and heroism.",
+            "genre": "Action",
+            "year": 2025,
+            "image": "imgs/Yodha.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 66,
+            "title": "War",
+            "description": "High‑octane action and stunning visuals dominate the screen.",
+            "genre": "Action",
+            "year": 2024,
+            "image": "imgs/War.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 67,
+            "title": "Aashiqui 2",
+            "description": "A soulful romantic drama with memorable music.",
+            "genre": "Romance",
+            "year": 2023,
+            "image": "imgs/Aashiqui2.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 68,
+            "title": "Balbbul",
+            "description": "A poignant film exploring love and loss.",
+            "genre": "Drama",
+            "year": 2025,
+            "image": "imgs/Balbbul.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 69,
+            "title": "Crew",
+            "description": "A behind‑the‑scenes look into the film industry.",
+            "genre": "Drama",
+            "year": 2024,
+            "image": "imgs/Crew.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 70,
+            "title": "Fighter",
+            "description": "An adrenaline‑pumping action movie with explosive sequences.",
+            "genre": "Action",
+            "year": 2023,
+            "image": "imgs/Fighter.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 71,
+            "title": "Rocky Aur Rani",
+            "description": "A family drama with a mix of humor and emotion.",
+            "genre": "Drama",
+            "year": 2025,
+            "image": "imgs/RockyAurRani.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 72,
+            "title": "Jawan",
+            "description": "A blockbuster that brings intense action and drama.",
+            "genre": "Action",
+            "year": 2024,
+            "image": "imgs/Jawan.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 73,
+            "title": "Kabir Singh",
+            "description": "A passionate drama with powerful performances.",
+            "genre": "Drama",
+            "year": 2023,
+            "image": "imgs/KabirSingh.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 74,
+            "title": "Rem Setu",
+            "description": "A mythological journey intertwined with modern storytelling.",
+            "genre": "Adventure",
+            "year": 2025,
+            "image": "imgs/RamSetu.jpeg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 75,
+            "title": "Singham Again",
+            "description": "A reboot that revives the spirit of a classic action series.",
+            "genre": "Action",
+            "year": 2024,
+            "image": "imgs/SinghamAgain.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 76,
+            "title": "Pathaan",
+            "description": "A fast‑paced spy thriller with high stakes.",
+            "genre": "Action",
+            "year": 2023,
+            "image": "imgs/Pathaan.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 77,
+            "title": "Tamasha",
+            "description": "A romantic drama that explores personal identity.",
+            "genre": "Drama",
+            "year": 2025,
+            "image": "imgs/Tamasha.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 78,
+            "title": "Ek Villain",
+            "description": "A dark thriller with intense emotional depth.",
+            "genre": "Thriller",
+            "year": 2024,
+            "image": "imgs/TheVillain.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 79,
+            "title": "Tiger 3",
+            "description": "A ferocious action film with gripping sequences.",
+            "genre": "Action",
+            "year": 2023,
+            "image": "imgs/Tiger3.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+   
+          {
+            "id": 80,
+            "title": "The Conjuring",
+            "description": "A spine‑tingling horror based on true events.",
+            "genre": "Horror",
+            "year": 2025,
+            "image": "imgs/TheConjuring.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 81,
+            "title": "The Nun",
+            "description": "A terrifying tale of demonic possession.",
+            "genre": "Horror",
+            "year": 2024,
+            "image": "imgs/TheNun.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 82,
+            "title": "The Ring",
+            "description": "A cursed videotape brings horror to life.",
+            "genre": "Horror",
+            "year": 2023,
+            "image": "imgs/TheRing.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 83,
+            "title": "Annabelle",
+            "description": "A possessed doll terrorizes a family.",
+            "genre": "Horror",
+            "year": 2025,
+            "image": "imgs/Annabelle.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 84,
+            "title": "Siccin",
+            "description": "A Turkish horror story that blurs the line between reality and nightmare.",
+            "genre": "Horror",
+            "year": 2024,
+            "image": "imgs/Siccin.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 85,
+            "title": "La LLorona",
+            "description": "A haunting story based on a Latin American legend.",
+            "genre": "Horror",
+            "year": 2023,
+            "image": "imgs/LaLLorona.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 86,
+            "title": "Eli",
+            "description": "A disturbing exploration of the supernatural.",
+            "genre": "Horror",
+            "year": 2025,
+            "image": "imgs/Eli.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 87,
+            "title": "Haunt",
+            "description": "A psychological horror that leaves a lasting impact.",
+            "genre": "Horror",
+            "year": 2024,
+            "image": "imgs/Haunt.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 88,
+            "title": "The Grudge",
+            "description": "A curse that transcends generations.",
+            "genre": "Horror",
+            "year": 2023,
+            "image": "imgs/TheGrudge.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 89,
+            "title": "A Quiet Place",
+            "description": "Silence is survival in this post‑apocalyptic horror.",
+            "genre": "Horror",
+            "year": 2025,
+            "image": "imgs/AQuietPlace.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 90,
+            "title": "Cukur",
+            "description": "A gritty drama set in the underbelly of urban life.",
+            "genre": "Drama",
+            "year": 2025,
+            "image": "imgs/cukur.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 91,
+            "title": "SOZ",
+            "description": "A story of loyalty, betrayal, and resilience.",
+            "genre": "Drama",
+            "year": 2024,
+            "image": "imgs/Soz.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 92,
+            "title": "Diriliş: Ertuğrul",
+            "description": "An epic historical saga of valor and honor.",
+            "genre": "Historical",
+            "year": 2023,
+            "image": "imgs/DirilişErtuğrul.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 93,
+            "title": "Kuruluş: Osman",
+            "description": "The foundation of an empire unfolds in this historical drama.",
+            "genre": "Historical",
+            "year": 2025,
+            "image": "imgs/KuruluşOsman.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 94,
+            "title": "The Festival of Troubadours",
+            "description": "A celebration of music and tradition.",
+            "genre": "Musical",
+            "year": 2024,
+            "image": "imgs/TheFestivalofTroubadours.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 95,
+            "title": "Miracle in Cell No.7",
+            "description": "An emotional journey of love and justice.",
+            "genre": "Drama",
+            "year": 2023,
+            "image": "imgs/MiracleinCellNo7.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 96,
+            "title": "Love 101",
+            "description": "A youthful and energetic romance.",
+            "genre": "Romantic",
+            "year": 2025,
+            "image": "imgs/Love101.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 97,
+            "title": "Bittersoet",
+            "description": "A modern retelling of classic themes.",
+            "genre": "Drama",
+            "year": 2024,
+            "image": "imgs/Bittersoet.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 98,
+            "title": "Aşk Laftan Anlamaz",
+            "description": "A lighthearted romantic comedy.",
+            "genre": "Romantic",
+            "year": 2023,
+            "image": "imgs/AşkLaftanAnlamaz.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 99,
+            "title": "In Good Hands",
+            "description": "A suspenseful tale of survival and trust.",
+            "genre": "Thriller",
+            "year": 2025,
+            "image": "imgs/InGoodHands.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 100,
+            "title": "KUL",
+            "description": "An intense drama exploring the depths of human emotion.",
+            "genre": "Drama",
+            "year": 2024,
+            "image": "imgs/Kul.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 101,
+            "title": "Love Tactics",
+            "description": "An innovative take on romance and strategy.",
+            "genre": "Romantic",
+            "year": 2023,
+            "image": "imgs/LoveTactics.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 102,
+            "title": "The Lion King",
+            "description": "A timeless tale of courage and royalty.",
+            "genre": "Animation",
+            "year": 1994,
+            "image": "imgs/TheLionKing.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 103,
+            "title": "One Piece",
+            "description": "An epic adventure with pirates in search of treasure.",
+            "genre": "Animation",
+            "year": 1999,
+            "image": "imgs/OnePiece.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 104,
+            "title": "Attack on Titan",
+            "description": "Humans struggle against giant beings in a post‑apocalyptic world.",
+            "genre": "Animation",
+            "year": 2013,
+            "image": "imgs/AttackonTitan.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 105,
+            "title": "Death Note",
+            "description": "A high‑stakes psychological thriller with supernatural elements.",
+            "genre": "Animation",
+            "year": 2006,
+            "image": "imgs/DeathNote.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 106,
+            "title": "Frozen",
+            "description": "An enchanting winter tale with heartwarming songs.",
+            "genre": "Animation",
+            "year": 2013,
+            "image": "imgs/Frozen.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 107,
+            "title": "Coco",
+            "description": "A celebration of family and tradition in a vibrant animated journey.",
+            "genre": "Animation",
+            "year": 2017,
+            "image": "imgs/Coco.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 108,
+            "title": "Tom and Jerry",
+            "description": "Classic cartoon antics between a cat and mouse.",
+            "genre": "Animation",
+            "year": 1940,
+            "image": "imgs/TomandJerry.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 109,
+            "title": "Ratatouille",
+            "description": "An animated journey into the world of gourmet cooking.",
+            "genre": "Animation",
+            "year": 2007,
+            "image": "imgs/Ratatouille.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 110,
+            "title": "Bolt",
+            "description": "The adventures of a super‑dog in a high‑octane animated film.",
+            "genre": "Animation",
+            "year": 2008,
+            "image": "imgs/Bolt.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 111,
+            "title": "Detective Conan",
+            "description": "A brilliant animated detective solves mysteries.",
+            "genre": "Animation",
+            "year": 1996,
+            "image": "imgs/DetectiveConan.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 112,
+            "title": "Dragon Ball Z",
+            "description": "Epic battles among super‑powered warriors.",
+            "genre": "Animation",
+            "year": 1989,
+            "image": "imgs/DragonBallZ.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 113,
+            "title": "IF",
+            "description": "An unconventional animated narrative that challenges norms.",
+            "genre": "Animation",
+            "year": 2020,
+            "image": "imgs/IF.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 114,
+            "title": "Ice Age",
+            "description": "A humorous journey through a frozen prehistoric world.",
+            "genre": "Animation",
+            "year": 2002,
+            "image": "imgs/IceAge.jpg",
+            "cast": ["Cast detail not provided"]
+          },
+          {
+            "id": 115,
+            "title": "Hotel Transylvania Transformania",
+            "description": "The latest chapter in a quirky animated horror‑comedy saga.",
+            "genre": "Animation",
+            "year": 2022,
+            "image": "imgs/HotelTransylvaniaTransformania.jpg",
+            "cast": ["Cast detail not provided"]
+          }
+        ],
+   
+        "stars": [
+          {
+            "name": "Leonardo Dicaprio",
+            "description": "Leonardo DiCaprio is an American actor and film producer known for his intense roles in films such as 'Titanic' and 'Inception'. He is one of the most acclaimed actors of his generation.",
+            "movies": [
+              "Titanic",
+              "Inception",
+              "The Revenant",
+              "Catch Me If You Can",
+              "The Wolf of Wall Street"
+            ],
+            "image": "LeonardoDicaprio.jpg"
+          },
+          {
+            "name": "Jason Statham",
+            "description": "Jason Statham is an English actor and former competitive diver, known for his roles in action films, particularly 'The Transporter' series and 'The Expendables'.",
+            "movies": [
+              "The Transporter",
+              "The Expendables",
+              "Crank",
+              "Fast & Furious 7",
+              "The Mechanic"
+            ],
+            "image": "JasonStatham.jpg"
+          },
+          {
+            "name": "Shah Rukh Khan",
+            "description": "Shah Rukh Khan, often called the 'King of Bollywood', is an Indian actor, film producer, and television personality. He is one of the biggest film stars in the world.",
+            "movies": [
+              "Dilwale Dulhania Le Jayenge",
+              "My Name Is Khan",
+              "Chennai Express",
+              "Kabhi Khushi Kabhie Gham",
+              "Raees"
+            ],
+            "image": "ShahRukhKhan.jpg"
+          },
+          {
+            "name": "Margot Robbie",
+            "description": "Margot Robbie is an Australian actress and producer known for her roles in 'The Wolf of Wall Street' and 'Suicide Squad'. She is one of Hollywood's most successful actresses.",
+            "movies": [
+              "The Wolf of Wall Street",
+              "Suicide Squad",
+              "I, Tonya",
+              "Once Upon a Time in Hollywood",
+              "Birds of Prey"
+            ],
+            "image": "MargotRobbie.jpg"
+          },
+          {
+            "name": "Scarlett Johansson",
+            "description": "Scarlett Johansson is an American actress known for her versatile roles in films like 'The Avengers' series and 'Lost in Translation'. She is one of the highest-paid actresses in the world.",
+            "movies": [
+              "The Avengers",
+              "Lost in Translation",
+              "Marriage Story",
+              "Lucy",
+              "Jojo Rabbit"
+            ],
+            "image": "ScarlettJohansson.jpg"
+          },
+          {
+            "name": "Aras Bulut",
+            "description": "Aras Bulut İynemli is a Turkish actor known for his roles in TV series and films, including 'Çukur' and 'Miracle in Cell No. 7'.",
+            "movies": [
+              "Çukur",
+              "Miracle in Cell No. 7",
+              "Efsane",
+              "Kelebekler"
+            ],
+            "image": "ArasBulut.jpg"
+          },
+          {
+            "name": "Neslihan Atagül",
+            "description": "Neslihan Atagül is a Turkish actress known for her roles in TV series and films, particularly 'Kara Sevda' and 'Fazilet Hanım ve Kızları'.",
+            "movies": [
+              "Kara Sevda",
+              "Fazilet Hanım ve Kızları",
+              "Daha",
+              "Sefirin Kızı"
+            ],
+            "image": "Neslihan Atagül.jpg"
+          },
+          {
+            "name": "Hrithik Roshan",
+            "description": "Hrithik Roshan is an Indian actor known for his dancing skills and his roles in Bollywood films like 'Jodhaa Akbar' and 'War'. He is one of India's most popular and highest-paid actors.",
+            "movies": [
+              "Jodhaa Akbar",
+              "War",
+              "Zindagi Na Milegi Dobara",
+              "Koi... Mil Gaya",
+              "Bang Bang!"
+            ],
+            "image": "Hrithik Roshan.jpg"
+          },
+          {
+            "name": "Aamir Khan",
+            "description": "Aamir Khan is an Indian actor, director, and producer, renowned for his work in Bollywood. He is known for his socially relevant films and intense performances.",
+            "movies": [
+              "Lagaan",
+              "Dangal",
+              "PK",
+              "3 Idiots",
+              "Taare Zameen Par"
+            ],
+            "image": "AamirKhan.jpg"
+          },
+          {
+            "name": "Denzel Washington",
+            "description": "Denzel Washington is an American actor, director, and producer, regarded as one of the greatest actors of his generation, known for films such as 'Training Day' and 'Glory'.",
+            "movies": [
+              "Training Day",
+              "Glory",
+              "Fences",
+              "Malcolm X",
+              "The Equalizer"
+            ],
+            "image": "DenzelWashington.jpg"
+          },
+          {
+            "name": "Deepika Padukone",
+            "description": "Deepika Padukone is an Indian actress and producer, known for her roles in Bollywood films like 'Padmaavat' and 'Chennai Express'. She is one of the highest-paid actresses in India.",
+            "movies": [
+              "Padmaavat",
+              "Chennai Express",
+              "Piku",
+              "Yeh Jawaani Hai Deewani",
+              "Chhapaak"
+            ],
+            "image": "Deepika Padukone .jpg"
+          },
+          {
+            "name": "Gong Yoo",
+            "description": "Gong Yoo is a South Korean actor best known for his roles in the hit TV series 'Goblin' and the film 'Train to Busan'. He is widely regarded as one of Korea's top actors.",
+            "movies": [
+              "Goblin",
+              "Train to Busan",
+              "The Age of Shadows",
+              "Coffee Prince",
+              "Silenced"
+            ],
+            "image": "GongYoo.jpg"
+          },
+          {
+            "name": "Ma Dong-seok",
+            "description": "Ma Dong-seok is a South Korean actor known for his roles in action films and his portrayal of strong, charismatic characters in movies like 'Train to Busan'.",
+            "movies": [
+              "Train to Busan",
+              "The Outlaws",
+              "Along with the Gods",
+              "Unstoppable"
+            ],
+            "image": "MaDong-seok.jpg"
+          },
+          {
+            "name": "Burak Özçivit",
+            "description": "Burak Özçivit is a Turkish actor and model, best known for his role in the popular TV series 'Diriliş: Ertuğrul' and for his roles in Turkish dramas.",
+            "movies": [
+              "Diriliş: Ertuğrul",
+              "Kardeşim Benim",
+              "Çalıkuşu",
+              "Bizim Hikaye"
+            ],
+            "image": "BurakÖzçivit.jpg"
+          },
+          {
+            "name": "Ryan Reynolds",
+            "description": "Ryan Reynolds is a Canadian actor and producer known for his roles in 'Deadpool' and 'The Proposal'. He is known for his wit and comedy in Hollywood films.",
+            "movies": [
+              "Deadpool",
+              "The Proposal",
+              "Detective Pikachu",
+              "Green Lantern",
+              "6 Underground"
+            ],
+            "image": "RayanReynolds.jpg"
+          }
+        ]
+      }

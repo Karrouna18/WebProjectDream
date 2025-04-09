@@ -7,6 +7,7 @@ body {
 }
 
 
+
 .hero {
     position: relative;
     background: url(imgs/Homeback.jpg) no-repeat center center/cover;
@@ -378,7 +379,7 @@ input {
 }
 
 .footer-socials a:hover {
-    color: rgb(170, 0, 0);
+    color: rgb(0, 0, 0);
 }
 .footer-toggle {
     margin-top: 20px;
@@ -478,16 +479,16 @@ body.light-mode .hero .logo{
 
 /* Hero Content */
 body.light-mode .hero-content  {
-    background: linear-gradient(to right, #ff7070, #db2525);
-border-radius: 60%;
+    background: linear-gradient(to right,#b09a9a, #ccc2c2);
     color: rgb(232, 232, 232);
+    
 }
 body.light-mode .hero-content h1{
 color: #dcdcdc;
 }
 body.light-mode .hero-content .signup-form button,
 body.light-mode .hero .overlay .button-container .aboutus{
-    background:#ff0000;
+    background:#770808;
     color: white;
 }
 body.light-mode .hero-content .signup-form button:hover,
@@ -520,7 +521,7 @@ body.light-mode .footer {
 
 /* Buttons and Input Styles */
 
-body.light-mode input,
+body.light-mode input ,
 body.light-mode select {
     background-color: #fff;
     color: #333;
@@ -576,7 +577,7 @@ body.light-mode select {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 body.light-mode .footer .footer-socials a:hover{
-    color:#ff0000;
+    color:#000000;
 }
 
 

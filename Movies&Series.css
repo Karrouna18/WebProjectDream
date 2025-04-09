@@ -14,7 +14,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: black;
+    background: linear-gradient(rgb(119, 4, 4),rgb(82, 71, 71));
    
 }
 

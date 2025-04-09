@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     const categoriesBtn = document.getElementById("categoriesBtn");
     const subMenu = document.querySelector(".categories .sub-menu");
@@ -14,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
 
 
 let track = document.querySelector('.carousel-track');
@@ -86,38 +88,6 @@ function handleScroll(container, leftBtn, rightBtn) {
             ? "none"
             : "block";
 }
-
-let movies = [ 
-    {
-        title: "Buried Hearts",
-        description: "This is the description of Movie 1.",
-        img: "imgs/images.jpg", cast: ["John Doe", "Jane Smith", "Max Power"]
-    },
-    {
-        title: "Study Group",
-        description: "This is the description of Movie 2.",
-        img: "imgs/Study_Group.png",
-    },
-    {
-        title: "My fault London",
-        description: "This is the description of Movie 3.",
-        img: "imgs/myfault London.jpg",
-    },
-    { id: 1, title: "تحت سابع أرض",  description: "تحت سابع أرض هو مسلسل درامي مليء بالأحداث المثيرة التي تدور في أعماق الأرض. تتبع القصة مجموعة من الأشخاص الذين يجدون أنفسهم عالقين في مكان غريب ومظلم، حيث تبدأ المغامرات والتحديات التي تواجههم. يتميز هذا العمل بالتشويق والترقب، مع تفاصيل مثيرة ستجعلك تتابع الأحداث بشغف.", genre: "Family", year: 2025,rating:"8.5/10", img: "imgs/TahtSabehAred.jpeg",  cast: ["أحمد السقا", "منى زكي", "محمود عبد المغني"] },
-    { id: 2, title: "معاوية", description: "مسلسل معاوية هو عمل درامي تاريخي يعرض قصة حياة الصحابي معاوية بن أبي سفيان، ويأخذك عبر أحداث تاريخية مهمة وتحديات كبيرة في فترة خلافته. ينقلك العمل عبر الأحداث المليئة بالدراما والتشويق، مع تقديم العديد من اللحظات المؤثرة في حياة الشخصية.", genre: "Action", year: 2024, rating:"9.0/10", img: "imgs/Moawiya.jpg",  cast: ["تيم حسن", "كاريس بشار", "سلاف فواخرجي"] // Key Arabic cast
-    }, 
-    { id: 3, title: "البطل",  description: "البطل هو مسلسل درامي يشهد ظهور شخصية رئيسية تخوض مغامرات مليئة بالتحديات. يروي المسلسل قصة بطل خارق يتعرض لاختبارات صعبة في حياته. القصة مليئة بالإثارة والتشويق، وتركز على جوانب القوة الداخلية للشخصية وكيفية التعامل مع الأزمات.", genre: "Drama", year: 2023, rating:"7.8/10" ,img: "imgs/AlBatal.jpg",  cast: ["أحمد مكي", "دينا الشربيني", "أحمد داوود"] // Key Arabic cast
-    }, 
-    { id: 4, title: "تحت الأرض",  description: "قصة غامضة عن مجموعة تبحث عن الحقيقة في عالم خفي.", genre: "Sci-Fi", year: 2024, rating:"8.0/10" ,img: "imgs/TahetAlAred.jpg", },
-    { id: 5, title: "بالدم", description: "Laugh-out-loud comedy film.", genre: "Comedy", year: 2023, img: "imgs/Bldam.jpg" },
-    { id: 6, title: "فهد البطل", description: "Spine-chilling thriller.", genre: "Horror", year: 2025, img: "imgs/FahedAlBatal.jpg", cast: ["عمرو يوسف", "غادة عبد الرازق", "أحمد زاهر"] },
-    { id: 7, title: "نص الشعب اسمه محمد", description: "A special movie for Ramadan.", genre: "Family", year: 2025, img: "imgs/NosALShaab.jpg" },
-    { id: 8, title: "ولاد شمس", description: "High-octane action movie.", genre: "Action", year: 2024, img: "imgs/WladShames.jpg" },
-    { id: 9, title: "بيت حموله", description: "Emotional drama movie.", genre: "Drama", year: 2023, img: "imgs/BetHmouleh.jpg" },
-    { id: 10, title: "يوميات رجل عانس", description: "An intergalactic adventure.", genre: "Sci-Fi", year: 2024, img: "imgs/YawmeyatRajolAanes.jpg" },
-    { id: 11, title: "السيع ابن الجبل", description: "Laugh-out-loud comedy film.", genre: "Comedy", year: 2023, img: "imgs/AlSabihAbnlJabal.jpg" },
-    { id: 12, title: "رامز ايلون ماسك", description: "Spine-chilling thriller.", genre: "Horror", year: 2025, img: "imgs/RamezElonMasr.jpg" }
-];
 
 
 
@@ -213,103 +183,6 @@ document.getElementById('searchBtn').addEventListener('click', displaySearchResu
 document.getElementById('filterBtn').addEventListener('click', displaySearchResults);
 document.getElementById('searchInput').addEventListener('input', displaySearchResults);
 document.getElementById('yearFilter').addEventListener('input', displaySearchResults);
-
-
-// Hard-coded star data
-let stars = [
-    {
-        name: "Leonardo Dicaprio",
-        description: "An Academy Award-winning actor known for his roles in Titanic, Inception, and The Revenant.",
-        movies: ["Titanic", "Inception", "The Revenant", "Shutter Island"],
-        img: "imgs/LeonardoDicaprio.jpg"
-    },
-    {
-        name: "Jason Statham",
-        description: "A British actor known for his action-packed roles in The Transporter, Fast & Furious, and The Expendables.",
-        movies: ["The Transporter", "Fast & Furious", "The Expendables", "Wrath of Man"],
-        img: "imgs/JasonStatham.jpg"
-    },
-    {
-        name: "Shah Rhukh Khan",
-        description: "A Bollywood superstar known as 'King Khan,' famous for films like Dilwale, Raees, and My Name Is Khan.",
-        movies: ["Dilwale", "Raees", "My Name Is Khan", "Pathaan"],
-        img: "imgs/ShahRukhKhan.jpg"
-    },
-    {
-        name: "Margot Robbie",
-        description: "An Australian actress known for her roles in The Wolf of Wall Street, Suicide Squad, and Barbie.",
-        movies: ["The Wolf of Wall Street", "Suicide Squad", "Barbie", "I, Tonya"],
-        img: "imgs/MargotRobbie.jpg"
-    },
-    {
-        name: "Scarlett Johansson",
-        description: "An American actress known for playing Black Widow in the Marvel Cinematic Universe.",
-        movies: ["Black Widow", "Lucy", "Marriage Story", "Lost in Translation"],
-        img: "imgs/ScarlettJohansson.jpg"
-    },
-    {
-        name: "Aras Bulut",
-        description: "A talented Turkish actor known for his emotional depth and strong screen presence.",
-        movies: ["Çukur(TV Series)","İçerde (TV Series)","Koğuştaki Mucize"],
-        img: "imgs/ArasBulut.jpg"
-    },
-    {
-        name: "Neslihan Atagül",
-        description: "A popular Turkish actress known for her natural acting and beauty.",
-        movies: ["Kara Sevda","Sefirin Kızı","Araf (Movie)"],
-        img: "imgs/Neslihan Atagül.jpg"
-    },
-    {
-        name: "Hrithik Roshan",
-        description: "A top Bollywood actor famous for his dancing skills and versatile roles.",
-        movies: ["Krrish (Movie Series)","War (Movie)","Zindagi Na Milegi Dobara (Movie)","Jodhaa Akbar (Movie)"],
-        img: "imgs/Hrithik Roshan.jpg"
-    },
-    {
-        name: "Aamir Khan",
-        description: "One of Bollywood’s most respected actors and filmmakers, known for meaningful roles.",
-        movies: ["3 Idiots (Movie)","Dangal (Movie)","PK (Movie),Lagaan (Movie)"],
-        img: "imgs/AamirKhan.jpg"
-    },
-    {
-        name: "Denzel Washington",
-        description: "An award-winning American actor known for his powerful and intense performances.",
-        movies: ["Training Day (Movie)","Man on Fire (Movie)","The Equalizer series (Movies)","Fences (Movie)"],
-        img: "imgs/DenzelWashington.jpg"
-    },
-    {
-        name: "Deepika Padukone",
-        description: "A leading Bollywood actress praised for her beauty and acting range.",
-        movies: ["Padmaavat (Movie)","Chennai Express (Movie)","Piku (Movie)Pathaan (Movie)"],
-        img: "imgs/Deepika Padukone .jpg"
-    },
-    {
-        name: "Gong Yoo",
-        description: "A South Korean actor known internationally for his strong roles in dramas and thrillers.",
-        movies: ["Train to Busan (Movie)","Goblin (Guardian: The Lonely and Great God) (TV Series)","The Silent Sea (TV Series)"],
-        img: "imgs/GongYoo.jpg"
-    },
-    {
-        name: "Ma Dong-seok",
-        description: "",
-        movies: [],
-        img: "imgs/MaDong-seok.jpg"
-    },
-    {
-        name: "Burak Özçivit",
-        description: "A popular Turkish actor and model known for historical and romantic roles.",
-        movies: ["Kuruluş: Osman (TV Series)","Kara Sevda (Endless Love) (TV Series)","Çalıkuşu (TV Series)"],
-        img: "imgs/BurakÖzçivit.jpg"
-    },
-    {
-        name: "Rayan Reynolds",
-        description: "",
-        movies: [],
-        img: "imgs/RayanReynolds.jpg"
-    },
-];
-
-
 
 
 //Movie POP UP
@@ -578,28 +451,49 @@ function filterByCategory(category) {
     
 }
 
+
+
+
+
+// -------------------------------------------------------
 // Watchlist functionality
 let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+console.log("Initial watchlist loaded from localStorage:", watchlist);
 
 // Function to toggle movie in watchlist
 function toggleWatchlist(movieId) {
+    console.log("Toggling movie ID:", movieId);
     const index = watchlist.indexOf(movieId);
+
     if (index === -1) {
         watchlist.push(movieId);
+        console.log("Movie added to watchlist:", movieId);
     } else {
         watchlist.splice(index, 1);
+        console.log("Movie removed from watchlist:", movieId);
     }
+
     localStorage.setItem('watchlist', JSON.stringify(watchlist));
+    console.log("Updated watchlist saved to localStorage:", watchlist);
+
     updateHeartIcons();
+
+    // Only if you're on the watchlist page, update it immediately
+    const isOnWatchlistPage = document.querySelector('.watchlist-container');
+    if (isOnWatchlistPage) {
+        console.log("Reloading watchlist page after toggle...");
+        loadWatchlist();
+    }
 }
 
 // Update heart icons based on watchlist
 function updateHeartIcons() {
+    console.log("Updating heart icons based on watchlist...");
     document.querySelectorAll('.watchlist-heart').forEach(heart => {
         const movieId = heart.getAttribute('data-movie-id');
         if (watchlist.includes(movieId)) {
             heart.classList.add('active');
-            heart.textContent = '❤️';
+            heart.textContent = '❤';
         } else {
             heart.classList.remove('active');
             heart.textContent = '🤍';
@@ -611,26 +505,33 @@ function updateHeartIcons() {
 document.addEventListener('click', function(e) {
     if (e.target.classList.contains('watchlist-heart')) {
         const movieId = e.target.getAttribute('data-movie-id');
+        console.log("Heart icon clicked for movieId:", movieId);
         toggleWatchlist(movieId);
     }
 });
 
 // Initialize hearts on page load
 updateHeartIcons();
+
 // In Movies&Series.js, add this function
 function loadWatchlist() {
-    if (!document.querySelector('.watchlist-container')) return;
-    
+    if (!document.querySelector('.watchlist-container')) {
+        console.log("Not on the watchlist page. Skipping loadWatchlist.");
+        return;
+    }
+
+    console.log("Loading watchlist on page...");
     const watchlistContainer = document.getElementById('watchlist-movies');
     watchlistContainer.innerHTML = '';
-    
+
     if (watchlist.length === 0) {
+        console.log("Watchlist is empty.");
         watchlistContainer.innerHTML = '<p>Your watchlist is empty. Add movies by clicking the heart icon.</p>';
         return;
     }
-    
+
     watchlist.forEach(movieId => {
-        const movie = movies.find(m => m.id == movieId);
+        const movie = movies.find(m => String(m.id) === String(movieId));
         if (movie) {
             const movieElement = document.createElement('div');
             movieElement.classList.add('watchlist-movie');
@@ -639,13 +540,15 @@ function loadWatchlist() {
                 <img src="${movie.img}" alt="${movie.title}">
                 <div class="watchlist-movie-info">
                     <h3>${movie.title}</h3>
-                    <p>${movie.year} • ${movie.genre}</p>
+                    <p>${movie.year || "Unknown Year"} • ${movie.genre || "Unknown Genre"}</p>
                 </div>
             `;
             watchlistContainer.appendChild(movieElement);
+        } else {
+            console.warn("Movie not found for ID:", movieId);
         }
     });
-    
+
     // Add event listeners to remove buttons
     document.querySelectorAll('.remove-from-watchlist').forEach(button => {
         button.addEventListener('click', function(e) {
@@ -653,18 +556,20 @@ function loadWatchlist() {
             const movieId = this.getAttribute('data-movie-id');
             const index = watchlist.indexOf(movieId);
             if (index !== -1) {
+                console.log("Removing movie from watchlist:", movieId);
                 watchlist.splice(index, 1);
                 localStorage.setItem('watchlist', JSON.stringify(watchlist));
                 loadWatchlist();
+                updateHeartIcons();
             }
         });
     });
-    
+
     // Add click event to open movie details
     document.querySelectorAll('.watchlist-movie').forEach(card => {
         card.addEventListener('click', function() {
             const movieId = this.querySelector('button').getAttribute('data-movie-id');
-            const movie = movies.find(m => m.id == movieId);
+            const movie = movies.find(m => String(m.id) === String(movieId));
             if (movie) {
                 openMovieModal(movie);
             }
@@ -674,8 +579,6 @@ function loadWatchlist() {
 
 // Call this on page load
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOMContentLoaded - initializing watchlist view...");
     loadWatchlist();
 });
-
-
-
