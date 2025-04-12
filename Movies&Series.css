@@ -15,7 +15,6 @@ header {
     align-items: center;
     padding: 20px;
     background: linear-gradient(rgb(119, 4, 4),rgb(82, 71, 71));
-   
 }
 
 header .logo h1 {
@@ -366,8 +365,8 @@ footer p {
     align-items: center;
     flex-direction: column;
     background-color:#222;
-    
-    
+    padding: 20px;
+    margin-top:20px;
 }
 /* Rating stars */
 #ratingStars {
@@ -1266,4 +1265,38 @@ nav ul li a:hover {
     font-size: 16px;
     cursor: pointer;
     z-index: 10;
+}            
+
+
+
+
+
+
+
+
+
+
+/* Watch Now button styles */
+.watch-now-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #e50914, #b81d24);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 0 4px 14px rgba(229, 9, 20, 0.4);
 }
+
+.watch-now-button:hover {
+    opacity: 0.9;
+}
+
+.watch-now-button.in-watchlist {
+    background: linear-gradient(90deg, #00c853, #43a047);
+    box-shadow: 0 4px 14px rgba(0, 200, 83, 0.4);
+}
+

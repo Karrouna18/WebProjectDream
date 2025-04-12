@@ -1,4 +1,3 @@
-// FAQ Toggle Functionality
 document.querySelectorAll(".faq-question").forEach(button => {
     button.addEventListener("click", function () {
         const answer = this.nextElementSibling;
@@ -8,7 +7,6 @@ document.querySelectorAll(".faq-question").forEach(button => {
             answer.style.display = "none";
             icon.textContent = "+";
         } else {
-            // Close other open answers before opening a new one
             document.querySelectorAll(".faq-answer").forEach(item => item.style.display = "none");
             document.querySelectorAll(".toggle").forEach(icon => icon.textContent = "+");
 

@@ -1,31 +1,26 @@
-// === MOVIE SCROLL FUNCTIONALITY ===
+
 let moviesWrapper = document.getElementById("movieContainer");
 let btnLeft = document.getElementById("leftBtn");
 let btnRight = document.getElementById("rightBtn");
-let scrollAmount = 730; // Amount to scroll in pixels
+let scrollAmount = 730; 
 
 if (moviesWrapper) {
-    // Ensure first image is fully visible on load
     moviesWrapper.scrollLeft = 0;
     handleScroll();
 
-    // Scroll Right
     btnRight.addEventListener("click", function () {
         moviesWrapper.scrollBy({ left: scrollAmount, behavior: "smooth" });
         setTimeout(handleScroll, 730);
     });
 
-    // Scroll Left
     btnLeft.addEventListener("click", function () {
         moviesWrapper.scrollBy({ left: -scrollAmount, behavior: "smooth" });
         setTimeout(handleScroll, 730);
     });
 
-    // Add event listener to monitor scroll changes
     moviesWrapper.addEventListener("scroll", handleScroll);
 }
 
-// Move `handleScroll()` outside so it can be globally accessible
 function handleScroll() {
     let container = document.getElementById("movieContainer");
     let leftBtn = document.getElementById("leftBtn");
@@ -33,10 +28,8 @@ function handleScroll() {
 
     if (!container) return;
 
-    // Hide left button if at the start
     leftBtn.style.display = container.scrollLeft <= 0 ? "none" : "block";
 
-    // Hide right button if at the end
     rightBtn.style.display =
         container.scrollLeft + container.clientWidth >= container.scrollWidth - 1
             ? "none"
@@ -77,30 +70,26 @@ document.getElementById("loginForm").onsubmit = function(event) {
     window.location.href = 'Movies&Series.html'; 
 }
 
-//footer
+
 let subscribeBtn = document.getElementById('subscribeBtn');
 let emailInput = document.getElementById('newsletterEmail');
 let messageElement = document.getElementById('message');
-let form = document.getElementById('newsletter-form'); // Get the form element
+let form = document.getElementById('newsletter-form'); 
 
-// Check if the user is already subscribed
 if (localStorage.getItem('subscribed') === 'true') {
   subscribeBtn.innerText = 'Subscribed';
-  subscribeBtn.disabled = true; // Disable subscribe button after subscription
-  emailInput.disabled = true;   // Disable email input after subscription
+  subscribeBtn.disabled = true; 
+  emailInput.disabled = true;    
 } else {
-  // Ensure the input and button are active when page loads (in case of reloading)
   subscribeBtn.innerText = 'Subscribe';
   subscribeBtn.disabled = false;
   emailInput.disabled = false;
 }
 
-// Handle form submission instead of button click
 form.addEventListener('submit', function (event) {
-  event.preventDefault(); // ⛔ Prevent the page from reloading
+  event.preventDefault(); 
 
-  let email = emailInput.value.trim(); // Get the email value
-
+  let email = emailInput.value.trim(); 
   if (!email) {
     showMessage('Please enter your email', 'error');
   } else if (!isValidEmail(email)) {
@@ -115,11 +104,11 @@ form.addEventListener('submit', function (event) {
     subscribeBtn.disabled = true;
     emailInput.disabled = true;
 
-    emailInput.value = ''; // Clear input field
+    emailInput.value = ''; 
   }
 });
 
-// Show message under the email input
+
 function showMessage(text, type) {
   messageElement.textContent = text;
   messageElement.classList.remove('success', 'error', 'valid');
@@ -143,7 +132,6 @@ function showMessage(text, type) {
   }, 3000);
 }
 
-// Email validation function
 function isValidEmail(email) {
   let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
   return emailRegex.test(email);
@@ -151,11 +139,10 @@ function isValidEmail(email) {
 
 
 
-//Light mode
   let toggle = document.getElementById("themeToggle");
   let body = document.body;
 
-  // Load saved theme from localStorage
+  
   if (localStorage.getItem("theme") === "light") {
     body.classList.add("light-mode");
     toggle.checked = true;
