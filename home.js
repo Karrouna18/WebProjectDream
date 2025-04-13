@@ -158,3 +158,50 @@ function isValidEmail(email) {
     }
   });
 
+
+
+  
+  fetch("trending.json")
+  .then(res => res.json())
+  .then(movies => {
+   let container = document.getElementById("movieContainer");
+    movies.forEach(movie => {
+      let div = document.createElement("div");
+      div.classList.add("grid");
+      div.innerHTML = `<img src="${movie.image}" alt="${movie.title}" data-id="${movie.id}">`;
+      container.appendChild(div);
+    });
+
+    // Add click listeners for modal popups
+    document.querySelectorAll("#movieContainer img").forEach(img => {
+      img.addEventListener("click", () => {
+       let movieId = img.getAttribute("data-id");
+        let selectedMovie = movies.find(m => m.id == movieId);
+        openMovieModal(selectedMovie);
+      });
+    });
+    handleScroll();
+  });
+  function openMovieModal(movie) {
+    // Always close login modal when opening movie modal
+    document.getElementById("loginModal").style.display = "none";
+  
+    document.getElementById("movieCover").src = movie.modalImage ;
+    document.getElementById("movieTitle").innerText = movie.title;
+    document.getElementById("movieMeta").innerText =
+      `${movie.year} • ${movie.age} • ${movie.type} • ${movie.genres.join(" • ")}`;
+    document.getElementById("movieDesc").innerText = movie.description;
+  
+    document.getElementById("movieModal").style.display = "flex";
+  }
+  
+  document.getElementById("closeMovieModal").onclick = () => {
+    document.getElementById("movieModal").style.display = "none";
+  };
+  
+  // When user clicks login, hide movie modal if it's open
+  document.getElementById("loginBtn").onclick = function () {
+    document.getElementById("movieModal").style.display = "none";
+    document.getElementById("loginModal").style.display = "block";
+  };
+

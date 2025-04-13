@@ -678,6 +678,9 @@ input {
     width: 200px;
     margin-right: 10px;
 }
+.star-card:hover{
+    transform: scale(1.05);
+}
 .star-card img{
     width: 90%;
     border-radius: 100%;

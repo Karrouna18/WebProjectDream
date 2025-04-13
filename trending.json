@@ -1,0 +1,101 @@
+[
+    {
+      "id": 1,
+      "title": "Squid Game",
+      "year": "2021",
+      "age": "18+",
+      "type": "Show",
+      "genres": ["Thriller", "Survival"],
+      "description": "Hundreds of cash-strapped players accept a strange invitation to compete in children's games for a tempting prize, but the stakes are deadly.",
+      "image": "imgs/SquidGame.jpg",
+      "modalImage": "https://images.unsplash.com/photo-1635763600243-7de773972512?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3F1aWQlMjBnYW1lfGVufDB8fDB8fHww"
+    },
+    {
+      "id": 2,
+      "title": "Back in Action",
+      "year": "2023",
+      "age": "16+",
+      "type": "Movie",
+      "genres": ["Action", "Comedy"],
+      "description": "A retired spy is forced back into the field for one last mission.",
+      "image": "imgs/BackinAction.jpg",
+      "modalImage":"https://m.media-amazon.com/images/M/MV5BNTVkNDcyZjUtNDA2Ny00ZjU5LThkNzItMmQ1NzhiMmZhZjkyXkEyXkFqcGc@._V1_QL75_UX1230_.jpg"
+    },
+    {
+      "id": 3,
+      "title": "The Night Agent",
+      "year": "2023",
+      "age": "18+",
+      "type": "Show",
+      "genres": ["Thriller", "Action"],
+      "description": "A low-level FBI agent works in the basement of the White House, manning a phone that never rings—until the night that it does.",
+      "image": "imgs/TheNightAgent.jpg",
+      "modalImage":"https://m.media-amazon.com/images/M/MV5BNWRjZWFhMzAtMjg0Mi00MDVkLWJjYjAtZGJjNDAzY2M3MzZmXkEyXkFqcGc@._V1_QL75_UX1230_.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Friends",
+      "year": "1994-2004",
+      "age": "13+",
+      "type": "Show",
+      "genres": ["Comedy", "Drama"],
+      "description": "Follow the lives of six reckless adults living in Manhattan, as they indulge in adventures which make their lives both troublesome and happening.",
+      "image": "imgs/Friends.jpg",
+      "modalImage":"https://media.gettyimages.com/id/183118177/photo/friends-the-one-where-rachel-finds-out-episode-124-pictured-matt-leblanc-as-joey-tribbiani.jpg?s=612x612&w=0&k=20&c=tFAwieyUHS-OyiWZLLIKMFIEqEftVKOzeCIijYrBRA4="
+    },
+    {
+      "id": 5,
+      "title": "Prison Break",
+      "year": "2005-2017",
+      "age": "16+",
+      "type": "Show",
+      "genres": ["Action", "Drama"],
+      "description": "A structural engineer installs himself in a prison to help his brother, a death-row inmate, escape custody.",
+      "image": "imgs/PrisonBreak.jpg",
+      "modalImage":"https://media.gettyimages.com/id/679519912/photo/wentworth-miller-and-dominic-purcell-in-the-all-new-the-liar-episode-of-prison-break-airing.jpg?s=612x612&w=0&k=20&c=weeJHMA4nAUuqI0hXnLiWg665nkdXcQEikkRuV0ZJic="
+    },
+    {
+      "id": 6,
+      "title": "Fast X",
+      "year": "2023",
+      "age": "13+",
+      "type": "Movie",
+      "genres": ["Action", "Adventure"],
+      "description": "Dom Toretto and his family are targeted by the vengeful son of drug kingpin Hernan Reyes.",
+      "image": "imgs/FastX.jpg",
+      "modalImage":"https://m.media-amazon.com/images/M/MV5BY2Y3MDY0M2MtOTRlNS00MTgyLTg5MzctYmNlMTE1ZGQ5NTYyXkEyXkFqcGc@._V1_QL75_UX1197_.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Carry On",
+      "year": "2023",
+      "age": "16+",
+      "type": "Movie",
+      "genres": ["Comedy", "Drama"],
+      "description": "A heartwarming story about friendship and adventure.",
+      "image": "imgs/CarryOn.jpg",
+      "modalImage":"https://m.media-amazon.com/images/M/MV5BNmY3OGZlYzAtNjQzNC00MDg2LTlhNDgtNzAxNjMyNzI4NWYzXkEyXkFqcGc@._V1_QL75_UX681_.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Moana",
+      "year": "2016",
+      "age": "6+",
+      "type": "Movie",
+      "genres": ["Animation", "Adventure"],
+      "description": "A young woman uses her navigational talents to set sail for a fabled island.",
+      "image": "imgs/Moana.jpg",
+      "modalImage":"https://m.media-amazon.com/images/M/MV5BYTczYjYwMjktMGQ2My00NGRiLTlhY2EtMzE0ZTI0OTIxYjJlXkEyXkFqcGc@._V1_QL75_UX1197_.jpg"
+    },
+    {
+      "id": 9,
+      "title": "The Penguin",
+      "year": "2024",
+      "age": "18+",
+      "type": "Show",
+      "genres": ["Crime", "Drama"],
+      "description": "The rise of Oswald Cobblepot in Gotham's criminal underworld.",
+      "image": "imgs/Thepenguin.jpg",
+      "modalImage":"https://m.media-amazon.com/images/M/MV5BNjk2ZDEwM2ItZWQ4Ny00NGI2LTkxNzUtZjA1MzdkNWNjOWJjXkEyXkFqcGc@._V1_QL75_UX595.5_.jpg"
+    }
+  ]

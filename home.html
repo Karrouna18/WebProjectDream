@@ -48,38 +48,24 @@
         <h2>Trending Now</h2>
         <div class="scroll-container">
         <button class="scroll-btn left-btn" id="leftBtn">&#10094;</button>
-        <div class="movie-container" id="movieContainer" >
-            <div class="grid">
-                <img src="imgs/SquidGame.jpg" alt="">
-            </div>
-            <div class="grid">
-                <img src="imgs/BackinAction.jpg" alt="">
-            </div>
-            <div class="grid">
-                <img src="imgs/TheNightAgent.jpg" alt="">
-            </div>
-            <div class="grid">
-                <img src="imgs/Friends.jpg" alt="">
-            </div>
-            <div class="grid">
-                <img src="imgs/PrisonBreak.jpg" alt="">
-            </div>
-            <div class="grid">
-                <img src="imgs/FastX.jpg" alt="">
-            </div>
-            <div class="grid">
-                <img src="imgs/CarryOn.jpg" alt="">
-            </div>
-            <div class="grid">
-                <img src="imgs/Moana.jpg" alt="">
-            </div>
-            <div class="grid">
-                <img src="imgs/Thepenguin.jpg" alt="">
-            </div>
-        </div>
+        <div class="movie-container" id="movieContainer"></div>
+        
         <button class="scroll-btn right-btn" onclick="scrollRight()" id="rightBtn">&#10095;</button>
     </div>
     </section>
+
+
+    <div id="movieModal" class="modal">
+        <div class="modal-box">
+          <span class="close" id="closeMovieModal">&times;</span>
+          <img id="movieCover" class="movie-cover" src="" alt="Movie Cover">
+          <div class="movie-info">
+            <h2 id="movieTitle"></h2>
+            <p id="movieMeta"></p>
+            <p id="movieDesc"></p>
+          </div>
+        </div>
+      </div>
     
     <section class="reasons">
         <h2>More Reasons to Join</h2>
