@@ -1,7 +1,7 @@
 document.querySelectorAll(".faq-question").forEach(button => {
     button.addEventListener("click", function () {
-        const answer = this.nextElementSibling;
-        const icon = this.querySelector(".toggle");
+        let answer = this.nextElementSibling;
+        let icon = this.querySelector(".toggle");
 
         if (answer.style.display === "block") {
             answer.style.display = "none";

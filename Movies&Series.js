@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    const categoriesBtn = document.getElementById("categoriesBtn");
-    const subMenu = document.querySelector(".categories .sub-menu");
+    let categoriesBtn = document.getElementById("categoriesBtn");
+    let subMenu = document.querySelector(".categories .sub-menu");
 
     categoriesBtn.addEventListener("click", function (event) {
         event.preventDefault(); 
@@ -106,9 +106,9 @@ function hideSections() {
 }
 
 function displaySearchResults() {
-    const searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
-    const yearFilter = document.getElementById('yearFilter').value.trim();
-    const searchResultsContainer = document.getElementById('movieResults');
+    let searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
+    let yearFilter = document.getElementById('yearFilter').value.trim();
+    let searchResultsContainer = document.getElementById('movieResults');
     searchResultsContainer.innerHTML = ''; 
 
     if (searchQuery === '' && yearFilter === '') {
@@ -147,7 +147,7 @@ function displaySearchResults() {
 
     if (filteredMovies.length > 0) {
         filteredMovies.forEach(movie => {
-            const movieElement = document.createElement('div');
+            let movieElement = document.createElement('div');
             movieElement.classList.add('movie');
             movieElement.innerHTML = `
                 <img src="${movie.img}" alt="${movie.title}">
@@ -1469,7 +1469,7 @@ function openMovieModal(movie) {
 
     modalRating.textContent = movie.rating || "N/A";
     updateWatchNowButton(movie.title); 
-    const saved = movieReviews[movie.title] || { rating: 0, review: "" };
+    let saved = movieReviews[movie.title] || { rating: 0, review: "" };
     selectedStars = new Set();
     for (let i = 0; i < saved.rating; i++) {
         selectedStars.add(i);
@@ -1503,8 +1503,8 @@ ratingStars.forEach((star, index) => {
 
 
 submitReviewBtn.addEventListener("click", function () {
-    const reviewText = userReviewInput.value.trim();
-    const rating = selectedStars.size;
+    let reviewText = userReviewInput.value.trim();
+    let rating = selectedStars.size;
 
     if (!rating && !reviewText) {
         alert("Please enter a rating and a review.");
@@ -1553,7 +1553,7 @@ window.addEventListener("click", (event) => {
 document.querySelectorAll('.nav-link').forEach(categoryLink => {
     categoryLink.addEventListener('click', function(e) {
         e.preventDefault();
-        const category = this.textContent.trim();
+        let category = this.textContent.trim();
         filterByCategory(category);
     });
 });
@@ -1561,17 +1561,17 @@ document.querySelectorAll('.nav-link').forEach(categoryLink => {
 function filterByCategory(category) {
     hideSections();
     
-    const searchResultsContainer = document.getElementById('movieResults');
+    let searchResultsContainer = document.getElementById('movieResults');
     searchResultsContainer.innerHTML = '';
     searchResultsContainer.style.display = 'flex';
     
-    const filteredMovies = movies.filter(movie => {
+    let filteredMovies = movies.filter(movie => {
         return movie.genre && movie.genre.toLowerCase().includes(category.toLowerCase());
     });
     
     if (filteredMovies.length > 0) {
         filteredMovies.forEach(movie => {
-            const movieElement = document.createElement('div');
+            let movieElement = document.createElement('div');
             movieElement.classList.add('movie');
             movieElement.innerHTML = `
                 <img src="${movie.img}" alt="${movie.title}">
@@ -1609,7 +1609,7 @@ function updateWatchNowButton(title) {
 }
 
 watchNowBtn.addEventListener("click", () => {
-    const movieData = {
+    let movieData = {
         title: modalTitle.textContent,
         img: modalImage.src,
         description: modalDescription.textContent,
@@ -1619,7 +1619,7 @@ watchNowBtn.addEventListener("click", () => {
         cast: modalCast.textContent
     };
 
-    const index = watchlist.findIndex(m => m.title === movieData.title);
+    let index = watchlist.findIndex(m => m.title === movieData.title);
 
     if (index === -1) {
         watchlist.push(movieData);
