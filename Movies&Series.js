@@ -425,10 +425,8 @@ function openMovieModal(movie) {
     modalImage.src = movie.image || movie.img || "";
 
     modalRating.textContent = movie.rating || "N/A";
-
+    updateWatchNowButton(movie.title); 
     const saved = movieReviews[movie.title] || { rating: 0, review: "" };
-
-  
     selectedStars = new Set();
     for (let i = 0; i < saved.rating; i++) {
         selectedStars.add(i);
@@ -438,6 +436,7 @@ function openMovieModal(movie) {
     userReviewInput.value = saved.review;
 
     movieModal.style.display = "block";
+    
 }
 
 
@@ -538,7 +537,11 @@ function filterByCategory(category) {
                 <p><strong>Year:</strong> ${movie.year}</p>
                 <p><strong>Genre:</strong> ${movie.genre}</p>
             `;
+            movieElement.addEventListener('click', () => {
+                openMovieModal(movie);
+            });
             searchResultsContainer.appendChild(movieElement);
+
         });
     } else {
         searchResultsContainer.innerHTML = `<p>No ${category} movies found.</p>`;
@@ -585,16 +588,3 @@ watchNowBtn.addEventListener("click", () => {
 
     updateWatchNowButton(movieData.title);
 });
-function openMovieModal(movie) {
-    modalTitle.textContent = movie.title;
-    modalImage.src = movie.img;
-    modalDescription.textContent = movie.description;
-    modalYear.textContent = movie.year;
-    modalGenre.textContent = movie.genre;
-    modalRating.textContent = movie.rating;
-    modalCast.textContent = movie.cast;
-
-    updateWatchNowButton(movie.title); 
-
-    modal.style.display = "block";
-}
