@@ -272,7 +272,7 @@ let movies = [
         description: "This is the description of Movie 3.",
         img: "imgs/myfault London.jpg",
     },
- // Ramadan 2025 Movies (Arabic)
+ 
  {
     id: 1,
     title: "تحت سابع أرض",
@@ -454,7 +454,7 @@ let movies = [
     cast: ["ياسر جلال", "صباح الجزائري", "علي كريم"]
 },
 
-// Trending Now (International)
+
 {
     id: 19,
     title: "Culpa Tuya",
